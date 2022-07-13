@@ -1,0 +1,163 @@
+/*
+	Homepage styles
+*/
+
+.naomimoon-homepage {
+	margin-top: 52px;
+	.home-heading {
+		font-size: 40px;
+		@media (max-width: $size-phone) {
+			font-size: 30px;
+		}
+		text-align: center;
+		top: 54px;
+		text-transform: uppercase;
+    	letter-spacing: 5px;
+	}
+	p {
+		line-height: 30px;
+	}
+	&__content {
+		box-shadow: 0 0 15px rgba(0,0,0,.4);
+	}
+	&__hero {
+		width: 100%;
+		padding: 32vh 0;
+		background: linear-gradient(180deg, #ff79c5bd -90%, #bd93f9ac 50%, #282a36bd 140%);
+		background-size: cover;
+		background-attachment: fixed;
+		.hero-card {
+			background-color: rgb(40, 42, 54);
+			backdrop-filter: blur(5px);
+			padding: 20px;
+			border-radius: 20px;
+			max-width: 570px;
+			box-shadow: 0 0 15px rgba(0,0,0,.4);
+			@media (max-width: $size-tablet) {
+				max-width: 100%;
+				border-radius: 0;
+			}
+			margin: 0 auto;
+			h1 {
+				text-transform: lowercase;
+				font-weight: 600;
+				font-size: 80px;
+				margin: 20px 0 15px;
+				line-height: 100px;
+				cursor: default;
+				color: $white;
+			}
+			h3 {
+				font-size: 22px;
+				margin: 30px 0;
+				font-weight: 300;
+			}
+			h4 {
+				font-weight: 200;
+				padding-bottom: 15px;
+			}
+		}
+	}
+	&__about {
+		.square-border {
+			border: 2px solid $purple;
+			border-radius: 10px;
+			max-width: 770px;
+			margin: auto;
+			@media (max-width: $size-tablet) {
+				border: none;
+			}
+		}
+		p {
+			max-width: 710px;
+			margin: auto;
+		}
+	}
+	&__experience {
+		background: linear-gradient(180deg, #282a36bd -90%, #bd93f9ac 50%, #ff79c5bd 180%);
+		background-size: cover;
+		background-attachment: fixed;
+		.row {
+			justify-content: center;
+			margin-bottom: 20px;
+			max-width: 1000px;
+			margin: auto;
+			@media (max-width: 540px) {
+				justify-content: left;
+			}
+		}
+		.col {
+			box-shadow: 0 0 20px rgba(0,0,0,.4);
+			background: $background;
+			border-radius: 10px;
+			@media (max-width: 540px) {
+				flex: 0 0 100%;
+			}
+		}
+		.experience-heading {
+			box-shadow: 0 0 20px rgba(0,0,0,.4);
+			padding: 13px 15px 10px;
+			border-radius: 10px;
+			max-width: 686px;
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: 20px;
+			background: $background;
+			.naomimoon-border-bottom {
+				margin-bottom: 20px;
+			}
+		}
+		h2 {
+			color: #fff;
+			margin-top: 0 !important;
+			margin-bottom: 20px;
+		}
+		h3 {
+			margin: 0;
+			padding: 10px 0;
+			color: $white;
+			background: $background-dark;
+			border-top-left-radius: 10px;
+			border-top-right-radius: 10px;
+			letter-spacing: 2px;
+		}
+		ul {
+			text-align: left;
+			padding-right: 25px;
+			@media (max-width: 540px) {
+				font-size: 18px;
+			}
+			li {
+				font-weight: 300;
+				line-height: 30px;
+			}
+			&.php-ul, &.other-ul {
+				padding-right: 21px;
+				@media (max-width: 765px) {
+					padding-right: 19.5px;
+				}
+				@media (max-width: 761px) {
+					padding-right: 28px;
+				}
+			}
+			@media (max-width: 761px) {
+				&.other-ul, &.design-ul {
+					padding: 0 45.5px;
+				}
+			}
+		}
+	}
+	&__certs {
+		ul {
+			margin-left: auto;
+			font-size: 19px;
+		}
+	}
+	.seperator {
+		width: 100%;
+		padding: 1px 0;
+		background: linear-gradient(180deg, #ff79c5bd -90%, #bd93f9ac 50%, #282a36bd 140%);
+		background-size: cover;
+		background-attachment: fixed;
+	}
+}

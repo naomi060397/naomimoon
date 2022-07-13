@@ -1,0 +1,93 @@
+.contact-block {
+	margin-bottom: 120px;
+	.home-heading {
+		margin-bottom: 20px;
+	}
+	.row {
+		justify-content: center;
+		margin-top: 25px;
+	}
+	.col {
+		background: $background-dark;
+		padding: 20px;
+		border-radius: 10px;
+		position: relative;
+		&:hover {
+			.item-action-wrap {
+				display: flex;
+			}
+			.dashicons-edit {
+				display: block;
+			}
+		}
+	}
+	h4 {
+		font-weight: 300;
+		margin: 0; 
+		padding: 0;
+		margin-top: 8px;
+	}
+	a {
+		h4 {
+			color: white;
+			text-decoration: none;
+		}
+	}
+	img {
+		border-bottom: 2px solid $purple;
+		padding-bottom: 20px;
+	}
+	/* EDITOR */
+	.contact-url-input {
+		font-size: 13px;
+		min-width: 100px !important;
+		background-color: $selection;
+		border-radius: 6px;
+		padding: 0 8px;
+		text-align: left;
+		margin-bottom: 0;
+
+	}
+	.naomi-mediaupload {
+		color: white;
+		outline: 1px solid $purple;
+		z-index: 99;
+		margin-bottom: 12px;
+		&:hover {
+			background: $purple;
+		}
+	}
+	.components-button:focus:not(:disabled) {
+		box-shadow: 0 0 8px $purple;
+		outline: none;
+	}
+	.dashicons-edit {
+		position: absolute;
+		right: 5px;
+		top: 5px;
+		background: white;
+		color: black;
+		padding: 4px;
+		border: 1px solid black;
+		display: none;
+		cursor: pointer;
+		&:hover {
+			background: $purple;
+		}
+	}
+	.item-action-wrap {
+		margin-left: -15px;
+		top: 5px;
+		display: none;
+	}
+	.add-item-wrap {
+		i {
+			background: $purple;
+			color: black;
+			&:hover {
+				background: $selection;
+				color: white;
+			}
+		}
+	}
+}

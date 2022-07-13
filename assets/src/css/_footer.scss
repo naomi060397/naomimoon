@@ -1,0 +1,21 @@
+.site-footer {
+	background: $background-dark;
+	padding: 50px;
+	.site-info {
+		font-size: 14.5px;
+		display: flex;
+		justify-content: space-between;
+		a:hover {
+			text-decoration: underline;
+		}
+		.dashicons-arrow-up-alt2 {
+			font-size: 16px;
+			margin-top: 1px;
+			color: $pink;
+			margin-left: 3px;
+		}
+		.back-to-top {
+			cursor: pointer;
+		}
+	}
+}

@@ -1,0 +1,30 @@
+.container {
+    max-width: 1290px;
+    margin-right: auto;
+    margin-left: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.row {
+	display: flex;
+	flex-direction: row;  
+	flex-grow: 1;
+	flex-wrap: wrap;
+	gap: 20px;
+	justify-content: space-between;
+}
+
+.col {
+	flex: 0 0 auto;
+	text-align: center;
+}
+
+.align-center {
+	text-align: center;
+}
+
+.full-width {
+	width: 100%;
+}
+

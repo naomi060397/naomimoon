@@ -1,0 +1,36 @@
+{
+  "name": "naomimoon",
+  "version": "0.1.0",
+  "description": "Naomimoon theme packages",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "babel": "babel --presets es2015 js/main.js -o build/main.bundle.js",
+    "watch": "wp-scripts start src/js/*.js src/js/**/block.js --output-path=js",
+    "build": "wp-scripts build build/js/project-block/block.js build/js/naomimoon-scripts.js --output-path=js"
+  },
+  "keywords": [
+    "wordpress",
+    "themes"
+  ],
+  "author": "Naomi Keller",
+  "license": "MIT",
+  "private": true,
+  "browserslist": [
+    "defaults"
+  ],
+  "devDependencies": {
+    "@wordpress/babel-preset-default": "^6.12.0",
+    "@wordpress/components": "^9.5.0",
+    "@wordpress/scripts": "^9.0.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "grunt": "^1.5.3",
+    "grunt-contrib-sass": "^2.0.0",
+    "grunt-contrib-watch": "^1.1.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.2.0-beta1",
+    "grunt-contrib-uglify": "^5.2.2"
+  }
+}

@@ -1,0 +1,60 @@
+/*
+	General element styles
+*/
+
+html {
+	scroll-behavior: smooth;
+	margin-top: -52px;
+	&.wp-toolbar {
+		margin-top: 0;
+	}
+}
+
+body.home, body.page-template {
+	background: $background;
+	color: $white;
+	margin: 0;
+	width: 100%;
+	a {
+		color: $pink;
+		text-decoration: none;
+	}
+
+	.naomimoon-border-bottom {
+		display: block;
+		content: '';
+		background: $purple;
+		height: 4px;
+		margin: 0 auto;
+		max-width: 200px;
+		border-radius: 50px;
+	}
+
+}
+	
+.menu-item, .link-hover-animation {
+	transition: ease-in-out .3s;
+	display: inline-block;
+	position: relative;
+	&:after {
+		content: '';
+		top: 22.5px;
+		position: absolute;
+		width: 100%;
+		transform: scaleX(0);
+		height: 2px;
+		bottom: 0;
+		left: 0;
+		background-color: $pink;
+		transform-origin: bottom right;
+		transition: transform 0.25s ease-out;
+	}
+	&:hover:after {
+		transform: scaleX(1);
+		transform-origin: bottom left;
+	}
+}
+
+html :where(.editor-styles-wrapper) h4 {
+	margin: 0;
+}

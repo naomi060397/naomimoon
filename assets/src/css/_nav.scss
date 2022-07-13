@@ -1,0 +1,149 @@
+.naomimoon-header, .site-header {
+	background: $background-dark;
+	z-index: 45;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	overflow: hidden;
+	transition: ease-in-out .3s;
+	transform: scaleY(100%);
+	transform-origin: top;
+	box-shadow: 0 0 15px rgba(0,0,0,.3);
+
+	&.scrolled {
+		transform: scaleY(0%);
+		visibility: hidden;
+		@media ($size-tablet) {
+			transform: none;
+		}
+	}
+	
+	&__logo {
+		margin: auto 0;
+		h5 {
+			font-size: 25px;
+			margin: 0;
+			padding: 10px 0;
+			color: $white;
+			transition: ease-in-out .3s;
+			&:after {
+				top: 42px;
+			}
+			a {
+				color: $white;
+				text-decoration: none;
+				transition: ease-in-out .3s;
+				&:hover {
+					color: $pink;
+				}
+			}
+		}
+	}
+
+	.main-navigation {
+		z-index: 99;
+		ul {
+			list-style: none;
+			justify-content: right;
+			padding: 0;
+			display: flex;
+			gap: 18px;
+			@media (max-width: $size-tablet) {
+				display: none;
+			}
+			a {
+				color: $white;
+				text-decoration: none;
+				padding: 0 0;
+				transition: ease-in-out .3s;
+				&:hover {
+					color: $pink;
+				}
+			}
+		}
+	}
+
+	&__hamburger {
+		display: none;
+		visibility: hidden;
+		padding: 11px 0 0 0;
+		img {
+			filter: brightness(0) invert(1);
+			transition: ease-in-out .3s;
+			cursor: pointer;
+			&:hover {
+				filter: invert(64%) sepia(8%) saturate(4142%) hue-rotate(289deg) brightness(106%) contrast(102%);
+			}
+		}
+		@media (max-width: $size-tablet) {
+			display: block;
+			visibility: visible;
+		}
+	}
+
+	&__hamburger-menu {
+		z-index: 45;
+		position: fixed;
+		top: 52px;
+		right: 0;
+		visibility: hidden;
+		opacity: 0;
+		width: 0;
+		background: $background-dark;
+		padding-right: 15px;
+		height: 100vh;
+		transition: ease-in-out .3s;
+		ul {
+			text-align: right;
+			display: block;
+			padding-right: 3px;
+			padding-left: 15px;
+			li {
+				width: 100%;
+				padding: 12px 0;
+				&:hover {
+					a {
+						color: $pink;
+					}
+				}
+				&:after {
+					top: 52px;
+				}
+				&:hover:after {
+					transform-origin: bottom right;
+				}
+				a {
+					font-size: 30px;
+					color: $white;
+					transition: ease-in-out .3s;
+				}
+			}
+		}
+		.menu {
+			margin: 0;
+		}
+		&.active {
+			visibility: visible;
+			opacity: 1;
+			width: 250px;
+		}
+	}
+
+}
+
+.dim-background {
+	z-index: 40;
+	visibility: hidden;
+	opacity: 0;
+	background: rgba(0, 0, 0, 0.45);
+	position: fixed;
+	top: 54px;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	transition: ease-in-out .3s;
+	&.active {
+		visibility: visible;
+		opacity: 1.0;
+	}
+}
