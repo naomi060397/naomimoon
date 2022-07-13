@@ -156,6 +156,13 @@ function naomimoon_register_blocks() {
 			'editor_style'  => 'naomimoon-style-editor',
 		)
 	);
+	register_block_type(
+		'naomimoon/about',
+		array(
+			'editor_script' => 'project-block-script',
+			'editor_style'  => 'naomimoon-style-editor',
+		)
+	);
 }
 add_action( 'init', 'naomimoon_register_blocks' );
 

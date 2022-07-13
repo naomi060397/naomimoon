@@ -10,21 +10,6 @@ get_header();
 
 	<main id="primary" class="site-main naomimoon-homepage">
 		<div class="naomimoon-homepage__content">
-			<div class="naomimoon-homepage__about t-break b-break container" id="about">
-				<div class="square-border">
-					<h2 class="home-heading mb-10">About</h2>
-					<span class="naomimoon-border-bottom mb-50"></span>
-					<p class="pb-30 pt-25">	
-						I'm and Ivy Tech graduate with an AAS degree in Software Development. I've been working as a WordPress Full-stack Developer for Multidots Inc. and through this
-						have a lot of experience working with React/JSX with WP Gutenberg blocks. I've also become quite aquainted with PHP scripting, and creating responsive pages with
-						HTML and SCSS.
-					</p>
-					<p class="pb-40"> 
-						Multidots is a WordPress VIP partner, so I am familar with the coding standards that come along with that as well. 
-						I made my first WordPress blog when I was ten years old, so I suppose it is fate I became a WordPress developer. 
-					</p>
-				</div>
-			</div>
 			<div class="naomimoon-homepage__experience b-break t-break" id="experience">
 				<div class="container">
 					<div class="experience-heading">
