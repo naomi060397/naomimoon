@@ -18,8 +18,16 @@ registerBlockType("naomimoon/hero", {
     attributes: {
         heading: {
             type: 'string',
-            default: ''
+            default: 'naomi keller'
         },
+        subHeading: {
+            type: 'string',
+            default: 'Developer Portfolio'
+        },
+        description: {
+            type: 'string',
+            default: 'WordPress Full-stack | React | PHP | HTML5 | Sass'
+        }
     },
     edit: heroEdit,
     save: heroSave,

@@ -14,12 +14,29 @@ export default class heroSave extends Component {
 		const { attributes, className } = this.props;
         const {
             heading,
+            subHeading,
+            description
         } = attributes;
 
         return (
-            <div className='hero-block container' id="home">
-                hello
-			</div>
+            <div class="hero-block naomimoon-homepage__hero align-center" id="home">
+                <div class="overlay-wrapper"></div>
+                <div class="hero-card">
+                    <RichText.Content
+                        tagName="h1"
+                        value={ heading }
+                    />
+                    <span class="naomimoon-border-bottom"></span>
+                    <RichText.Content
+                        tagName="h3"
+                        value={ subHeading }
+                    />
+                    <RichText.Content
+                        tagName="h4"
+                        value={ description }
+                    />
+                </div>
+            </div>
         );
 	}
 }

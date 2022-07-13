@@ -9,15 +9,6 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main naomimoon-homepage">
-		<div class="naomimoon-homepage__hero align-center">
-			<div class="overlay-wrapper"></div>
-			<div class="hero-card">
-				<h1>Naomi Keller</h1>
-				<span class="naomimoon-border-bottom"></span>
-				<h3>Developer Portfolio</h3>
-				<h4>WordPress Full-stack | React | PHP | HTML5 | Sass</h4>
-			</div>
-		</div>
 		<div class="naomimoon-homepage__content">
 			<div class="naomimoon-homepage__about t-break b-break container" id="about">
 				<div class="square-border">
