@@ -832,8 +832,8 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])("nao
       default: []
     },
     flexWidth: {
-      type: 'string',
-      default: '23'
+      type: 'number',
+      default: 23
     }
   },
   edit: _edit__WEBPACK_IMPORTED_MODULE_2__["default"],

@@ -29,8 +29,8 @@ registerBlockType("naomimoon/contact", {
             default: []
         },
         flexWidth: {
-            type: 'string',
-            default: '23'
+            type: 'number',
+            default: 23
         }
     },
     edit: contactEdit,

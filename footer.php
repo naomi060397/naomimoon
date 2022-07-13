@@ -12,11 +12,11 @@
 				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'naomimoon' ) ); ?>">
 					Powered by WordPress
 				</a>
-				<span class="sep"> | </span>
+				<span class="sep"> &#8226; </span>
 				<a href="https://www.bluehost.com/">Hosted by Bluehost</a>
-				<span class="sep"> | </span>
+				<span class="sep"> &#8226; </span>
 				<a href="https://github.com/dracula/dracula-theme">Dracula Color Theme</a>
-				<span class="sep"> | </span>
+				<span class="sep"> &#8226; </span>
 				<a href="https://github.com/naomi060397/naomimoon">Theme by Naomi Keller</a>
 			</div>
 			<div>

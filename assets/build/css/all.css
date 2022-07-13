@@ -348,11 +348,14 @@ html :where(.editor-styles-wrapper) h4 {
       text-decoration: underline; }
     .site-footer .site-info .dashicons-arrow-up-alt2 {
       font-size: 16px;
-      margin-top: 1px;
+      margin-top: 2px;
       margin-left: 3px;
       text-decoration: none; }
     .site-footer .site-info .back-to-top {
       cursor: pointer; }
+  .site-footer .sep {
+    padding: 0 2px;
+    color: #BD93F9; }
 
 .editor-styles-wrapper.block-editor-writing-flow {
   background: #282a36;
@@ -816,7 +819,7 @@ html :where(.editor-styles-wrapper) h4 {
       color: #FF79C6; }
   .contact-block img {
     border-bottom: 2px solid #BD93F9;
-    padding-bottom: 20px;
+    padding-bottom: 16px;
     transition: ease-in-out .3s; }
     .contact-block img:hover {
       transform: scale(1.03); }

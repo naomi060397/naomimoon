@@ -10,15 +10,16 @@
 		}
 		.dashicons-arrow-up-alt2 {
 			font-size: 16px;
-			margin-top: 1px;
+			margin-top: 2px;
 			margin-left: 3px;
 			text-decoration: none;
 		}
 		.back-to-top {
 			cursor: pointer;
 		}
-		.back-top-top-text {
-
-		}
+	}
+	.sep {
+		padding: 0 2px;
+		color: $purple;
 	}
 }
