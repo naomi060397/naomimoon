@@ -31,6 +31,9 @@
 			@media (min-width: 785px) {
 				transform: scale(1.05);
 			}
+			p a {
+				color: $pink;
+			}
 		}
 		p {
 			margin: 0;

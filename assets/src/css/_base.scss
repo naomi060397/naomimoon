@@ -16,8 +16,11 @@ body.home, body.page-template {
 	margin: 0;
 	width: 100%;
 	a {
-		color: $pink;
+		color: $white;
 		text-decoration: none;
+		&:hover {
+			color: $pink;
+		}
 	}
 
 	.naomimoon-border-bottom {

@@ -24,8 +24,10 @@ body.home, body.page-template {
   margin: 0;
   width: 100%; }
   body.home a, body.page-template a {
-    color: #FF79C6;
+    color: #F8F8F2;
     text-decoration: none; }
+    body.home a:hover, body.page-template a:hover {
+      color: #FF79C6; }
   body.home .naomimoon-border-bottom, body.page-template .naomimoon-border-bottom {
     display: block;
     content: '';
@@ -347,8 +349,8 @@ html :where(.editor-styles-wrapper) h4 {
     .site-footer .site-info .dashicons-arrow-up-alt2 {
       font-size: 16px;
       margin-top: 1px;
-      color: #FF79C6;
-      margin-left: 3px; }
+      margin-left: 3px;
+      text-decoration: none; }
     .site-footer .site-info .back-to-top {
       cursor: pointer; }
 
@@ -747,6 +749,8 @@ html :where(.editor-styles-wrapper) h4 {
     @media (min-width: 785px) {
       .certificate-block .col:hover {
         transform: scale(1.05); } }
+    .certificate-block .col:hover p a {
+      color: #FF79C6; }
     .certificate-block .col p {
       margin: 0;
       font-size: 18px;
@@ -808,9 +812,14 @@ html :where(.editor-styles-wrapper) h4 {
   .contact-block a h4 {
     color: white;
     text-decoration: none; }
+    .contact-block a h4:hover {
+      color: #FF79C6; }
   .contact-block img {
     border-bottom: 2px solid #BD93F9;
-    padding-bottom: 20px; }
+    padding-bottom: 20px;
+    transition: ease-in-out .3s; }
+    .contact-block img:hover {
+      transform: scale(1.03); }
   .contact-block .contact-url-input {
     font-size: 13px;
     min-width: 100px !important;

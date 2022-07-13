@@ -30,7 +30,7 @@
 		if(verticalClient <= 55) {
 			$(".site-header").removeClass("scrolled");
 		}
-		if (verticalClient >= 55 && verticalPage >= 780) {
+		if (verticalClient >= 55 && verticalPage >= 1000) {
 			$(".site-header").addClass("scrolled");
 		}
 	});
@@ -38,6 +38,7 @@
 	// Back to top animation
 	$(document).on('click', '.back-to-top', function (e) {
 		$("html, body").animate({ scrollTop: "0" });
+		$(".site-header").removeClass("scrolled");
 	});
 
 })(jQuery);
