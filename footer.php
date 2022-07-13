@@ -17,7 +17,7 @@
 				<span class="sep"> | </span>
 				<a href="https://github.com/dracula/dracula-theme">Dracula Color Theme</a>
 				<span class="sep"> | </span>
-				<a href="">Theme by Naomi Keller</a>
+				<a href="https://github.com/naomi060397/naomimoon">Theme by Naomi Keller</a>
 			</div>
 			<div>
 				<a class="back-to-top">Back to Top<span class="dashicons dashicons-arrow-up-alt2"></span></a>
