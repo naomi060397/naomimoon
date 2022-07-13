@@ -1670,12 +1670,12 @@ var heroEdit = /*#__PURE__*/function (_Component) {
           subHeading = attributes.subHeading,
           description = attributes.description;
       return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_8__["InspectorControls"], null), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("div", {
-        class: "hero-block naomimoon-homepage__hero align-center",
+        className: "hero-block naomimoon-homepage__hero align-center",
         id: "home"
       }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("div", {
-        class: "overlay-wrapper"
+        className: "overlay-wrapper"
       }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("div", {
-        class: "hero-card"
+        className: "hero-card"
       }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_8__["RichText"], {
         tagName: "h1",
         value: heading,
@@ -1686,7 +1686,7 @@ var heroEdit = /*#__PURE__*/function (_Component) {
         },
         placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_6__["__"])('Heading...')
       }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("span", {
-        class: "naomimoon-border-bottom"
+        className: "naomimoon-border-bottom"
       }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_8__["RichText"], {
         tagName: "h3",
         value: subHeading,
@@ -1784,17 +1784,17 @@ var heroSave = /*#__PURE__*/function (_Component) {
           subHeading = attributes.subHeading,
           description = attributes.description;
       return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("div", {
-        class: "hero-block naomimoon-homepage__hero align-center",
+        className: "hero-block naomimoon-homepage__hero align-center",
         id: "home"
       }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("div", {
-        class: "overlay-wrapper"
+        className: "overlay-wrapper"
       }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("div", {
-        class: "hero-card"
+        className: "hero-card"
       }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_7__["RichText"].Content, {
         tagName: "h1",
         value: heading
       }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("span", {
-        class: "naomimoon-border-bottom"
+        className: "naomimoon-border-bottom"
       }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_7__["RichText"].Content, {
         tagName: "h3",
         value: subHeading

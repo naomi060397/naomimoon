@@ -23,16 +23,16 @@ export default class heroEdit extends Component {
             <Fragment>
                 <InspectorControls>
                 </InspectorControls>
-                <div class="hero-block naomimoon-homepage__hero align-center" id="home">
-                    <div class="overlay-wrapper"></div>
-                    <div class="hero-card">
+                <div className="hero-block naomimoon-homepage__hero align-center" id="home">
+                    <div className="overlay-wrapper"></div>
+                    <div className="hero-card">
                         <RichText
                             tagName="h1"
                             value={ heading }
                             onChange={ ( heading ) => setAttributes( { heading } ) }
                             placeholder={ __( 'Heading...' ) }
                         />
-                        <span class="naomimoon-border-bottom"></span>
+                        <span className="naomimoon-border-bottom"></span>
                         <RichText
                             tagName="h3"
                             value={ subHeading }
