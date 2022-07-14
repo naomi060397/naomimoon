@@ -569,68 +569,6 @@ html :where(.editor-styles-wrapper) h4 {
   .naomimoon-homepage__about p {
     max-width: 710px;
     margin: auto; }
-  .naomimoon-homepage__experience {
-    background: linear-gradient(180deg, #282a36bd -90%, #bd93f9ac 50%, #ff79c5bd 180%);
-    background-size: cover;
-    background-attachment: fixed; }
-    .naomimoon-homepage__experience .row {
-      justify-content: center;
-      margin-bottom: 20px;
-      max-width: 1000px;
-      margin: auto; }
-      @media (max-width: 540px) {
-        .naomimoon-homepage__experience .row {
-          justify-content: left; } }
-    .naomimoon-homepage__experience .col {
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-      background: #282a36;
-      border-radius: 10px; }
-      @media (max-width: 540px) {
-        .naomimoon-homepage__experience .col {
-          flex: 0 0 100%; } }
-    .naomimoon-homepage__experience .experience-heading {
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-      padding: 13px 15px 10px;
-      border-radius: 10px;
-      max-width: 686px;
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 20px;
-      background: #282a36; }
-      .naomimoon-homepage__experience .experience-heading .naomimoon-border-bottom {
-        margin-bottom: 20px; }
-    .naomimoon-homepage__experience h2 {
-      color: #fff;
-      margin-top: 0 !important;
-      margin-bottom: 20px; }
-    .naomimoon-homepage__experience h3 {
-      margin: 0;
-      padding: 10px 0;
-      color: #F8F8F2;
-      background: #21242f;
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-      letter-spacing: 2px; }
-    .naomimoon-homepage__experience ul {
-      text-align: left;
-      padding-right: 25px; }
-      @media (max-width: 540px) {
-        .naomimoon-homepage__experience ul {
-          font-size: 18px; } }
-      .naomimoon-homepage__experience ul li {
-        font-weight: 300;
-        line-height: 30px; }
-      .naomimoon-homepage__experience ul.php-ul, .naomimoon-homepage__experience ul.other-ul {
-        padding-right: 21px; }
-        @media (max-width: 765px) {
-          .naomimoon-homepage__experience ul.php-ul, .naomimoon-homepage__experience ul.other-ul {
-            padding-right: 19.5px; } }
-        @media (max-width: 761px) {
-          .naomimoon-homepage__experience ul.php-ul, .naomimoon-homepage__experience ul.other-ul {
-            padding-right: 28px; } }
-      @media (max-width: 761px) {
-        .naomimoon-homepage__experience ul.other-ul, .naomimoon-homepage__experience ul.design-ul {
-          padding: 0 45.5px; } }
   .naomimoon-homepage__certs ul {
     margin-left: auto;
     font-size: 19px; }
@@ -863,5 +801,59 @@ html :where(.editor-styles-wrapper) h4 {
     .contact-block .add-item-wrap i:hover {
       background: #44475A;
       color: white; }
+
+.experience-block {
+  background: linear-gradient(180deg, #282a36bd -90%, #bd93f9ac 50%, #ff79c5bd 180%);
+  background-size: cover;
+  background-attachment: fixed; }
+  .experience-block .row {
+    justify-content: center;
+    margin-bottom: 20px;
+    max-width: 1000px;
+    margin: auto; }
+    @media (max-width: 540px) {
+      .experience-block .row {
+        justify-content: left; } }
+  .experience-block .col {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    background: #282a36;
+    border-radius: 10px; }
+    @media (max-width: 540px) {
+      .experience-block .col {
+        flex: 0 0 100%; } }
+    .experience-block .col:hover .item-action-wrap {
+      display: flex; }
+  .experience-block .experience-heading {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    padding: 13px 15px 10px;
+    border-radius: 10px;
+    max-width: 686px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    background: #282a36; }
+    .experience-block .experience-heading .naomimoon-border-bottom {
+      margin-bottom: 20px; }
+  .experience-block h2 {
+    color: #fff;
+    margin-top: 0 !important;
+    margin-bottom: 20px; }
+  .experience-block h3 {
+    margin: 0;
+    padding: 10px 5px;
+    color: #F8F8F2;
+    background: #21242f;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    letter-spacing: 2px; }
+  .experience-block .experience-list {
+    text-align: left;
+    padding: 0 25px; }
+    @media (max-width: 540px) {
+      .experience-block .experience-list {
+        font-size: 18px; } }
+    .experience-block .experience-list p {
+      font-size: 16px;
+      line-height: 30px; }
 
 /*# sourceMappingURL=all.css.map */

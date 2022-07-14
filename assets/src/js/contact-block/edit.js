@@ -88,7 +88,7 @@ export default class contactEdit extends Component {
         } = attributes;
 
         const flexStyle = {};
-        flexWidth && (flexStyle.flex = '0 0 ' + flexWidth + '%');
+        flexWidth && (flexStyle.flex = '0 0 ' + flexWidth + 'px');
 
         const getImageButton = (openEvent, index) => {
             if (dataArray[index].icon) {
@@ -239,8 +239,8 @@ export default class contactEdit extends Component {
                             label="Flex Width"
                             value={ flexWidth }
                             onChange={ ( flexWidth ) => setAttributes({ flexWidth }) }
-                            min={ 5 }
-                            max={ 100 }
+                            min={ 60 }
+                            max={ 300 }
                         />
 					</PanelBody>
                 </InspectorControls>

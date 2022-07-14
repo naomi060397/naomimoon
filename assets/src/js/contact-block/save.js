@@ -20,7 +20,7 @@ export default class contactSave extends Component {
         } = attributes;
 
         const flexStyle = {};
-        flexWidth && (flexStyle.flex = '0 0 ' + flexWidth + '%');
+        flexWidth && (flexStyle.flex = '0 0 ' + flexWidth + 'px');
 
         return (
             <div className='contact-block container' id="contact">
