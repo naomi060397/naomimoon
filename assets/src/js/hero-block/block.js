@@ -13,7 +13,7 @@ import heroSave from './save';
 registerBlockType("naomimoon/hero", {
     title: __( "Naomimoon Hero" ),
     description: __( "Hero Banner" ),
-    icon: 'dashicons dashicons-align-full-width',
+    icon: 'dashicons dashicons-align-full-width naomimoon-icon',
     category: 'naomimoon',
     attributes: {
         heading: {

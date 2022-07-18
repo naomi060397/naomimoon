@@ -13,7 +13,7 @@ import certificateSave from './save';
 registerBlockType("naomimoon/certificate", {
     title: __( "Naomimoon Certificates" ),
     description: __( "List block" ),
-    icon: 'dashicons dashicons-welcome-learn-more',
+    icon: 'dashicons dashicons-welcome-learn-more naomimoon-icon',
     category: 'naomimoon',
     attributes: {
         heading: {

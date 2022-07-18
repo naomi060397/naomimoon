@@ -13,7 +13,7 @@ import contactSave from './save';
 registerBlockType("naomimoon/contact", {
     title: __( "Naomimoon Contact" ),
     description: __( "2 Column block" ),
-    icon: 'dashicons dashicons-admin-links',
+    icon: 'dashicons dashicons-admin-links naomimoon-icon',
     category: 'naomimoon',
     attributes: {
         heading: {

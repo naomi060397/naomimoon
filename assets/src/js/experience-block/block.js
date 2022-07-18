@@ -13,7 +13,7 @@ import experienceSave from './save';
 registerBlockType("naomimoon/experience", {
     title: __( "Naomimoon Experience" ),
     description: __( "List block" ),
-    icon: 'dashicons ddashicons-table-row-after',
+    icon: 'dashicons dashicons-table-row-after naomimoon-icon',
     category: 'naomimoon',
     attributes: {
         heading: {

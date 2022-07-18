@@ -109,18 +109,18 @@ export default class experienceEdit extends Component {
                         <div className="item-action-wrap">
                             <div className="move-item">
                                 {0 < index && (
-                                <Tooltip text={__( "Move Up" )}>
+                                <Tooltip text={__( "Move Left" )}>
                                     <i 
-                                        className="dashicons dashicons-arrow-up-alt2" 
+                                        className="dashicons dashicons-arrow-left-alt2" 
                                         onClick={()=>this.moveItem(index, index - 1)}
                                         aria-hidden="true"
                                     ></i>
                                 </Tooltip>
                                 )}
                                 {index + 1 < dataArray.length && (
-                                <Tooltip text={__( "Move Down" )}>
+                                <Tooltip text={__( "Move Right" )}>
                                     <i 
-                                        className="dashicons dashicons-arrow-down-alt2" 
+                                        className="dashicons dashicons-arrow-right-alt2" 
                                         onClick={()=>this.moveItem(index, index + 1)}
                                         aria-hidden="true"
                                     ></i>

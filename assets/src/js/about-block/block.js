@@ -13,7 +13,7 @@ import aboutSave from './save';
 registerBlockType("naomimoon/about", {
     title: __( "Naomimoon About" ),
     description: __( "About me" ),
-    icon: 'dashicons dashicons-align-full-width',
+    icon: 'dashicons dashicons-align-full-width naomimoon-icon',
     category: 'naomimoon',
     attributes: {
         heading: {

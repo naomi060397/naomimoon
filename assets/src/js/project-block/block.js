@@ -13,7 +13,7 @@ import projectSave from './save';
 registerBlockType("naomimoon/project", {
     title: __( "Naomimoon Projects" ),
     description: __( "2 Column block" ),
-    icon: 'format-image',
+    icon: 'format-image naomimoon-icon',
     category: 'naomimoon',
     attributes: {
         heading: {

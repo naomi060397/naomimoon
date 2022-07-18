@@ -408,7 +408,7 @@ __webpack_require__.r(__webpack_exports__);
 Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])("naomimoon/about", {
   title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])("Naomimoon About"),
   description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])("About me"),
-  icon: 'dashicons dashicons-align-full-width',
+  icon: 'dashicons dashicons-align-full-width naomimoon-icon',
   category: 'naomimoon',
   attributes: {
     heading: {
@@ -654,7 +654,7 @@ __webpack_require__.r(__webpack_exports__);
 Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])("naomimoon/certificate", {
   title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])("Naomimoon Certificates"),
   description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])("List block"),
-  icon: 'dashicons dashicons-welcome-learn-more',
+  icon: 'dashicons dashicons-welcome-learn-more naomimoon-icon',
   category: 'naomimoon',
   attributes: {
     heading: {
@@ -1062,7 +1062,7 @@ __webpack_require__.r(__webpack_exports__);
 Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])("naomimoon/contact", {
   title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])("Naomimoon Contact"),
   description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])("2 Column block"),
-  icon: 'dashicons dashicons-admin-links',
+  icon: 'dashicons dashicons-admin-links naomimoon-icon',
   category: 'naomimoon',
   attributes: {
     heading: {
@@ -1577,7 +1577,7 @@ __webpack_require__.r(__webpack_exports__);
 Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])("naomimoon/experience", {
   title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])("Naomimoon Experience"),
   description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])("List block"),
-  icon: 'dashicons ddashicons-table-row-after',
+  icon: 'dashicons dashicons-table-row-after naomimoon-icon',
   category: 'naomimoon',
   attributes: {
     heading: {
@@ -1780,17 +1780,17 @@ var experienceEdit = /*#__PURE__*/function (_Component) {
         }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])("div", {
           className: "move-item"
         }, 0 < index && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_8__["Tooltip"], {
-          text: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__["__"])("Move Up")
+          text: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__["__"])("Move Left")
         }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])("i", {
-          className: "dashicons dashicons-arrow-up-alt2",
+          className: "dashicons dashicons-arrow-left-alt2",
           onClick: function onClick() {
             return _this.moveItem(index, index - 1);
           },
           "aria-hidden": "true"
         })), index + 1 < dataArray.length && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_8__["Tooltip"], {
-          text: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__["__"])("Move Down")
+          text: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__["__"])("Move Right")
         }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])("i", {
-          className: "dashicons dashicons-arrow-down-alt2",
+          className: "dashicons dashicons-arrow-right-alt2",
           onClick: function onClick() {
             return _this.moveItem(index, index + 1);
           },
@@ -2006,7 +2006,7 @@ __webpack_require__.r(__webpack_exports__);
 Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])("naomimoon/hero", {
   title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])("Naomimoon Hero"),
   description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])("Hero Banner"),
-  icon: 'dashicons dashicons-align-full-width',
+  icon: 'dashicons dashicons-align-full-width naomimoon-icon',
   category: 'naomimoon',
   attributes: {
     heading: {
@@ -2270,7 +2270,7 @@ __webpack_require__.r(__webpack_exports__);
 Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])("naomimoon/project", {
   title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])("Naomimoon Projects"),
   description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])("2 Column block"),
-  icon: 'format-image',
+  icon: 'format-image naomimoon-icon',
   category: 'naomimoon',
   attributes: {
     heading: {
