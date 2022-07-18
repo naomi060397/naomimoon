@@ -16,10 +16,8 @@
 		background: $background;
 		border-radius: 10px;
 		position: relative;
-		@media (max-width: 772px) {
-			flex: 0 0 45%;
-		}
-		@media (max-width: 540px) {
+		flex: 0 0 48.2%;
+		@media (max-width: 600px) {
 			flex: 0 0 100%;
 		}
 		&:hover {
@@ -33,7 +31,7 @@
 		box-shadow: 0 0 20px rgba(0,0,0,.4);
 		padding: 13px 15px 10px;
 		border-radius: 10px;
-		max-width: 686px;
+		max-width: 721px;
 		margin-left: auto;
 		margin-right: auto;
 		margin-bottom: 20px;

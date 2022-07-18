@@ -343,7 +343,10 @@ html :where(.editor-styles-wrapper) h4 {
 
 .site-footer {
   background: #21242f;
-  padding: 50px; }
+  padding: 50px 0; }
+  @media (max-width: 900px) {
+    .site-footer {
+      padding: 20px 0; } }
   .site-footer .site-info {
     font-size: 14.5px;
     display: flex;
@@ -363,7 +366,7 @@ html :where(.editor-styles-wrapper) h4 {
     @media (max-width: 900px) {
       .site-footer .site-info a {
         line-height: 30px;
-        font-size: 15px; }
+        font-size: 14.5px; }
       .site-footer .site-info a:after {
         content: "\a";
         white-space: pre; }
@@ -783,12 +786,14 @@ html :where(.editor-styles-wrapper) h4 {
       transform: scale(1.03); }
   .contact-block .contact-url-input {
     font-size: 13px;
-    min-width: 100px !important;
     background-color: #44475A;
     border-radius: 6px;
     padding: 0 8px;
     text-align: left;
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    width: 139px !important;
+    overflow: hidden;
+    white-space: nowrap !important; }
   .contact-block .naomi-mediaupload {
     color: white;
     outline: 1px solid #BD93F9;
@@ -838,11 +843,9 @@ html :where(.editor-styles-wrapper) h4 {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
     background: #282a36;
     border-radius: 10px;
-    position: relative; }
-    @media (max-width: 772px) {
-      .experience-block .col {
-        flex: 0 0 45%; } }
-    @media (max-width: 540px) {
+    position: relative;
+    flex: 0 0 48.2%; }
+    @media (max-width: 600px) {
       .experience-block .col {
         flex: 0 0 100%; } }
     .experience-block .col:hover .item-action-wrap {
@@ -852,7 +855,7 @@ html :where(.editor-styles-wrapper) h4 {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
     padding: 13px 15px 10px;
     border-radius: 10px;
-    max-width: 686px;
+    max-width: 721px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;

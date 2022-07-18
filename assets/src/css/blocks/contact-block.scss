@@ -52,13 +52,14 @@
 	/* EDITOR */
 	.contact-url-input {
 		font-size: 13px;
-		min-width: 100px !important;
 		background-color: $selection;
 		border-radius: 6px;
 		padding: 0 8px;
 		text-align: left;
 		margin-bottom: 0;
-
+		width: 139px !important;
+		overflow: hidden;
+		white-space: nowrap !important;
 	}
 	.naomi-mediaupload {
 		color: white;

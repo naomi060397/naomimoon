@@ -1,6 +1,9 @@
 .site-footer {
 	background: $background-dark;
-	padding: 50px;
+	padding: 50px 0;
+	@media (max-width: 900px) {
+		padding: 20px 0;
+	}
 	.site-info {
 		font-size: 14.5px;
 		display: flex;
@@ -24,7 +27,7 @@
 		@media (max-width: 900px) {
 			a {
 				line-height: 30px;
-				font-size: 15px;
+				font-size: 14.5px;
 			}
 			a:after {
 				content: "\a";
