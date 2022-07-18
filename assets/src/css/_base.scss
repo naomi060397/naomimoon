@@ -22,17 +22,16 @@ body.home, body.page-template {
 			color: $pink;
 		}
 	}
+}
 
-	.naomimoon-border-bottom {
-		display: block;
-		content: '';
-		background: $purple;
-		height: 4px;
-		margin: 0 auto;
-		max-width: 200px;
-		border-radius: 50px;
-	}
-
+.naomimoon-border-bottom {
+	display: block;
+	content: '';
+	background: $purple;
+	height: 4px;
+	margin: 0 auto;
+	max-width: 200px;
+	border-radius: 50px;
 }
 	
 .menu-item, .link-hover-animation {

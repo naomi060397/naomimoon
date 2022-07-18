@@ -17,9 +17,25 @@
 		.back-to-top {
 			cursor: pointer;
 		}
-	}
-	.sep {
-		padding: 0 2px;
-		color: $purple;
+		.sep {
+			padding: 0 2px;
+			color: $purple;
+		}
+		@media (max-width: 900px) {
+			a {
+				line-height: 30px;
+				font-size: 15px;
+			}
+			a:after {
+				content: "\a";
+				white-space: pre;
+			}
+			.dashicons-arrow-up-alt2 {
+				margin-top: 6px;
+			}
+			.sep {
+				display: none;
+			}
+		}
 	}
 }

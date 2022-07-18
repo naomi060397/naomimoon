@@ -28,14 +28,15 @@ body.home, body.page-template {
     text-decoration: none; }
     body.home a:hover, body.page-template a:hover {
       color: #FF79C6; }
-  body.home .naomimoon-border-bottom, body.page-template .naomimoon-border-bottom {
-    display: block;
-    content: '';
-    background: #BD93F9;
-    height: 4px;
-    margin: 0 auto;
-    max-width: 200px;
-    border-radius: 50px; }
+
+.naomimoon-border-bottom {
+  display: block;
+  content: '';
+  background: #BD93F9;
+  height: 4px;
+  margin: 0 auto;
+  max-width: 200px;
+  border-radius: 50px; }
 
 .menu-item, .link-hover-animation {
   transition: ease-in-out .3s;
@@ -353,9 +354,20 @@ html :where(.editor-styles-wrapper) h4 {
       text-decoration: none; }
     .site-footer .site-info .back-to-top {
       cursor: pointer; }
-  .site-footer .sep {
-    padding: 0 2px;
-    color: #BD93F9; }
+    .site-footer .site-info .sep {
+      padding: 0 2px;
+      color: #BD93F9; }
+    @media (max-width: 900px) {
+      .site-footer .site-info a {
+        line-height: 30px;
+        font-size: 15px; }
+      .site-footer .site-info a:after {
+        content: "\a";
+        white-space: pre; }
+      .site-footer .site-info .dashicons-arrow-up-alt2 {
+        margin-top: 6px; }
+      .site-footer .site-info .sep {
+        display: none; } }
 
 .editor-styles-wrapper.block-editor-writing-flow {
   background: #282a36;
@@ -735,7 +747,12 @@ html :where(.editor-styles-wrapper) h4 {
     margin-bottom: 20px; }
   .contact-block .row {
     justify-content: center;
-    margin-top: 25px; }
+    margin-top: 30px; }
+    @media (max-width: 1293px) {
+      .contact-block .row {
+        max-width: 670px;
+        margin-left: auto;
+        margin-right: auto; } }
   .contact-block .col {
     background: #21242f;
     padding: 20px;
@@ -809,7 +826,7 @@ html :where(.editor-styles-wrapper) h4 {
   .experience-block .row {
     justify-content: center;
     margin-bottom: 20px;
-    max-width: 1000px;
+    max-width: 996px;
     margin: auto; }
     @media (max-width: 540px) {
       .experience-block .row {
@@ -818,6 +835,9 @@ html :where(.editor-styles-wrapper) h4 {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
     background: #282a36;
     border-radius: 10px; }
+    @media (max-width: 772px) {
+      .experience-block .col {
+        flex: 0 0 45%; } }
     @media (max-width: 540px) {
       .experience-block .col {
         flex: 0 0 100%; } }
@@ -855,5 +875,8 @@ html :where(.editor-styles-wrapper) h4 {
     .experience-block .experience-list p {
       font-size: 16px;
       line-height: 30px; }
+
+div[data-title="Experience Block"] {
+  background: red; }
 
 /*# sourceMappingURL=all.css.map */

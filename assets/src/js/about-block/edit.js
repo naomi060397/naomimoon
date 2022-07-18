@@ -31,7 +31,7 @@ export default class aboutEdit extends Component {
                             placeholder={ __( 'Heading...' ) }
                             className="home-heading mb-10"
                         />
-                        <span class="naomimoon-border-bottom mb-50"></span>
+                        <span class="naomimoon-border-bottom"></span>
                         <RichText
                             tagName="p"
                             value={ content }

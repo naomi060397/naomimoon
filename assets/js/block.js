@@ -511,7 +511,7 @@ var aboutEdit = /*#__PURE__*/function (_Component) {
         placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_6__["__"])('Heading...'),
         className: "home-heading mb-10"
       }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("span", {
-        class: "naomimoon-border-bottom mb-50"
+        class: "naomimoon-border-bottom"
       }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_8__["RichText"], {
         tagName: "p",
         value: content,
@@ -609,7 +609,7 @@ var aboutSave = /*#__PURE__*/function (_Component) {
         value: heading,
         className: "home-heading mb-10"
       }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("span", {
-        class: "naomimoon-border-bottom mb-50"
+        class: "naomimoon-border-bottom"
       }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_7__["RichText"].Content, {
         tagName: "p",
         value: content,

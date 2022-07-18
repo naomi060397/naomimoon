@@ -25,7 +25,7 @@ export default class aboutSave extends Component {
                         value={ heading }
                         className="home-heading mb-10"
                     />
-                    <span class="naomimoon-border-bottom mb-50"></span>
+                    <span class="naomimoon-border-bottom"></span>
                     <RichText.Content
                         tagName="p"
                         value={ content }
