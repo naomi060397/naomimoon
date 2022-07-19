@@ -31,7 +31,6 @@
 	$(document).mousemove(function(e){
 		var verticalClient = e.clientY;
 		var verticalPage = e.pageY;
-		console.log(width);
 		if (width >= 900) {
 			if(verticalClient <= 55) {
 				$(".site-header").removeClass("scrolled");
