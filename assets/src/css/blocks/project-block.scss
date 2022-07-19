@@ -50,7 +50,8 @@
 				border-top-right-radius: 10px !important;
 			}
 			img {
-				max-width: 320px;
+				max-width: 310px;
+				max-height: 80px;
 				transform: scale(1);
 				transition: ease-in-out .2s;
 				&:hover {

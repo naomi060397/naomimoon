@@ -645,7 +645,8 @@ html :where(.editor-styles-wrapper) h4 {
           border-top-left-radius: 10px !important;
           border-top-right-radius: 10px !important; } }
       .project-block .col.image img {
-        max-width: 320px;
+        max-width: 310px;
+        max-height: 80px;
         transform: scale(1);
         transition: ease-in-out .2s; }
         .project-block .col.image img:hover {
@@ -764,6 +765,9 @@ html :where(.editor-styles-wrapper) h4 {
     padding: 20px;
     border-radius: 10px;
     position: relative; }
+    @media (max-width: 445px) {
+      .contact-block .col {
+        flex: 0 0 90% !important; } }
     .contact-block .col:hover .item-action-wrap {
       display: flex; }
     .contact-block .col:hover .dashicons-edit {
