@@ -579,7 +579,7 @@ html :where(.editor-styles-wrapper) h4 {
   .naomimoon-homepage__about .square-border {
     border: 2px solid #BD93F9;
     border-radius: 10px;
-    max-width: 770px;
+    max-width: 762px;
     margin: auto; }
     @media (max-width: 900px) {
       .naomimoon-homepage__about .square-border {
@@ -687,7 +687,7 @@ html :where(.editor-styles-wrapper) h4 {
   .certificate-block .row {
     gap: 20px;
     justify-content: center;
-    max-width: 718px;
+    max-width: 770px;
     margin-left: auto;
     margin-right: auto; }
   .certificate-block .col {
@@ -733,7 +733,7 @@ html :where(.editor-styles-wrapper) h4 {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
     padding: 13px 15px 10px;
     border-radius: 10px;
-    max-width: 686px;
+    max-width: 738px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
@@ -838,7 +838,7 @@ html :where(.editor-styles-wrapper) h4 {
   .experience-block .row {
     justify-content: center;
     margin-bottom: 20px;
-    max-width: 760px;
+    max-width: 778px;
     margin: auto; }
     @media (max-width: 540px) {
       .experience-block .row {
@@ -859,7 +859,7 @@ html :where(.editor-styles-wrapper) h4 {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
     padding: 13px 15px 10px;
     border-radius: 10px;
-    max-width: 721px;
+    max-width: 738px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
