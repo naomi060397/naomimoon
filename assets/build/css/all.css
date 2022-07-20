@@ -795,6 +795,9 @@ html :where(.editor-styles-wrapper) h4 {
     padding: 0 8px;
     text-align: left;
     margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 140px !important;
     overflow: hidden;
     white-space: nowrap !important; }
   .contact-block .naomi-mediaupload {
