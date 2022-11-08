@@ -23,6 +23,7 @@ class Naomimoon {
 		 * Load classes.
 		 */
 		Assets::get_instance();
+		Widgets::get_instance();
 
 		$this->setup_hooks();
 	}
