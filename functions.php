@@ -67,30 +67,6 @@ function naomimoon_get_theme_instance() {
 
 naomimoon_get_theme_instance();
 
-// END OOP CODE.
-
-/**
- * Adding a new (custom) block category.
- *
- * @param array                   $block_categories Get categories.
- * @param WP_Block_Editor_Context $block_editor_context Get context.
- */
-function naomimoon_add_block_category( $block_categories, $block_editor_context = null ) {
-
-	return array_merge(
-		$block_categories,
-		array(
-			array(
-				'slug'  => 'naomimoon',
-				'title' => esc_html__( 'Naomi Moon', 'text-domain' ),
-				'icon'  => 'dashicons dashicons-star-filled',
-			),
-		)
-	);
-}
-
-add_filter( 'block_categories_all', 'naomimoon_add_block_category' );
-
 /**
  * Import files
  */

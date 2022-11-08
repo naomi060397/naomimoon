@@ -39,6 +39,7 @@ class Blocks {
 	 */
 	protected function setup_hooks() {
 		add_action( 'init', array( $this, 'naomimoon_register_blocks' ) );
+		add_filter( 'block_categories_all', array( $this, 'naomimoon_add_block_category' ) );
 	}
 
 	/**
@@ -60,6 +61,26 @@ class Blocks {
 				)
 			);
 		}
+	}
+
+	/**
+	 * Adding a new (custom) block category.
+	 *
+	 * @param array                   $block_categories Get categories.
+	 * @param WP_Block_Editor_Context $block_editor_context Get context.
+	 */
+	public function naomimoon_add_block_category( $block_categories, $block_editor_context = null ) {
+
+		return array_merge(
+			$block_categories,
+			array(
+				array(
+					'slug'  => 'naomimoon',
+					'title' => esc_html__( 'Naomi Moon', 'text-domain' ),
+					'icon'  => 'dashicons dashicons-star-filled',
+				),
+			)
+		);
 	}
 
 }
