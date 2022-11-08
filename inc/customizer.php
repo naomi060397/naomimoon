@@ -1,6 +1,6 @@
 <?php
 /**
- * naomimoon Theme Customizer
+ * Naomimoon Theme Customizer
  *
  * @package naomimoon
  */

@@ -9,7 +9,39 @@
  * Define constants
  */
 if ( ! defined( 'THEME_VERSION' ) ) {
-	define( 'THEME_VERSION', '0.1.0' );
+	define( 'THEME_VERSION', '1.1' );
+}
+
+if ( ! defined( 'THEME_PATH' ) ) {
+	define( 'THEME_PATH', __DIR__ );
+}
+
+if ( ! defined( 'THEME_URL' ) ) {
+	define( 'THEME_URL', get_template_directory_uri() );
+}
+
+if ( ! defined( 'BUILD_URI' ) ) {
+	define( 'BUILD_URI', untrailingslashit( get_template_directory_uri() ) . '/assets/build' );
+}
+
+if ( ! defined( 'BUILD_PATH' ) ) {
+	define( 'BUILD_PATH', untrailingslashit( get_template_directory() ) . '/assets/build' );
+}
+
+if ( ! defined( 'BUILD_CSS_URI' ) ) {
+	define( 'BUILD_CSS_URI', untrailingslashit( get_template_directory_uri() ) . '/assets/build/css' );
+}
+
+if ( ! defined( 'BUILD_CSS_DIR_PATH' ) ) {
+	define( 'BUILD_CSS_DIR_PATH', untrailingslashit( get_template_directory() ) . '/assets/build/css' );
+}
+
+if ( ! defined( 'ASSETS_DIR_PATH' ) ) {
+	define( 'ASSETS_DIR_PATH', untrailingslashit( get_template_directory() ) . '/assets' );
+}
+
+if ( ! defined( 'ASSETS_URI' ) ) {
+	define( 'ASSETS_URI', untrailingslashit( get_template_directory_uri() ) . '/assets' );
 }
 
 if ( defined( 'JETPACK__VERSION' ) ) {
