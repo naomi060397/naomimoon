@@ -10,7 +10,7 @@ namespace NAOMIMOON\Inc;
 use NAOMIMOON\Inc\Traits\Singleton;
 
 /**
- * Main Naomimoon Class
+ * Main Theme Class
  */
 class Naomimoon {
 	use Singleton;
@@ -22,7 +22,7 @@ class Naomimoon {
 		/**
 		 * Load classes.
 		 */
-		// Assets::get_instance(); .
+		Assets::get_instance();
 
 		$this->setup_hooks();
 	}

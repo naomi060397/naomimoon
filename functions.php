@@ -90,24 +90,6 @@ function naomimoon_widgets_init() {
 add_action( 'widgets_init', 'naomimoon_widgets_init' );
 
 /**
- * Enqueue scripts and styles.
- */
-function naomimoon_scripts() {
-	wp_enqueue_style( 'naomimoon-style', get_template_directory_uri() . '/assets/build/css/all.css', array(), THEME_VERSION, false );
-	wp_enqueue_style( 'dashicons' );
-	wp_style_add_data( 'naomimoon-style', 'rtl', 'replace' );
-
-	wp_enqueue_script( 'naomimoon-navigation', get_template_directory_uri() . '/js/navigation.js', array(), THEME_VERSION, true );
-	wp_enqueue_script( 'jquery', get_template_directory_uri() . '/js/jquery.min.js', array(), THEME_VERSION, true );
-	wp_enqueue_script( 'naomimoon-scripts', get_template_directory_uri() . '/assets/js/naomimoon-scripts.js', array( 'jquery' ), THEME_VERSION, true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-}
-add_action( 'wp_enqueue_scripts', 'naomimoon_scripts' );
-
-/**
  * Register Blocks
  */
 function naomimoon_register_blocks() {
