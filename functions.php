@@ -70,58 +70,6 @@ naomimoon_get_theme_instance();
 // END OOP CODE.
 
 /**
- * Register Blocks
- */
-function naomimoon_register_blocks() {
-	wp_register_script( 'project-block-script', get_template_directory_uri() . '/assets/js/block.js', array( 'jquery' ), THEME_VERSION, true );
-	wp_enqueue_style( 'naomimoon-style-editor', get_template_directory_uri() . '/assets/build/css/all.css', array(), THEME_VERSION, false );
-	wp_register_script( 'naomimoon-scripts', get_template_directory_uri() . '/assets/js/naomimoon-scripts.js', array( 'jquery' ), THEME_VERSION, true );
-	register_block_type(
-		'naomimoon/project',
-		array(
-			'editor_script' => 'project-block-script',
-			'editor_style'  => 'naomimoon-style-editor',
-		)
-	);
-	register_block_type(
-		'naomimoon/certificate',
-		array(
-			'editor_script' => 'project-block-script',
-			'editor_style'  => 'naomimoon-style-editor',
-		)
-	);
-	register_block_type(
-		'naomimoon/contact',
-		array(
-			'editor_script' => 'project-block-script',
-			'editor_style'  => 'naomimoon-style-editor',
-		)
-	);
-	register_block_type(
-		'naomimoon/hero',
-		array(
-			'editor_script' => 'project-block-script',
-			'editor_style'  => 'naomimoon-style-editor',
-		)
-	);
-	register_block_type(
-		'naomimoon/about',
-		array(
-			'editor_script' => 'project-block-script',
-			'editor_style'  => 'naomimoon-style-editor',
-		)
-	);
-	register_block_type(
-		'naomimoon/experience',
-		array(
-			'editor_script' => 'project-block-script',
-			'editor_style'  => 'naomimoon-style-editor',
-		)
-	);
-}
-add_action( 'init', 'naomimoon_register_blocks' );
-
-/**
  * Adding a new (custom) block category.
  *
  * @param array                   $block_categories Get categories.

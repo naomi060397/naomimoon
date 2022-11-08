@@ -24,6 +24,7 @@ class Naomimoon {
 		 */
 		Assets::get_instance();
 		Widgets::get_instance();
+		Blocks::get_instance();
 
 		$this->setup_hooks();
 	}
