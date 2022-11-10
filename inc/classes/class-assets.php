@@ -30,10 +30,11 @@ class Assets {
 	 */
 	protected function setup_hooks() {
 		add_action( 'wp_enqueue_scripts', array( $this, 'naomimoon_scripts' ) );
+		add_action( 'admin_enqueue_scripts', array( $this, 'naomimoon_admin_scripts' ) );
 	}
 
 	/**
-	 * Enqueue scripts and styles.
+	 * Enqueue front scripts and styles.
 	 *
 	 * @return void
 	 * @since 1.1
@@ -50,6 +51,20 @@ class Assets {
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
+	}
+
+	/**
+	 * Enqueue admin scripts and styles.
+	 *
+	 * @return void
+	 * @since 1.1
+	 */
+	public function naomimoon_admin_scripts() {
+
+		wp_enqueue_style( 'wp-color-picker' );
+		wp_enqueue_style( 'naomimoon-admin-style', THEME_URL . '/assets/build/css/admin.css', array(), THEME_VERSION, false );
+		wp_enqueue_script( 'naomimoon-admin-scripts', THEME_URL . '/assets/js/naomimoon-admin-scripts.js', array( 'wp-color-picker' ), THEME_VERSION, true );
+
 	}
 
 }

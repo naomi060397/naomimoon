@@ -8,7 +8,8 @@ module.exports = function(grunt) {
 			dev: {    // indicates that it will be used only during development
 			  files: {
 				// destination     // source file
-				'build/css/all.css': 'src/css/all.scss'
+				'build/css/all.css': 'src/css/all.scss',
+				'build/css/admin.css': 'src/css/admin.scss'
 			  }
 			}
 		},
@@ -33,5 +34,5 @@ module.exports = function(grunt) {
 			}
 		},
 	});
-	grunt.registerTask('default', ['sass'] );
+	//grunt.registerTask('default', ['sass'] );
 };

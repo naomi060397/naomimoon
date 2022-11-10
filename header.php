@@ -7,6 +7,9 @@
  * @package naomimoon
  */
 
+$get_theme_options    = get_option( 'naomimoon_settings' );
+$naomimoon_background = $get_theme_options['naomimoon_background'];
+
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -14,7 +17,11 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-
+	<style>
+		body.home, body.page-template, .naomimoon-header, .site-footer {
+			background: <?php echo esc_html( $naomimoon_background ); ?> !important;
+		}
+	</style>
 	<?php wp_head(); ?>
 </head>
 
@@ -37,7 +44,7 @@
 				);
 				?>
 			</nav>
-		
+
 			<div class="naomimoon-header__hamburger">
 				<img src="<?php echo esc_html( get_template_directory_uri() . '/assets/images/hamburger-icon.svg' ); ?>" alt="hamburger-icon" />
 			</div>

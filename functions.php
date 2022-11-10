@@ -49,6 +49,14 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 /**
+ * Import files
+ */
+require get_template_directory() . '/inc/underscores-extras/custom-header.php';
+require get_template_directory() . '/inc/underscores-extras/template-tags.php';
+require get_template_directory() . '/inc/underscores-extras/template-functions.php';
+require get_template_directory() . '/inc/underscores-extras/customizer.php';
+
+/**
  * Load class autoloader.
  */
 require_once THEME_PATH . '/inc/helpers/autoloader.php';
@@ -66,13 +74,3 @@ function naomimoon_get_theme_instance() {
 }
 
 naomimoon_get_theme_instance();
-
-/**
- * Import files
- */
-require get_template_directory() . '/inc/underscores-extras/custom-header.php';
-require get_template_directory() . '/inc/underscores-extras/template-tags.php';
-require get_template_directory() . '/inc/underscores-extras/template-functions.php';
-require get_template_directory() . '/inc/underscores-extras/customizer.php';
-
-
