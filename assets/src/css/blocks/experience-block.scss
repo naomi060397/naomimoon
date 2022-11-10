@@ -13,7 +13,6 @@
 	}
 	.col {
 		box-shadow: 0 0 20px rgba(0,0,0,.4);
-		background: $background;
 		border-radius: 10px;
 		position: relative;
 		flex: 0 0 48.2%;
@@ -35,21 +34,17 @@
 		margin-left: auto;
 		margin-right: auto;
 		margin-bottom: 20px;
-		background: $background;
 		.naomimoon-border-bottom {
 			margin-bottom: 20px;
 		}
 	}
 	h2 {
-		color: #fff;
 		margin-top: 0 !important;
 		margin-bottom: 20px;
 	}
 	h3 {
 		margin: 0;
 		padding: 10px 5px;
-		color: $white;
-		background: $background-dark;
 		border-top-left-radius: 10px;
 		border-top-right-radius: 10px;
 		letter-spacing: 2px;

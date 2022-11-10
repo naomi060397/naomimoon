@@ -19,8 +19,6 @@ html {
     margin-top: 0; }
 
 body.home, body.page-template {
-  background: #282a36;
-  color: #F8F8F2;
   margin: 0;
   width: 100%; }
   body.home a, body.page-template a {
@@ -93,7 +91,6 @@ html :where(.editor-styles-wrapper) h4 {
   width: 100%; }
 
 .naomimoon-header, .site-header {
-  background: #21242f;
   z-index: 45;
   position: fixed;
   top: 0;
@@ -550,7 +547,6 @@ html :where(.editor-styles-wrapper) h4 {
     background-size: cover;
     background-attachment: fixed; }
     .naomimoon-homepage__hero .hero-card {
-      background-color: #282a36;
       backdrop-filter: blur(5px);
       padding: 20px;
       border-radius: 20px;
@@ -567,8 +563,7 @@ html :where(.editor-styles-wrapper) h4 {
         font-size: 80px;
         margin: 20px 0 15px;
         line-height: 100px;
-        cursor: default;
-        color: #F8F8F2; }
+        cursor: default; }
       .naomimoon-homepage__hero .hero-card h3 {
         font-size: 22px;
         margin: 30px 0;
@@ -621,7 +616,6 @@ html :where(.editor-styles-wrapper) h4 {
       .project-block .col {
         flex: 0 0 100%; } }
     .project-block .col a {
-      color: #F8F8F2;
       text-decoration: none; }
     .project-block .col h4 {
       font-size: 25px;
@@ -652,8 +646,7 @@ html :where(.editor-styles-wrapper) h4 {
         .project-block .col.image img:hover {
           transform: scale(1.05); }
     .project-block .col.content {
-      text-align: left;
-      background: #21242f; }
+      text-align: left; }
       @media (max-width: 800px) {
         .project-block .col.content {
           border-radius: 0 !important;
@@ -694,7 +687,6 @@ html :where(.editor-styles-wrapper) h4 {
     flex: 0 0 100%;
     text-align: center;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-    background: #282a36;
     border-radius: 10px;
     position: relative;
     padding: 0;
@@ -736,8 +728,7 @@ html :where(.editor-styles-wrapper) h4 {
     max-width: 738px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 20px;
-    background: #282a36; }
+    margin-bottom: 20px; }
     .certificate-block .certificate-heading .home-heading {
       margin: 0;
       margin-bottom: 20px; }
@@ -761,7 +752,6 @@ html :where(.editor-styles-wrapper) h4 {
         margin-left: auto;
         margin-right: auto; } }
   .contact-block .col {
-    background: #21242f;
     padding: 20px;
     border-radius: 10px;
     position: relative; }
@@ -847,7 +837,6 @@ html :where(.editor-styles-wrapper) h4 {
         justify-content: left; } }
   .experience-block .col {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-    background: #282a36;
     border-radius: 10px;
     position: relative;
     flex: 0 0 48.2%; }
@@ -864,19 +853,15 @@ html :where(.editor-styles-wrapper) h4 {
     max-width: 738px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 20px;
-    background: #282a36; }
+    margin-bottom: 20px; }
     .experience-block .experience-heading .naomimoon-border-bottom {
       margin-bottom: 20px; }
   .experience-block h2 {
-    color: #fff;
     margin-top: 0 !important;
     margin-bottom: 20px; }
   .experience-block h3 {
     margin: 0;
     padding: 10px 5px;
-    color: #F8F8F2;
-    background: #21242f;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     letter-spacing: 2px; }

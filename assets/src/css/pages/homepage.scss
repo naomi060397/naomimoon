@@ -27,7 +27,6 @@
 		background-size: cover;
 		background-attachment: fixed;
 		.hero-card {
-			background-color: rgb(40, 42, 54);
 			backdrop-filter: blur(5px);
 			padding: 20px;
 			border-radius: 20px;
@@ -45,7 +44,6 @@
 				margin: 20px 0 15px;
 				line-height: 100px;
 				cursor: default;
-				color: $white;
 			}
 			h3 {
 				font-size: 22px;

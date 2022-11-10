@@ -22,7 +22,6 @@
 		}
 		text-align: center;
 		a {
-			color: $white;
 			text-decoration: none;
 		}
 		h4 {
@@ -61,7 +60,6 @@
 		}
 		&.content {
 			text-align: left;
-			background: $background-dark;
 			@media (max-width: 800px) {
 				border-radius: 0 !important;
 				border-bottom-left-radius: 10px !important;

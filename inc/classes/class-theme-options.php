@@ -85,10 +85,10 @@ class Theme_Options {
 		register_setting( 'naomimoon-setting', 'naomimoon_settings' );
 		add_settings_section( 'naomimoon-section', __( 'Color Options', 'naomimoon' ), false, 'naomimoon' );
 
-		// General.
+		// Body.
 		add_settings_field(
 			'naomimoon_background',
-			__( 'Theme Background', 'naomimoon' ),
+			__( 'Body Background', 'naomimoon' ),
 			array( $this, 'add_field' ),
 			'naomimoon',
 			'naomimoon-section',
@@ -96,6 +96,48 @@ class Theme_Options {
 				'type'  => 'color-picker',
 				'name'  => 'naomimoon_settings[naomimoon_background]',
 				'value' => 'naomimoon_background',
+				'class' => 'general',
+			)
+		);
+
+		add_settings_field(
+			'naomimoon_background_secondary',
+			__( 'Body Secondary', 'naomimoon' ),
+			array( $this, 'add_field' ),
+			'naomimoon',
+			'naomimoon-section',
+			array(
+				'type'  => 'color-picker',
+				'name'  => 'naomimoon_settings[naomimoon_background_secondary]',
+				'value' => 'naomimoon_background_secondary',
+				'class' => 'general',
+			)
+		);
+
+		add_settings_field(
+			'naomimoon_body_font',
+			__( 'Body Font Color', 'naomimoon' ),
+			array( $this, 'add_field' ),
+			'naomimoon',
+			'naomimoon-section',
+			array(
+				'type'  => 'color-picker',
+				'name'  => 'naomimoon_settings[naomimoon_body_font]',
+				'value' => 'naomimoon_body_font',
+				'class' => 'general',
+			)
+		);
+
+		add_settings_field(
+			'naomimoon_accent',
+			__( 'Theme Accent Color', 'naomimoon' ),
+			array( $this, 'add_field' ),
+			'naomimoon',
+			'naomimoon-section',
+			array(
+				'type'  => 'color-picker',
+				'name'  => 'naomimoon_settings[naomimoon_accent]',
+				'value' => 'naomimoon_accent',
 				'class' => 'general',
 			)
 		);
@@ -124,19 +166,6 @@ class Theme_Options {
 				'type'  => 'color-picker',
 				'name'  => 'naomimoon_settings[naomimoon_header_font]',
 				'value' => 'naomimoon_header_font',
-			)
-		);
-
-		add_settings_field(
-			'naomimoon_header_font_active',
-			__( 'Header Active Font Color', 'naomimoon' ),
-			array( $this, 'add_field' ),
-			'naomimoon',
-			'naomimoon-section',
-			array(
-				'type'  => 'color-picker',
-				'name'  => 'naomimoon_settings[naomimoon_header_font_active]',
-				'value' => 'naomimoon_header_font_active',
 			)
 		);
 
