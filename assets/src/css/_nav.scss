@@ -29,12 +29,8 @@
 				top: 42px;
 			}
 			a {
-				color: $white;
 				text-decoration: none;
 				transition: ease-in-out .3s;
-				&:hover {
-					color: $pink;
-				}
 			}
 		}
 	}
@@ -51,13 +47,9 @@
 				display: none;
 			}
 			a {
-				color: $white;
 				text-decoration: none;
 				padding: 0 0;
 				transition: ease-in-out .3s;
-				&:hover {
-					color: $pink;
-				}
 			}
 		}
 	}

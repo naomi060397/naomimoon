@@ -1,3 +1,16 @@
+$background:#282a36 !default;
+$background-dark:#21242f;
+$white: #F8F8F2;
+$selection: #44475A;
+$comment: #6272A4;
+$red: #FF5555;
+$orange: #FFB86C;
+$yellow: #F1FA8C;
+$green: #50FA7B;
+$purple: #BD93F9;
+$cyan: #8BE9FD;
+$pink: #FF79C6;
+
 .naomimoon-options {
 	background: none;
     width: fit-content;
@@ -44,8 +57,9 @@
 	}
 	h2 {
 		text-align: center;
-		margin-top: 0;
-		padding-top: 17px;
+		margin: 0 20px;
+		padding: 17px 0;
+		border-bottom: 1px solid #e9e9e9;
 	}
 	h5 { // description
 		font-size: 14px;
@@ -60,7 +74,6 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
-		border-top: 1px solid #e9e9e9;
 		border-bottom: 1px solid #e9e9e9;
 		margin: 0 20px;
 		padding: 32px 0 20px;
@@ -86,7 +99,25 @@
 		text-align: center;
 		margin-left: -10px;
 	}
-
+	.settings-buttons {
+		display: flex;
+		justify-content: center;
+		p {
+			margin-right: 5px;
+		}
+	}
+	.gradient-preview {
+		text-align: center;
+		.preview {
+			height: 70px;
+			width: 250px;
+			float: none;
+			margin: 0 auto;
+			background: black;
+			border: 1px solid black;
+			border-radius: 3px;
+		}
+	}
 }
 
 // WP Core
@@ -107,4 +138,54 @@ table.form-table+p.submit {
 
 .wp-picker-container .iris-picker {
 	position: absolute;
+}
+
+// Color scheme overwrite for editor
+
+/* Body and Blocks */
+body.home, body.page-template {
+	background: $background;
+	color: $white;
+}
+.naomimoon-homepage__hero .hero-card,
+.experience-heading, .experience-block .col,
+.certificate-block .certificate-heading,
+.certificate-block .col {
+	background: $background;
+}
+.project-block .col.content,
+.experience-block h3,
+.contact-block .col {
+	background: $background-dark;
+}
+/* Links */
+.project-block .col a,
+.certificate-block .col p a,
+.contact-block a h4 {
+	color: $white;
+}
+body.home a:hover,
+body.page-template a:hover,
+.certificate-block .col:hover p a,
+.contact-block a h4:hover,
+.naomimoon-header .main-navigation ul a:hover,
+.site-header .main-navigation ul a:hover {
+	color: $pink;
+}
+.project-block .col h4:hover {
+	border-bottom: 1px solid $pink;
+}
+.menu-item:after,
+.link-hover-animation:after {
+	background-color: $pink;
+}
+/* Accent Design */
+.naomimoon-border-bottom {
+	background: $purple;
+}
+.naomimoon-homepage__about .square-border {
+	border: 2px solid $purple;
+}
+.contact-block img {
+	border-bottom: 2px solid $purple;
 }

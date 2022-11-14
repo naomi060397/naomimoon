@@ -64,8 +64,15 @@ class Theme_Options {
 				<?php
 				settings_fields( 'naomimoon-setting' );
 				do_settings_sections( 'naomimoon' );
-				submit_button();
 				?>
+				<div class="settings-buttons">
+					<p class="submit">
+						<button class="button button-primary" id="reset-color-options">Reset to Default</button>
+					</p>
+					<?php
+					submit_button();
+					?>
+				</div>
 			</form>
 			<div class="options-page about">
 				<h2>About Naomimoon</h2>
@@ -83,7 +90,8 @@ class Theme_Options {
 	 */
 	public function option_settings_init() {
 		register_setting( 'naomimoon-setting', 'naomimoon_settings' );
-		add_settings_section( 'naomimoon-section', __( 'Color Options', 'naomimoon' ), false, 'naomimoon' );
+		add_settings_section( 'naomimoon-section-color', __( 'Color Options', 'naomimoon' ), false, 'naomimoon' );
+		add_settings_section( 'naomimoon-section-gradient', __( 'Gradient Options', 'naomimoon' ), array( $this, 'gradient_preview' ), 'naomimoon' );
 
 		// Body.
 		add_settings_field(
@@ -91,7 +99,7 @@ class Theme_Options {
 			__( 'Body Background', 'naomimoon' ),
 			array( $this, 'add_field' ),
 			'naomimoon',
-			'naomimoon-section',
+			'naomimoon-section-color',
 			array(
 				'type'  => 'color-picker',
 				'name'  => 'naomimoon_settings[naomimoon_background]',
@@ -105,7 +113,7 @@ class Theme_Options {
 			__( 'Body Secondary', 'naomimoon' ),
 			array( $this, 'add_field' ),
 			'naomimoon',
-			'naomimoon-section',
+			'naomimoon-section-color',
 			array(
 				'type'  => 'color-picker',
 				'name'  => 'naomimoon_settings[naomimoon_background_secondary]',
@@ -119,7 +127,7 @@ class Theme_Options {
 			__( 'Body Font Color', 'naomimoon' ),
 			array( $this, 'add_field' ),
 			'naomimoon',
-			'naomimoon-section',
+			'naomimoon-section-color',
 			array(
 				'type'  => 'color-picker',
 				'name'  => 'naomimoon_settings[naomimoon_body_font]',
@@ -133,7 +141,7 @@ class Theme_Options {
 			__( 'Theme Accent Color', 'naomimoon' ),
 			array( $this, 'add_field' ),
 			'naomimoon',
-			'naomimoon-section',
+			'naomimoon-section-color',
 			array(
 				'type'  => 'color-picker',
 				'name'  => 'naomimoon_settings[naomimoon_accent]',
@@ -148,7 +156,7 @@ class Theme_Options {
 			__( 'Header Background', 'naomimoon' ),
 			array( $this, 'add_field' ),
 			'naomimoon',
-			'naomimoon-section',
+			'naomimoon-section-color',
 			array(
 				'type'  => 'color-picker',
 				'name'  => 'naomimoon_settings[naomimoon_header_bg]',
@@ -161,7 +169,7 @@ class Theme_Options {
 			__( 'Header Font Color', 'naomimoon' ),
 			array( $this, 'add_field' ),
 			'naomimoon',
-			'naomimoon-section',
+			'naomimoon-section-color',
 			array(
 				'type'  => 'color-picker',
 				'name'  => 'naomimoon_settings[naomimoon_header_font]',
@@ -175,7 +183,7 @@ class Theme_Options {
 			__( 'Footer Background', 'naomimoon' ),
 			array( $this, 'add_field' ),
 			'naomimoon',
-			'naomimoon-section',
+			'naomimoon-section-color',
 			array(
 				'type'  => 'color-picker',
 				'name'  => 'naomimoon_settings[naomimoon_footer_bg]',
@@ -189,12 +197,53 @@ class Theme_Options {
 			__( 'Footer Font Color', 'naomimoon' ),
 			array( $this, 'add_field' ),
 			'naomimoon',
-			'naomimoon-section',
+			'naomimoon-section-color',
 			array(
 				'type'  => 'color-picker',
 				'name'  => 'naomimoon_settings[naomimoon_footer_font]',
 				'value' => 'naomimoon_footer_font',
 				'class' => 'footer',
+			)
+		);
+
+		add_settings_field(
+			'naomimoon_link_hover',
+			__( 'Link Hover Color', 'naomimoon' ),
+			array( $this, 'add_field' ),
+			'naomimoon',
+			'naomimoon-section-color',
+			array(
+				'type'  => 'color-picker',
+				'name'  => 'naomimoon_settings[naomimoon_link_hover]',
+				'value' => 'naomimoon_link_hover',
+			)
+		);
+
+		add_settings_field(
+			'naomimoon_gradient_1',
+			__( 'Gradient Color 1', 'naomimoon' ),
+			array( $this, 'add_field' ),
+			'naomimoon',
+			'naomimoon-section-gradient',
+			array(
+				'type'  => 'color-picker',
+				'name'  => 'naomimoon_settings[naomimoon_gradient_1]',
+				'value' => 'naomimoon_gradient_1',
+				'class' => 'gradient-1',
+			)
+		);
+
+		add_settings_field(
+			'naomimoon_gradient_2',
+			__( 'Gradient Color 2', 'naomimoon' ),
+			array( $this, 'add_field' ),
+			'naomimoon',
+			'naomimoon-section-gradient',
+			array(
+				'type'  => 'color-picker',
+				'name'  => 'naomimoon_settings[naomimoon_gradient_2]',
+				'value' => 'naomimoon_gradient_2',
+				'class' => 'gradient-2',
 			)
 		);
 	}
@@ -226,6 +275,26 @@ class Theme_Options {
 	public function color_picker_callback( $args, $options ) {
 		?>
 		<input type="text" class="color-picker" name="<?php echo esc_attr( $args['name'] ); ?>" value="<?php echo isset( $options[ $args['value'] ] ) ? esc_attr( $options[ $args['value'] ] ) : ''; ?>" />
+		<?php
+	}
+
+	/**
+	 * Generate Gradient Preview.
+	 *
+	 * @return void
+	 * @since 1.1
+	 */
+	public function gradient_preview() {
+		?>
+		<div class="gradient-preview">
+			<h4>Preview</h4>
+			<?php
+			$get_theme_options    = get_option( 'naomimoon_settings' );
+			$naomimoon_gradient_1 = ( isset( $get_theme_options['naomimoon_gradient_1'] ) && ! empty( $get_theme_options['naomimoon_gradient_1'] ) ? $get_theme_options['naomimoon_gradient_1'] : '#ff79c5bd' );
+			$naomimoon_gradient_2 = ( isset( $get_theme_options['naomimoon_gradient_2'] ) && ! empty( $get_theme_options['naomimoon_gradient_2'] ) ? $get_theme_options['naomimoon_gradient_2'] : '#bd93f9ac' );
+			?>
+			<div class="preview" style="background: linear-gradient(90deg, <?php echo esc_html( $naomimoon_gradient_1 ); ?>, <?php echo esc_html( $naomimoon_gradient_2 ); ?>)"></div>
+		</div>
 		<?php
 	}
 }

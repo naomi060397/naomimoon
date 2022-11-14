@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,oCAAqC;EACpC,UAAU,EAAE,KAAK",
+"sources": ["../../src/css/editor-compat.scss"],
+"names": [],
+"file": "editor-compat.css"
+}

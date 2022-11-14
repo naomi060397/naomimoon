@@ -1,5 +1,4 @@
 .certificate-block {
-	background: linear-gradient(180deg, #ff79c5bd -90%, #bd93f9ac 50%, #282a36bd 140%);
 	background-size: cover;
 	background-attachment: fixed;
 	padding: 125px 0;
@@ -30,9 +29,6 @@
 			@media (min-width: 785px) {
 				transform: scale(1.05);
 			}
-			p a {
-				color: $pink;
-			}
 		}
 		p {
 			margin: 0;
@@ -44,7 +40,6 @@
 			}
 			a {
 				padding: 18px;
-				color: white;
 				text-decoration: none;
 				@media (min-width: 768px) {
 					padding: 18px 135px;

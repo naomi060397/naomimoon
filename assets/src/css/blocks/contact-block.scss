@@ -36,15 +36,10 @@
 	}
 	a {
 		h4 {
-			color: white;
 			text-decoration: none;
-			&:hover {
-				color: $pink;
-			}
 		}
 	}
 	img {
-		border-bottom: 2px solid $purple;
 		padding-bottom: 16px;
 		transition: ease-in-out .3s;
 		&:hover {

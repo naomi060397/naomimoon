@@ -1,5 +1,4 @@
 .site-footer {
-	background: $background-dark;
 	padding: 50px 0;
 	@media (max-width: 900px) {
 		padding: 20px 0;
@@ -22,7 +21,6 @@
 		}
 		.sep {
 			padding: 0 2px;
-			color: $purple;
 		}
 		@media (max-width: 900px) {
 			a {

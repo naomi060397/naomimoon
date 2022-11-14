@@ -14,18 +14,13 @@ body.home, body.page-template {
 	margin: 0;
 	width: 100%;
 	a {
-		color: $white;
 		text-decoration: none;
-		&:hover {
-			color: $pink;
-		}
 	}
 }
 
 .naomimoon-border-bottom {
 	display: block;
 	content: '';
-	background: $purple;
 	height: 4px;
 	margin: 0 auto;
 	max-width: 200px;
@@ -45,7 +40,6 @@ body.home, body.page-template {
 		height: 2px;
 		bottom: 0;
 		left: 0;
-		background-color: $pink;
 		transform-origin: bottom right;
 		transition: transform 0.25s ease-out;
 	}

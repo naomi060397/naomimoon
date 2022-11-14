@@ -36,8 +36,9 @@
     border-top-right-radius: 10px; }
   .naomimoon-options h2 {
     text-align: center;
-    margin-top: 0;
-    padding-top: 17px; }
+    margin: 0 20px;
+    padding: 17px 0;
+    border-bottom: 1px solid #e9e9e9; }
   .naomimoon-options h5 {
     font-size: 14px;
     text-align: center;
@@ -49,7 +50,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    border-top: 1px solid #e9e9e9;
     border-bottom: 1px solid #e9e9e9;
     margin: 0 20px;
     padding: 32px 0 20px;
@@ -70,6 +70,21 @@
     width: 92px;
     text-align: center;
     margin-left: -10px; }
+  .naomimoon-options .settings-buttons {
+    display: flex;
+    justify-content: center; }
+    .naomimoon-options .settings-buttons p {
+      margin-right: 5px; }
+  .naomimoon-options .gradient-preview {
+    text-align: center; }
+    .naomimoon-options .gradient-preview .preview {
+      height: 70px;
+      width: 250px;
+      float: none;
+      margin: 0 auto;
+      background: black;
+      border: 1px solid black;
+      border-radius: 3px; }
 
 .wp-core-ui .notice.is-dismissible {
   position: absolute;
@@ -85,5 +100,52 @@ table.form-table + p.submit {
 
 .wp-picker-container .iris-picker {
   position: absolute; }
+
+/* Body and Blocks */
+body.home, body.page-template {
+  background: #282a36;
+  color: #F8F8F2; }
+
+.naomimoon-homepage__hero .hero-card,
+.experience-heading, .experience-block .col,
+.certificate-block .certificate-heading,
+.certificate-block .col {
+  background: #282a36; }
+
+.project-block .col.content,
+.experience-block h3,
+.contact-block .col {
+  background: #21242f; }
+
+/* Links */
+.project-block .col a,
+.certificate-block .col p a,
+.contact-block a h4 {
+  color: #F8F8F2; }
+
+body.home a:hover,
+body.page-template a:hover,
+.certificate-block .col:hover p a,
+.contact-block a h4:hover,
+.naomimoon-header .main-navigation ul a:hover,
+.site-header .main-navigation ul a:hover {
+  color: #FF79C6; }
+
+.project-block .col h4:hover {
+  border-bottom: 1px solid #FF79C6; }
+
+.menu-item:after,
+.link-hover-animation:after {
+  background-color: #FF79C6; }
+
+/* Accent Design */
+.naomimoon-border-bottom {
+  background: #BD93F9; }
+
+.naomimoon-homepage__about .square-border {
+  border: 2px solid #BD93F9; }
+
+.contact-block img {
+  border-bottom: 2px solid #BD93F9; }
 
 /*# sourceMappingURL=admin.css.map */

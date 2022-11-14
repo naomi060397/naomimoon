@@ -22,15 +22,11 @@ body.home, body.page-template {
   margin: 0;
   width: 100%; }
   body.home a, body.page-template a {
-    color: #F8F8F2;
     text-decoration: none; }
-    body.home a:hover, body.page-template a:hover {
-      color: #FF79C6; }
 
 .naomimoon-border-bottom {
   display: block;
   content: '';
-  background: #BD93F9;
   height: 4px;
   margin: 0 auto;
   max-width: 200px;
@@ -49,7 +45,6 @@ body.home, body.page-template {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #FF79C6;
     transform-origin: bottom right;
     transition: transform 0.25s ease-out; }
   .menu-item:hover:after, .link-hover-animation:hover:after {
@@ -117,11 +112,8 @@ html :where(.editor-styles-wrapper) h4 {
       .naomimoon-header__logo h5:after, .site-header__logo h5:after {
         top: 42px; }
       .naomimoon-header__logo h5 a, .site-header__logo h5 a {
-        color: #F8F8F2;
         text-decoration: none;
         transition: ease-in-out .3s; }
-        .naomimoon-header__logo h5 a:hover, .site-header__logo h5 a:hover {
-          color: #FF79C6; }
   .naomimoon-header .main-navigation, .site-header .main-navigation {
     z-index: 99; }
     .naomimoon-header .main-navigation ul, .site-header .main-navigation ul {
@@ -134,12 +126,9 @@ html :where(.editor-styles-wrapper) h4 {
         .naomimoon-header .main-navigation ul, .site-header .main-navigation ul {
           display: none; } }
       .naomimoon-header .main-navigation ul a, .site-header .main-navigation ul a {
-        color: #F8F8F2;
         text-decoration: none;
         padding: 0 0;
         transition: ease-in-out .3s; }
-        .naomimoon-header .main-navigation ul a:hover, .site-header .main-navigation ul a:hover {
-          color: #FF79C6; }
   .naomimoon-header__hamburger, .site-header__hamburger {
     display: none;
     visibility: hidden;
@@ -339,7 +328,6 @@ html :where(.editor-styles-wrapper) h4 {
   padding-bottom: 125px; }
 
 .site-footer {
-  background: #21242f;
   padding: 50px 0; }
   @media (max-width: 900px) {
     .site-footer {
@@ -358,8 +346,7 @@ html :where(.editor-styles-wrapper) h4 {
     .site-footer .site-info .back-to-top {
       cursor: pointer; }
     .site-footer .site-info .sep {
-      padding: 0 2px;
-      color: #BD93F9; }
+      padding: 0 2px; }
     @media (max-width: 900px) {
       .site-footer .site-info a {
         line-height: 30px;
@@ -543,7 +530,6 @@ html :where(.editor-styles-wrapper) h4 {
   .naomimoon-homepage__hero {
     width: 100%;
     padding: 32vh 0;
-    background: linear-gradient(180deg, #ff79c5bd -90%, #bd93f9ac 50%, #282a36bd 140%);
     background-size: cover;
     background-attachment: fixed; }
     .naomimoon-homepage__hero .hero-card {
@@ -572,7 +558,6 @@ html :where(.editor-styles-wrapper) h4 {
         font-weight: 200;
         padding-bottom: 15px; }
   .naomimoon-homepage__about .square-border {
-    border: 2px solid #BD93F9;
     border-radius: 10px;
     max-width: 762px;
     margin: auto; }
@@ -588,7 +573,6 @@ html :where(.editor-styles-wrapper) h4 {
   .naomimoon-homepage .seperator {
     width: 100%;
     padding: 1px 0;
-    background: linear-gradient(180deg, #ff79c5bd -90%, #bd93f9ac 50%, #282a36bd 140%);
     background-size: cover;
     background-attachment: fixed; }
 
@@ -622,8 +606,6 @@ html :where(.editor-styles-wrapper) h4 {
       margin: 0;
       border-bottom: 1px solid #6272A4;
       transition: ease-in-out .2s; }
-      .project-block .col h4:hover {
-        border-bottom: 1px solid #FF79C6; }
     .project-block .col p {
       margin-bottom: 0; }
     .project-block .col.image {
@@ -673,7 +655,6 @@ html :where(.editor-styles-wrapper) h4 {
     outline: none; }
 
 .certificate-block {
-  background: linear-gradient(180deg, #ff79c5bd -90%, #bd93f9ac 50%, #282a36bd 140%);
   background-size: cover;
   background-attachment: fixed;
   padding: 125px 0; }
@@ -701,8 +682,6 @@ html :where(.editor-styles-wrapper) h4 {
     @media (min-width: 785px) {
       .certificate-block .col:hover {
         transform: scale(1.05); } }
-    .certificate-block .col:hover p a {
-      color: #FF79C6; }
     .certificate-block .col p {
       margin: 0;
       font-size: 18px;
@@ -713,7 +692,6 @@ html :where(.editor-styles-wrapper) h4 {
           font-size: 15px; } }
       .certificate-block .col p a {
         padding: 18px;
-        color: white;
         text-decoration: none; }
         @media (min-width: 768px) {
           .certificate-block .col p a {
@@ -768,12 +746,8 @@ html :where(.editor-styles-wrapper) h4 {
     padding: 0;
     margin-top: 8px; }
   .contact-block a h4 {
-    color: white;
     text-decoration: none; }
-    .contact-block a h4:hover {
-      color: #FF79C6; }
   .contact-block img {
-    border-bottom: 2px solid #BD93F9;
     padding-bottom: 16px;
     transition: ease-in-out .3s; }
     .contact-block img:hover {
@@ -824,7 +798,6 @@ html :where(.editor-styles-wrapper) h4 {
       color: white; }
 
 .experience-block {
-  background: linear-gradient(180deg, #282a36bd -90%, #bd93f9ac 50%, #ff79c5bd 180%);
   background-size: cover;
   background-attachment: fixed; }
   .experience-block .row {
