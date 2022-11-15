@@ -7,7 +7,7 @@
  * @package naomimoon
  */
 
-$get_theme_options              = get_option( 'naomimoon_settings' );
+$get_theme_options              = get_option( 'naomimoon_color_settings' );
 $naomimoon_background           = ( isset( $get_theme_options['naomimoon_background'] ) && ! empty( $get_theme_options['naomimoon_background'] ) ? $get_theme_options['naomimoon_background'] : '#282A36' );
 $naomimoon_background_secondary = ( isset( $get_theme_options['naomimoon_background_secondary'] ) && ! empty( $get_theme_options['naomimoon_background_secondary'] ) ? $get_theme_options['naomimoon_background_secondary'] : '#21242F' );
 $naomimoon_body_font            = ( isset( $get_theme_options['naomimoon_body_font'] ) && ! empty( $get_theme_options['naomimoon_body_font'] ) ? $get_theme_options['naomimoon_body_font'] : '#F8F8F2' );

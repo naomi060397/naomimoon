@@ -2,7 +2,8 @@
   background: none;
   width: fit-content;
   margin: 0 auto;
-  margin-top: 70px; }
+  margin-top: 70px;
+  margin-bottom: 100px; }
   .naomimoon-options ul {
     display: flex;
     margin: 0; }
@@ -52,24 +53,30 @@
     justify-content: center;
     border-bottom: 1px solid #e9e9e9;
     margin: 0 20px;
-    padding: 32px 0 20px;
+    padding: 20px 0;
     max-width: 780px; }
-  .naomimoon-options form, .naomimoon-options .about {
+  .naomimoon-options form, .naomimoon-options .about, .naomimoon-options .general {
     background: white;
     border: 1px solid #808080;
     border-top: none;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
     display: none; }
-    .naomimoon-options form.active, .naomimoon-options .about.active {
+    .naomimoon-options form.active, .naomimoon-options .about.active, .naomimoon-options .general.active {
       display: block; }
-  .naomimoon-options .about {
-    width: 982px; }
+  .naomimoon-options .about, .naomimoon-options .general {
+    width: 820px; }
+    .naomimoon-options .about p, .naomimoon-options .general p {
+      padding: 0 20px;
+      font-size: 16px; }
   .naomimoon-options .form-table th {
-    display: inline-table;
-    width: 92px;
-    text-align: center;
-    margin-left: -10px; }
+    display: none; }
+  .naomimoon-options .use-label th {
+    display: revert;
+    width: 215px;
+    font-weight: 400; }
+  .naomimoon-options .wp-color-result-text {
+    min-width: 125px; }
   .naomimoon-options .settings-buttons {
     display: flex;
     justify-content: center; }
@@ -79,7 +86,7 @@
     text-align: center; }
     .naomimoon-options .gradient-preview .preview {
       height: 70px;
-      width: 250px;
+      width: 410px;
       float: none;
       margin: 0 auto;
       background: black;
@@ -98,8 +105,15 @@
 table.form-table + p.submit {
   text-align: center; }
 
+p.submit {
+  margin-bottom: 20px;
+  padding: 0 !important; }
+
 .wp-picker-container .iris-picker {
   position: absolute; }
+
+.wp-color-result {
+  border-color: #808080 !important; }
 
 /* Body and Blocks */
 body.home, body.page-template {

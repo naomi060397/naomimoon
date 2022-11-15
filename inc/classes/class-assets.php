@@ -51,6 +51,7 @@ class Assets {
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
+
 	}
 
 	/**
@@ -65,6 +66,12 @@ class Assets {
 		wp_enqueue_style( 'naomimoon-admin-style', THEME_URL . '/assets/build/css/admin.css', array(), THEME_VERSION, false );
 		wp_enqueue_script( 'naomimoon-admin-scripts', THEME_URL . '/assets/js/naomimoon-admin-scripts.js', array( 'wp-color-picker' ), THEME_VERSION, true );
 
+		$get_font_options = get_option( 'naomimoon_general_settings' );
+		$use_font         = ( isset( $get_font_options['naomimoon_admin_font'] ) && ! empty( $get_font_options['naomimoon_admin_font'] ) ? $get_font_options['naomimoon_admin_font'] : false );
+
+		if ( $use_font ) {
+			wp_enqueue_style( 'naomimoon-admin-font-style', THEME_URL . '/assets/build/css/admin-font.css', array(), THEME_VERSION, false );
+		}
 	}
 
 }

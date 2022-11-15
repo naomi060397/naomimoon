@@ -9,7 +9,8 @@ module.exports = function(grunt) {
 			  files: {
 				// destination     // source file
 				'build/css/all.css': 'src/css/all.scss',
-				'build/css/admin.css': 'src/css/admin.scss'
+				'build/css/admin.css': 'src/css/admin.scss',
+				'build/css/admin-font.css': 'src/css/admin-font.scss'
 			  }
 			}
 		},

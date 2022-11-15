@@ -1,6 +1,14 @@
 jQuery(document).ready(function($){
 	$('.color-picker').wpColorPicker();
 
+	let rows = document.querySelectorAll('tr');
+	rows.forEach((row) => {
+		let label = $(row).find('th').text();
+		$(row).find('.wp-color-result-text').text(label);
+	})
+
+	$('.myCheckbox').prop('checked', true);
+
 	$(document).on("click", ".options-tab", function () {
 		let id = $(this).attr('id');
 		$('.options-page').removeClass('active');
@@ -17,4 +25,11 @@ jQuery(document).ready(function($){
 		}
 	});
 
+	$('.iris-picker-inner').on("mouseover",function() {
+		$('.iris-picker-inner').on("mousemove", function() {
+			let grad1 = $('.gradient-1').find('.wp-color-result').css("background-color");
+			let grad2 = $('.gradient-2').find('.wp-color-result').css("background-color");
+			$('.gradient-preview').find('.preview').css('background', 'linear-gradient(90deg, '+grad1+',' +grad2 );
+		})
+    });
 });
