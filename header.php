@@ -7,18 +7,23 @@
  * @package naomimoon
  */
 
-$get_theme_options              = get_option( 'naomimoon_color_settings' );
-$naomimoon_background           = ( isset( $get_theme_options['naomimoon_background'] ) && ! empty( $get_theme_options['naomimoon_background'] ) ? $get_theme_options['naomimoon_background'] : '#282A36' );
-$naomimoon_background_secondary = ( isset( $get_theme_options['naomimoon_background_secondary'] ) && ! empty( $get_theme_options['naomimoon_background_secondary'] ) ? $get_theme_options['naomimoon_background_secondary'] : '#21242F' );
-$naomimoon_body_font            = ( isset( $get_theme_options['naomimoon_body_font'] ) && ! empty( $get_theme_options['naomimoon_body_font'] ) ? $get_theme_options['naomimoon_body_font'] : '#F8F8F2' );
-$naomimoon_header_bg            = ( isset( $get_theme_options['naomimoon_header_bg'] ) && ! empty( $get_theme_options['naomimoon_header_bg'] ) ? $get_theme_options['naomimoon_header_bg'] : '#21242f' );
-$naomimoon_accent               = ( isset( $get_theme_options['naomimoon_accent'] ) && ! empty( $get_theme_options['naomimoon_accent'] ) ? $get_theme_options['naomimoon_accent'] : '#BD93F9' );
-$naomimoon_header_font          = ( isset( $get_theme_options['naomimoon_header_font'] ) && ! empty( $get_theme_options['naomimoon_header_font'] ) ? $get_theme_options['naomimoon_header_font'] : '#FFF' );
-$naomimoon_footer_bg            = ( isset( $get_theme_options['naomimoon_footer_bg'] ) && ! empty( $get_theme_options['naomimoon_footer_bg'] ) ? $get_theme_options['naomimoon_footer_bg'] : '#21242f' );
-$naomimoon_footer_font          = ( isset( $get_theme_options['naomimoon_footer_font'] ) && ! empty( $get_theme_options['naomimoon_footer_font'] ) ? $get_theme_options['naomimoon_footer_font'] : '#FFF' );
-$naomimoon_link_hover           = ( isset( $get_theme_options['naomimoon_link_hover'] ) && ! empty( $get_theme_options['naomimoon_link_hover'] ) ? $get_theme_options['naomimoon_link_hover'] : '#FF79C6' );
-$naomimoon_gradient_1           = ( isset( $get_theme_options['naomimoon_gradient_1'] ) && ! empty( $get_theme_options['naomimoon_gradient_1'] ) ? $get_theme_options['naomimoon_gradient_1'] : '#ff79c5bd' );
-$naomimoon_gradient_2           = ( isset( $get_theme_options['naomimoon_gradient_2'] ) && ! empty( $get_theme_options['naomimoon_gradient_2'] ) ? $get_theme_options['naomimoon_gradient_2'] : '#bd93f9ac' );
+// Set color variables.
+$theme_color_options            = get_option( 'naomimoon_color_settings' );
+$naomimoon_background           = ( isset( $theme_color_options['naomimoon_background'] ) && ! empty( $theme_color_options['naomimoon_background'] ) ? $theme_color_options['naomimoon_background'] : '#282A36' );
+$naomimoon_background_secondary = ( isset( $theme_color_options['naomimoon_background_secondary'] ) && ! empty( $theme_color_options['naomimoon_background_secondary'] ) ? $theme_color_options['naomimoon_background_secondary'] : '#21242F' );
+$naomimoon_body_font            = ( isset( $theme_color_options['naomimoon_body_font'] ) && ! empty( $theme_color_options['naomimoon_body_font'] ) ? $theme_color_options['naomimoon_body_font'] : '#F8F8F2' );
+$naomimoon_header_bg            = ( isset( $theme_color_options['naomimoon_header_bg'] ) && ! empty( $theme_color_options['naomimoon_header_bg'] ) ? $theme_color_options['naomimoon_header_bg'] : '#21242f' );
+$naomimoon_accent               = ( isset( $theme_color_options['naomimoon_accent'] ) && ! empty( $theme_color_options['naomimoon_accent'] ) ? $theme_color_options['naomimoon_accent'] : '#BD93F9' );
+$naomimoon_header_font          = ( isset( $theme_color_options['naomimoon_header_font'] ) && ! empty( $theme_color_options['naomimoon_header_font'] ) ? $theme_color_options['naomimoon_header_font'] : '#FFF' );
+$naomimoon_footer_bg            = ( isset( $theme_color_options['naomimoon_footer_bg'] ) && ! empty( $theme_color_options['naomimoon_footer_bg'] ) ? $theme_color_options['naomimoon_footer_bg'] : '#21242f' );
+$naomimoon_footer_font          = ( isset( $theme_color_options['naomimoon_footer_font'] ) && ! empty( $theme_color_options['naomimoon_footer_font'] ) ? $theme_color_options['naomimoon_footer_font'] : '#FFF' );
+$naomimoon_link_hover           = ( isset( $theme_color_options['naomimoon_link_hover'] ) && ! empty( $theme_color_options['naomimoon_link_hover'] ) ? $theme_color_options['naomimoon_link_hover'] : '#FF79C6' );
+$naomimoon_gradient_1           = ( isset( $theme_color_options['naomimoon_gradient_1'] ) && ! empty( $theme_color_options['naomimoon_gradient_1'] ) ? $theme_color_options['naomimoon_gradient_1'] : '#ff79c5bd' );
+$naomimoon_gradient_2           = ( isset( $theme_color_options['naomimoon_gradient_2'] ) && ! empty( $theme_color_options['naomimoon_gradient_2'] ) ? $theme_color_options['naomimoon_gradient_2'] : '#bd93f9ac' );
+
+// Set data variables.
+$theme_general_options = get_option( 'naomimoon_general_settings' );
+$header_logo           = ( isset( $theme_general_options['naomimoon_header_logo'] ) && ! empty( $theme_general_options['naomimoon_header_logo'] ) ? $theme_general_options['naomimoon_header_logo'] : 'naomimoon' );
 
 ?>
 <!doctype html>
@@ -117,7 +122,7 @@ $naomimoon_gradient_2           = ( isset( $get_theme_options['naomimoon_gradien
 	<header id="masthead" class="site-header naomimoon-header">
 		<div class="container row">
 			<div class="naomimoon-header__logo">
-				<h5 class="link-hover-animation"><a href="/">naomi keller</a></h5>
+				<h5 class="link-hover-animation"><a href="/"><?php echo esc_html( $header_logo ); ?></a></h5>
 			</div>
 
 			<nav id="site-navigation" class="main-navigation">

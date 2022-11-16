@@ -20,6 +20,30 @@ class Theme_Options {
 	 */
 	protected function __construct() {
 		$this->setup_hooks();
+
+		$this->footer_fields = array(
+			'Footer Link 1' => 'footer_link_1',
+			'Footer Link 2' => 'footer_link_2',
+			'Footer Link 3' => 'footer_link_3',
+		);
+
+		$this->footer_text = array(
+			'Footer Link 1 Text' => 'footer_link_1_text',
+			'Footer Link 2 Text' => 'footer_link_2_text',
+			'Footer Link 3 Text' => 'footer_link_3_text',
+		);
+
+		$this->color_fields = array(
+			'Body Background'   => 'naomimoon_background',
+			'Body Secondary'    => 'naomimoon_background_secondary',
+			'Body Font'         => 'naomimoon_body_font',
+			'Theme Accent'      => 'naomimoon_accent',
+			'Header Background' => 'naomimoon_header_bg',
+			'Header Font Color' => 'naomimoon_header_font',
+			'Footer Background' => 'naomimoon_footer_bg',
+			'Footer Font'       => 'naomimoon_footer_font',
+			'Link Hover'        => 'naomimoon_link_hover',
+		);
 	}
 
 	/**
@@ -53,7 +77,8 @@ class Theme_Options {
 		?>
 		<div class="naomimoon-options">
 			<ul>
-				<li><a id="colors" class="options-tab active">Colors</a></li>
+				<li><a id="general" class="options-tab active">General</a></li>
+				<li><a id="colors" class="options-tab">Colors</a></li>
 				<li><a id="font" class="options-tab">Font</a></li>
 				<li><a id="about" class="options-tab">About</a></li>
 			</ul>
@@ -62,6 +87,7 @@ class Theme_Options {
 			</div>
 			<span><?php settings_errors(); ?></span>
 			<?php
+			$this->general_form();
 			$this->color_form();
 			$this->font_form();
 			$this->about_page();
@@ -78,134 +104,82 @@ class Theme_Options {
 	 */
 	public function option_settings_init() {
 		register_setting( 'naomimoon-color-setting', 'naomimoon_color_settings' );
-		add_settings_section( 'naomimoon-section-color', __( 'Color Options', 'naomimoon' ), false, 'naomimoon-color' );
-		add_settings_section( 'naomimoon-section-gradient', __( 'Gradient Options', 'naomimoon' ), array( $this, 'gradient_preview' ), 'naomimoon-color' );
+		add_settings_section( 'naomimoon-section-color', __( 'Color Scheme', 'naomimoon' ), false, 'naomimoon-color' );
+		add_settings_section( 'naomimoon-section-gradient', __( 'Background Gradient', 'naomimoon' ), array( $this, 'gradient_preview' ), 'naomimoon-color' );
 
 		register_setting( 'naomimoon-font-setting', 'naomimoon_font_settings' );
-		add_settings_section( 'naomimoon-section-font', __( 'Font Options', 'naomimoon' ), false, 'naomimoon-font' );
+		add_settings_section( 'naomimoon-section-font', __( 'Fonts', 'naomimoon' ), false, 'naomimoon-font' );
 
-		// Body.
+		register_setting( 'naomimoon-general-setting', 'naomimoon_general_settings' );
+		add_settings_section( 'naomimoon-section-header', __( 'Header', 'naomimoon' ), false, 'naomimoon-general' );
+		add_settings_section( 'naomimoon-section-footer', __( 'Footer', 'naomimoon' ), false, 'naomimoon-general' );
+
+		// Header logo text.
 		add_settings_field(
-			'naomimoon_background',
-			__( 'Body Background', 'naomimoon' ),
+			'naomimoon_header_logo',
+			__( 'Header Logo Text', 'naomimoon' ),
 			array( $this, 'add_field' ),
-			'naomimoon-color',
-			'naomimoon-section-color',
+			'naomimoon-general',
+			'naomimoon-section-header',
 			array(
-				'type'  => 'color-picker',
-				'name'  => 'naomimoon_color_settings[naomimoon_background]',
-				'value' => 'naomimoon_background',
+				'type'  => 'text',
+				'name'  => 'naomimoon_general_settings[naomimoon_header_logo]',
+				'value' => 'naomimoon_header_logo',
+				'class' => 'use-label',
 			)
 		);
 
-		add_settings_field(
-			'naomimoon_background_secondary',
-			__( 'Body Secondary', 'naomimoon' ),
-			array( $this, 'add_field' ),
-			'naomimoon-color',
-			'naomimoon-section-color',
-			array(
-				'type'  => 'color-picker',
-				'name'  => 'naomimoon_color_settings[naomimoon_background_secondary]',
-				'value' => 'naomimoon_background_secondary',
-			)
-		);
+		// Footer links.
+		foreach ( $this->footer_fields as $label => $field ) {
+			add_settings_field(
+				$field,
+				$label,
+				array( $this, 'add_field' ),
+				'naomimoon-general',
+				'naomimoon-section-footer',
+				array(
+					'type'  => 'text',
+					'name'  => 'naomimoon_general_settings[' . $field . ']',
+					'value' => $field,
+					'class' => 'use-label',
+				)
+			);
+		}
 
-		add_settings_field(
-			'naomimoon_body_font',
-			__( 'Body Font', 'naomimoon' ),
-			array( $this, 'add_field' ),
-			'naomimoon-color',
-			'naomimoon-section-color',
-			array(
-				'type'  => 'color-picker',
-				'name'  => 'naomimoon_color_settings[naomimoon_body_font]',
-				'value' => 'naomimoon_body_font',
-			)
-		);
+		// Footer link text.
+		foreach ( $this->footer_text as $label => $field ) {
+			add_settings_field(
+				$field,
+				$label,
+				array( $this, 'add_field' ),
+				'naomimoon-general',
+				'naomimoon-section-footer',
+				array(
+					'type'  => 'text',
+					'name'  => 'naomimoon_general_settings[' . $field . ']',
+					'value' => $field,
+					'class' => 'use-label',
+				)
+			);
+		}
 
-		add_settings_field(
-			'naomimoon_accent',
-			__( 'Theme Accent', 'naomimoon' ),
-			array( $this, 'add_field' ),
-			'naomimoon-color',
-			'naomimoon-section-color',
-			array(
-				'type'  => 'color-picker',
-				'name'  => 'naomimoon_color_settings[naomimoon_accent]',
-				'value' => 'naomimoon_accent',
-			)
-		);
+		// Color fields.
+		foreach ( $this->color_fields as $label => $field ) {
+			add_settings_field(
+				$field,
+				$label,
+				array( $this, 'add_field' ),
+				'naomimoon-color',
+				'naomimoon-section-color',
+				array(
+					'type'  => 'color-picker',
+					'name'  => 'naomimoon_color_settings[' . $field . ']',
+					'value' => $field,
+				)
+			);
+		}
 
-		// Header.
-		add_settings_field(
-			'naomimoon_header_bg',
-			__( 'Header Background', 'naomimoon' ),
-			array( $this, 'add_field' ),
-			'naomimoon-color',
-			'naomimoon-section-color',
-			array(
-				'type'  => 'color-picker',
-				'name'  => 'naomimoon_color_settings[naomimoon_header_bg]',
-				'value' => 'naomimoon_header_bg',
-			)
-		);
-
-		add_settings_field(
-			'naomimoon_header_font',
-			__( 'Header Font Color', 'naomimoon' ),
-			array( $this, 'add_field' ),
-			'naomimoon-color',
-			'naomimoon-section-color',
-			array(
-				'type'  => 'color-picker',
-				'name'  => 'naomimoon_color_settings[naomimoon_header_font]',
-				'value' => 'naomimoon_header_font',
-			)
-		);
-
-		// Footer.
-		add_settings_field(
-			'naomimoon_footer_bg',
-			__( 'Footer Background', 'naomimoon' ),
-			array( $this, 'add_field' ),
-			'naomimoon-color',
-			'naomimoon-section-color',
-			array(
-				'type'  => 'color-picker',
-				'name'  => 'naomimoon_color_settings[naomimoon_footer_bg]',
-				'value' => 'naomimoon_footer_bg',
-				'class' => 'footer',
-			)
-		);
-
-		add_settings_field(
-			'naomimoon_footer_font',
-			__( 'Footer Font', 'naomimoon' ),
-			array( $this, 'add_field' ),
-			'naomimoon-color',
-			'naomimoon-section-color',
-			array(
-				'type'  => 'color-picker',
-				'name'  => 'naomimoon_color_settings[naomimoon_footer_font]',
-				'value' => 'naomimoon_footer_font',
-				'class' => 'footer',
-			)
-		);
-
-		add_settings_field(
-			'naomimoon_link_hover',
-			__( 'Link Hover', 'naomimoon' ),
-			array( $this, 'add_field' ),
-			'naomimoon-color',
-			'naomimoon-section-color',
-			array(
-				'type'  => 'color-picker',
-				'name'  => 'naomimoon_color_settings[naomimoon_link_hover]',
-				'value' => 'naomimoon_link_hover',
-			)
-		);
-
+		// Gradient fields.
 		add_settings_field(
 			'naomimoon_gradient_1',
 			__( 'Gradient Color 1', 'naomimoon' ),
@@ -284,8 +258,10 @@ class Theme_Options {
 	 * @since 1.1
 	 */
 	public function add_field( array $args ) {
-		$options_color = get_option( 'naomimoon_color_settings' );
-		$options_font  = get_option( 'naomimoon_font_settings' );
+		$options_color   = get_option( 'naomimoon_color_settings' );
+		$options_font    = get_option( 'naomimoon_font_settings' );
+		$options_general = get_option( 'naomimoon_general_settings' );
+
 		if ( ! $options_color[ $args['value'] ] ) {
 			switch ( $args['value'] ) {
 				case 'naomimoon_gradient_1':
@@ -330,7 +306,24 @@ class Theme_Options {
 			case 'select':
 				$this->selectbox_callback( $args, $options_font );
 				break;
+			case 'text':
+				$this->text_callback( $args, $options_general );
+				break;
 		}
+	}
+
+	/**
+	 * Generate textbox.
+	 *
+	 * @param  array $args Field argument.
+	 * @param  array $options option values.
+	 * @return void
+	 * @since 1.0.0
+	 */
+	public function text_callback( $args, $options ) {
+		?>
+		<input type="<?php echo esc_attr( $args['type'] ); ?>" name="<?php echo esc_attr( $args['name'] ); ?>" value="<?php echo isset( $options[ $args['value'] ] ) ? esc_attr( $options[ $args['value'] ] ) : ''; ?>" />
+		<?php
 	}
 
 	/**
@@ -372,11 +365,28 @@ class Theme_Options {
 	}
 
 	/**
+	 * Render General Form.
+	 */
+	public function general_form() {
+		?>
+		<form action='options.php' method='post' id="general-options" class="active options-page general"> 
+			<?php
+			settings_fields( 'naomimoon-general-setting' );
+			do_settings_sections( 'naomimoon-general' );
+			?>
+			<div class="settings-buttons">
+				<?php submit_button(); ?>
+			</div>
+		</form>
+		<?php
+	}
+
+	/**
 	 * Render Color Form.
 	 */
 	public function color_form() {
 		?>
-		<form action='options.php' method='post' id="color-options" class="active options-page colors"> 
+		<form action='options.php' method='post' id="color-options" class="options-page colors"> 
 			<?php
 			settings_fields( 'naomimoon-color-setting' );
 			do_settings_sections( 'naomimoon-color' );
@@ -432,6 +442,9 @@ class Theme_Options {
 				This theme is made of six Gutenberg blocks, which you can find under the Naomi Moon block category. Each block's content is fully editable, 
 				and you can change the color scheme of the theme using the color settings here in the Theme Options.
 			</p>
+			<p>
+				Additionally, you can change the look of your Dashboard and site content with the font options also here in the Theme Options.
+			</p>
 		</div>
 		<?php
 	}
@@ -455,4 +468,5 @@ class Theme_Options {
 		</div>
 		<?php
 	}
+
 }

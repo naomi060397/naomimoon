@@ -60,6 +60,7 @@ $pink: #FF79C6;
 		text-align: center;
 		margin: 0 20px;
 		padding: 17px 0;
+		border-top: 1px solid #e9e9e9;
 		border-bottom: 1px solid #e9e9e9;
 	}
 	h5 { // description
@@ -75,7 +76,6 @@ $pink: #FF79C6;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
-		border-bottom: 1px solid #e9e9e9;
 		margin: 0 20px;
 		padding: 20px 0;
 		max-width: 780px;
@@ -91,7 +91,7 @@ $pink: #FF79C6;
 			display: block;
 		}
 	}
-	.about, .font {
+	.about, .font, .general {
 		width: 820px;
 		p {
 			padding: 0 20px;
@@ -105,6 +105,13 @@ $pink: #FF79C6;
 	}
 	.form-table th {
 		display: none;
+	}
+	.general {
+		tbody {
+			display: block;
+			width: fit-content;
+			margin: 0 auto;
+		}
 	}
 	// Non-color page form elements
 	.use-label {
@@ -138,6 +145,8 @@ $pink: #FF79C6;
 	.settings-buttons {
 		display: flex;
 		justify-content: center;
+		border-top: 1px solid #e9e9e9;
+		margin: 0 20px;
 		p {
 			margin-right: 5px;
 		}
