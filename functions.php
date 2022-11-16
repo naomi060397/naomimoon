@@ -9,7 +9,7 @@
  * Define constants
  */
 if ( ! defined( 'THEME_VERSION' ) ) {
-	define( 'THEME_VERSION', '1.1' );
+	define( 'THEME_VERSION', '1.5' );
 }
 
 if ( ! defined( 'THEME_PATH' ) ) {

@@ -61,35 +61,11 @@ class Theme_Options {
 				<h1>Naomimoon Theme Options</h1>
 			</div>
 			<span><?php settings_errors(); ?></span>
-			<form action='options.php' method='post' id="color-options" class="active options-page colors"> 
-				<?php
-				settings_fields( 'naomimoon-color-setting' );
-				do_settings_sections( 'naomimoon-color' );
-				?>
-				<div class="settings-buttons">
-					<p class="submit">
-						<button class="button button-primary" id="reset-color-options">Reset to Default</button>
-					</p>
-					<?php
-					submit_button();
-					?>
-				</div>
-			</form>
-			<form action='options.php' method='post' id="font-options" class="options-page font"> 
-				<?php
-				settings_fields( 'naomimoon-font-setting' );
-				do_settings_sections( 'naomimoon-font' );
-				?>
-				<div class="settings-buttons">
-					<?php
-					submit_button();
-					?>
-				</div>
-			</form>
-			<div class="options-page about">
-				<h2>About Naomimoon</h2>
-				<p>Hello world</p>
-			</div>
+			<?php
+			$this->color_form();
+			$this->font_form();
+			$this->about_page();
+			?>
 		</div>
 		<?php
 	}
@@ -392,6 +368,71 @@ class Theme_Options {
 				endforeach;
 			?>
 		</select>
+		<?php
+	}
+
+	/**
+	 * Render Color Form.
+	 */
+	public function color_form() {
+		?>
+		<form action='options.php' method='post' id="color-options" class="active options-page colors"> 
+			<?php
+			settings_fields( 'naomimoon-color-setting' );
+			do_settings_sections( 'naomimoon-color' );
+			?>
+			<div class="settings-buttons">
+				<p class="submit">
+					<button class="button button-primary" id="reset-color-options">Reset to Default</button>
+				</p>
+				<?php
+				submit_button();
+				?>
+			</div>
+		</form>
+		<?php
+	}
+
+	/**
+	 * Render Font Form.
+	 */
+	public function font_form() {
+		?>
+		<form action='options.php' method='post' id="font-options" class="options-page font"> 
+			<?php
+			settings_fields( 'naomimoon-font-setting' );
+			do_settings_sections( 'naomimoon-font' );
+			?>
+			<div class="settings-buttons">
+				<?php
+				submit_button();
+				?>
+			</div>
+		</form>
+		<?php
+	}
+
+	/**
+	 * Render About Page.
+	 */
+	public function about_page() {
+		global $wp_version;
+		?>
+		<div class="options-page about">
+			<h2>About</h2>
+			<div class="version-info">
+				<span>Theme Version: <?php echo esc_html( THEME_VERSION ); ?></span>
+				<span>WordPress Version: <?php echo esc_html( $wp_version ); ?></span>
+				<span>Tested up to WordPress 6.1.1</span>
+			</div>
+			<p>
+				With this theme you can put your skills on display and easlily customize the appearance to reflect your style!
+			</p>
+			<p>
+				This theme is made of six Gutenberg blocks, which you can find under the Naomi Moon block category. Each block's content is fully editable, 
+				and you can change the color scheme of the theme using the color settings here in the Theme Options.
+			</p>
+		</div>
 		<?php
 	}
 

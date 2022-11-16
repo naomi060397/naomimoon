@@ -32,4 +32,16 @@ jQuery(document).ready(function($){
 			$('.gradient-preview').find('.preview').css('background', 'linear-gradient(90deg, '+grad1+',' +grad2 );
 		})
     });
+
+	$('.gradient-1').find('input.color-picker').on("input", function() {
+		let grad1 = $(this).val();
+		let grad2 = $('.gradient-2').find('.wp-color-result').css("background-color");
+		$('.gradient-preview').find('.preview').css('background', 'linear-gradient(90deg, '+grad1+',' +grad2 );
+	});
+
+	$('.gradient-2').find('input.color-picker').on("input", function() {
+		let grad2 = $(this).val();
+		let grad1 = $('.gradient-1').find('.wp-color-result').css("background-color");
+		$('.gradient-preview').find('.preview').css('background', 'linear-gradient(90deg, '+grad1+',' +grad2 );
+	});
 });
