@@ -55,33 +55,33 @@
     margin: 0 20px;
     padding: 20px 0;
     max-width: 780px; }
-  .naomimoon-options form, .naomimoon-options .about, .naomimoon-options .general {
+  .naomimoon-options form, .naomimoon-options .about, .naomimoon-options .font {
     background: white;
     border: 1px solid #808080;
     border-top: none;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
     display: none; }
-    .naomimoon-options form.active, .naomimoon-options .about.active, .naomimoon-options .general.active {
+    .naomimoon-options form.active, .naomimoon-options .about.active, .naomimoon-options .font.active {
       display: block; }
-  .naomimoon-options .about, .naomimoon-options .general {
+  .naomimoon-options .about, .naomimoon-options .font {
     width: 820px; }
-    .naomimoon-options .about p, .naomimoon-options .general p {
+    .naomimoon-options .about p, .naomimoon-options .font p {
       padding: 0 20px;
       font-size: 16px; }
+  .naomimoon-options .font tbody {
+    gap: 65px; }
   .naomimoon-options .form-table th {
     display: none; }
   .naomimoon-options .use-label th {
     display: revert;
-    width: 215px;
-    font-weight: 400; }
+    width: auto;
+    font-weight: 400;
+    padding-top: 21px; }
+  .naomimoon-options .use-label td {
+    text-align: left; }
   .naomimoon-options .wp-color-result-text {
     min-width: 125px; }
-  .naomimoon-options .settings-buttons {
-    display: flex;
-    justify-content: center; }
-    .naomimoon-options .settings-buttons p {
-      margin-right: 5px; }
   .naomimoon-options .gradient-preview {
     text-align: center; }
     .naomimoon-options .gradient-preview .preview {
@@ -92,11 +92,19 @@
       background: black;
       border: 1px solid black;
       border-radius: 3px; }
+  .naomimoon-options .settings-buttons {
+    display: flex;
+    justify-content: center; }
+    .naomimoon-options .settings-buttons p {
+      margin-right: 5px; }
 
 .wp-core-ui .notice.is-dismissible {
   position: absolute;
-  top: 9px;
-  left: 0; }
+  top: 41px;
+  right: 111px; }
+
+.form-table {
+  margin-top: 0; }
 
 .wp-picker-container .wp-color-result.button {
   font-size: 14px;

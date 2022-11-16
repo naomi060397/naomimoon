@@ -52,6 +52,21 @@ class Assets {
 			wp_enqueue_script( 'comment-reply' );
 		}
 
+		// Set front end font.
+		$get_font_options = get_option( 'naomimoon_font_settings' );
+		$front_font       = ( isset( $get_font_options['naomimoon_front_font'] ) && ! empty( $get_font_options['naomimoon_front_font'] ) ? $get_font_options['naomimoon_front_font'] : false );
+
+		switch ( $front_font ) {
+			case '0':
+				wp_enqueue_style( 'naomimoon-front-font-style', THEME_URL . '/assets/build/css/fonts/font-nunito.css', array(), THEME_VERSION, false );
+				break;
+			case '1':
+				wp_enqueue_style( 'naomimoon-front-font-style', THEME_URL . '/assets/build/css/fonts/font-roboto.css', array(), THEME_VERSION, false );
+				break;
+			case '2':
+				wp_enqueue_style( 'naomimoon-front-font-style', THEME_URL . '/assets/build/css/fonts/font-ubuntu.css', array(), THEME_VERSION, false );
+				break;
+		}
 	}
 
 	/**
@@ -66,12 +81,20 @@ class Assets {
 		wp_enqueue_style( 'naomimoon-admin-style', THEME_URL . '/assets/build/css/admin.css', array(), THEME_VERSION, false );
 		wp_enqueue_script( 'naomimoon-admin-scripts', THEME_URL . '/assets/js/naomimoon-admin-scripts.js', array( 'wp-color-picker' ), THEME_VERSION, true );
 
-		$get_font_options = get_option( 'naomimoon_general_settings' );
-		$use_font         = ( isset( $get_font_options['naomimoon_admin_font'] ) && ! empty( $get_font_options['naomimoon_admin_font'] ) ? $get_font_options['naomimoon_admin_font'] : false );
+		// Set admin side font.
+		$get_font_options = get_option( 'naomimoon_font_settings' );
+		$admin_font       = ( isset( $get_font_options['naomimoon_admin_font'] ) && ! empty( $get_font_options['naomimoon_admin_font'] ) ? $get_font_options['naomimoon_admin_font'] : false );
 
-		if ( $use_font ) {
-			wp_enqueue_style( 'naomimoon-admin-font-style', THEME_URL . '/assets/build/css/admin-font.css', array(), THEME_VERSION, false );
+		switch ( $admin_font ) {
+			case '1':
+				wp_enqueue_style( 'naomimoon-admin-font-style', THEME_URL . '/assets/build/css/fonts/font-nunito.css', array(), THEME_VERSION, false );
+				break;
+			case '2':
+				wp_enqueue_style( 'naomimoon-admin-font-style', THEME_URL . '/assets/build/css/fonts/font-roboto.css', array(), THEME_VERSION, false );
+				break;
+			case '3':
+				wp_enqueue_style( 'naomimoon-admin-font-style', THEME_URL . '/assets/build/css/fonts/font-ubuntu.css', array(), THEME_VERSION, false );
+				break;
 		}
 	}
-
 }

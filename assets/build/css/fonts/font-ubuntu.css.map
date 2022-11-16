@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA;;EAEE;AAEM,qIAA6H;AAC7H,2GAAmG;AAE3G,IAAK;EACJ,WAAW,EAAE,oBAAoB",
+"sources": ["../../../src/css/fonts/font-ubuntu.scss"],
+"names": [],
+"file": "font-ubuntu.css"
+}

@@ -80,7 +80,7 @@ $pink: #FF79C6;
 		padding: 20px 0;
 		max-width: 780px;
 	}
-	form, .about, .general {
+	form, .about, .font {
 		background: white;
 		border: 1px solid #808080;
 		border-top: none;
@@ -91,32 +91,36 @@ $pink: #FF79C6;
 			display: block;
 		}
 	}
-	.about, .general {
+	.about, .font {
 		width: 820px;
 		p {
 			padding: 0 20px;
 			font-size: 16px;
 		}
 	}
+	.font {
+		tbody {
+			gap: 65px;
+		}
+	}
 	.form-table th {
 		display: none;
 	}
+	// Non-color page form elements
 	.use-label {
 		th {
 			display: revert;
-			width: 215px;
+			width: auto;
 			font-weight: 400;
+			padding-top: 21px;
+		}
+		td {
+			text-align: left;
 		}
 	}
+	// Color picker customization
 	.wp-color-result-text {
 		min-width: 125px;
-	}
-	.settings-buttons {
-		display: flex;
-		justify-content: center;
-		p {
-			margin-right: 5px;
-		}
 	}
 	.gradient-preview {
 		text-align: center;
@@ -130,13 +134,25 @@ $pink: #FF79C6;
 			border-radius: 3px;
 		}
 	}
+	// Submit buttons
+	.settings-buttons {
+		display: flex;
+		justify-content: center;
+		p {
+			margin-right: 5px;
+		}
+	}
 }
 
 // WP Core
 .wp-core-ui .notice.is-dismissible {
 	position: absolute;
-	top: 9px;
-	left: 0;
+	top: 41px;
+	right: 111px;
+}
+
+.form-table {
+	margin-top: 0;
 }
 
 .wp-picker-container .wp-color-result.button {

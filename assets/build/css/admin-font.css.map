@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA;;EAEE;AAEM,qLAA6K;AAC7K,2GAAmG;ACL3G;;EAEE;ADMF,IAAK;EACJ,WAAW,EAAE,oBAAoB",
-"sources": ["../../src/css/admin-font.scss","../../src/css/_variables.scss"],
-"names": [],
-"file": "admin-font.css"
-}

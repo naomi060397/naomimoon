@@ -10,7 +10,9 @@ module.exports = function(grunt) {
 				// destination     // source file
 				'build/css/all.css': 'src/css/all.scss',
 				'build/css/admin.css': 'src/css/admin.scss',
-				'build/css/admin-font.css': 'src/css/admin-font.scss'
+				'build/css/fonts/font-nunito.css': 'src/css/fonts/font-nunito.scss',
+				'build/css/fonts/font-roboto.css': 'src/css/fonts/font-roboto.scss',
+				'build/css/fonts/font-ubuntu.css': 'src/css/fonts/font-ubuntu.scss'
 			  }
 			}
 		},

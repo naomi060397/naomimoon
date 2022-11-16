@@ -54,7 +54,7 @@ class Theme_Options {
 		<div class="naomimoon-options">
 			<ul>
 				<li><a id="colors" class="options-tab active">Colors</a></li>
-				<li><a id="general" class="options-tab">General</a></li>
+				<li><a id="font" class="options-tab">Font</a></li>
 				<li><a id="about" class="options-tab">About</a></li>
 			</ul>
 			<div class="settings-title">
@@ -75,10 +75,10 @@ class Theme_Options {
 					?>
 				</div>
 			</form>
-			<form action='options.php' method='post' id="general-options" class="options-page general"> 
+			<form action='options.php' method='post' id="font-options" class="options-page font"> 
 				<?php
-				settings_fields( 'naomimoon-general-setting' );
-				do_settings_sections( 'naomimoon-general' );
+				settings_fields( 'naomimoon-font-setting' );
+				do_settings_sections( 'naomimoon-font' );
 				?>
 				<div class="settings-buttons">
 					<?php
@@ -105,8 +105,8 @@ class Theme_Options {
 		add_settings_section( 'naomimoon-section-color', __( 'Color Options', 'naomimoon' ), false, 'naomimoon-color' );
 		add_settings_section( 'naomimoon-section-gradient', __( 'Gradient Options', 'naomimoon' ), array( $this, 'gradient_preview' ), 'naomimoon-color' );
 
-		register_setting( 'naomimoon-general-setting', 'naomimoon_general_settings' );
-		add_settings_section( 'naomimoon-section-font', __( 'Font Options', 'naomimoon' ), false, 'naomimoon-general' );
+		register_setting( 'naomimoon-font-setting', 'naomimoon_font_settings' );
+		add_settings_section( 'naomimoon-section-font', __( 'Font Options', 'naomimoon' ), false, 'naomimoon-font' );
 
 		// Body.
 		add_settings_field(
@@ -261,15 +261,41 @@ class Theme_Options {
 		// Admin side font.
 		add_settings_field(
 			'naomimoon_admin_font',
-			__( 'Use Custom Font in Dashboard:', 'naomimoon' ),
+			__( 'Dashboard Font:', 'naomimoon' ),
 			array( $this, 'add_field' ),
-			'naomimoon-general',
+			'naomimoon-font',
 			'naomimoon-section-font',
 			array(
-				'type'  => 'checkbox',
-				'name'  => 'naomimoon_general_settings[naomimoon_admin_font]',
-				'value' => 'naomimoon_admin_font',
-				'class' => 'use-label',
+				'type'    => 'select',
+				'name'    => 'naomimoon_font_settings[naomimoon_admin_font]',
+				'value'   => 'naomimoon_admin_font',
+				'class'   => 'use-label',
+				'options' => array(
+					'None',
+					'Nunito',
+					'Roboto',
+					'Ubuntu',
+				),
+			)
+		);
+
+		// Front side font.
+		add_settings_field(
+			'naomimoon_front_font',
+			__( 'Theme Font:', 'naomimoon' ),
+			array( $this, 'add_field' ),
+			'naomimoon-font',
+			'naomimoon-section-font',
+			array(
+				'type'    => 'select',
+				'name'    => 'naomimoon_font_settings[naomimoon_front_font]',
+				'value'   => 'naomimoon_front_font',
+				'class'   => 'use-label',
+				'options' => array(
+					'Nunito',
+					'Roboto',
+					'Ubuntu',
+				),
 			)
 		);
 	}
@@ -282,9 +308,9 @@ class Theme_Options {
 	 * @since 1.1
 	 */
 	public function add_field( array $args ) {
-		$options         = get_option( 'naomimoon_color_settings' );
-		$options_general = get_option( 'naomimoon_general_settings' );
-		if ( ! $options[ $args['value'] ] ) {
+		$options_color = get_option( 'naomimoon_color_settings' );
+		$options_font  = get_option( 'naomimoon_font_settings' );
+		if ( ! $options_color[ $args['value'] ] ) {
 			switch ( $args['value'] ) {
 				case 'naomimoon_gradient_1':
 					$default = '#ff79c5bd';
@@ -323,10 +349,10 @@ class Theme_Options {
 		}
 		switch ( $args['type'] ) {
 			case 'color-picker':
-				$this->color_picker_callback( $args, $options, $default );
+				$this->color_picker_callback( $args, $options_color, $default );
 				break;
-			case 'checkbox':
-				$this->checkbox_callback( $args, $options_general );
+			case 'select':
+				$this->selectbox_callback( $args, $options_font );
 				break;
 		}
 	}
@@ -347,24 +373,30 @@ class Theme_Options {
 	}
 
 	/**
-	 * Generate Checkbox.
+	 * Generate Select Box.
 	 *
 	 * @param  array $args Field argument.
-	 * @param  array $options_general option values.
+	 * @param  array $options option values.
 	 * @return void
-	 * @since 1.1
+	 * @since 1.0.0
 	 */
-	public function checkbox_callback( $args, $options_general ) {
+	public function selectbox_callback( $args, $options ) {
+		$select_options = $args['options'];
 		?>
-		<input id="<?php echo esc_attr( $args['name'] ); ?>" type="<?php echo esc_attr( $args['type'] ); ?>" 
-		name="<?php echo esc_attr( $args['name'] ); ?>" value="true" <?php checked( 'true', ( isset( $options_general[ $args['value'] ] ) && ! empty( $options_general[ $args['value'] ] ) ? $options_general[ $args['value'] ] : false ) ); ?>>
-
-		<label for="<?php echo esc_attr( $args['name'] ); ?>"><?php echo esc_html( $args['task'] ); ?></label>
+		<select name="<?php echo esc_attr( $args['name'] ); ?>" value="<?php echo isset( $options[ $args['value'] ] ) ? esc_attr( $options[ $args['value'] ] ) : ''; ?>">
+			<?php
+			foreach ( $select_options as $key => $value ) :
+				?>
+				<option value="<?php echo esc_attr( $key ); ?>" <?php selected( $options[ $args['value'] ], $key ); ?>><?php echo esc_html( $value ); ?></option>
+				<?php
+				endforeach;
+			?>
+		</select>
 		<?php
 	}
 
 	/**
-	 * Generate Gradient Preview.
+	 * Gradient Preview Callback.
 	 *
 	 * @return void
 	 * @since 1.1

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA;;EAEE;AAEM,qLAA6K;AAC7K,2GAAmG;AAE3G,IAAK;EACJ,WAAW,EAAE,oBAAoB",
+"sources": ["../../../src/css/fonts/font-nunito.scss"],
+"names": [],
+"file": "font-nunito.css"
+}
