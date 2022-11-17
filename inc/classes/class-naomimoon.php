@@ -96,6 +96,8 @@ class Naomimoon {
 			)
 		);
 
+		add_theme_support( 'wp-block-styles' );
+
 	}
 
 	/**

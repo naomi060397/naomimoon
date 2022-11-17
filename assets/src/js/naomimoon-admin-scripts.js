@@ -44,4 +44,5 @@ jQuery(document).ready(function($){
 		let grad1 = $('.gradient-1').find('.wp-color-result').css("background-color");
 		$('.gradient-preview').find('.preview').css('background', 'linear-gradient(90deg, '+grad1+',' +grad2 );
 	});
+
 });

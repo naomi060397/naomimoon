@@ -44,6 +44,13 @@ class Theme_Options {
 			'Footer Font'       => 'naomimoon_footer_font',
 			'Link Hover'        => 'naomimoon_link_hover',
 		);
+
+		$this->section_descriptions = array(
+			'section_color'  => "Customize theme's block and page colors.",
+			'section_font'   => 'Change the font of the Dashboard and Front-end design.',
+			'section_header' => 'Change the text of the logo on the left side of the header.',
+			'section_footer' => 'Add custom links to the footer.',
+		);
 	}
 
 	/**
@@ -104,15 +111,55 @@ class Theme_Options {
 	 */
 	public function option_settings_init() {
 		register_setting( 'naomimoon-color-setting', 'naomimoon_color_settings' );
-		add_settings_section( 'naomimoon-section-color', __( 'Color Scheme', 'naomimoon' ), false, 'naomimoon-color' );
-		add_settings_section( 'naomimoon-section-gradient', __( 'Background Gradient', 'naomimoon' ), array( $this, 'gradient_preview' ), 'naomimoon-color' );
-
 		register_setting( 'naomimoon-font-setting', 'naomimoon_font_settings' );
-		add_settings_section( 'naomimoon-section-font', __( 'Fonts', 'naomimoon' ), false, 'naomimoon-font' );
-
 		register_setting( 'naomimoon-general-setting', 'naomimoon_general_settings' );
-		add_settings_section( 'naomimoon-section-header', __( 'Header', 'naomimoon' ), false, 'naomimoon-general' );
-		add_settings_section( 'naomimoon-section-footer', __( 'Footer', 'naomimoon' ), false, 'naomimoon-general' );
+
+		add_settings_section(
+			'naomimoon-section-color',
+			__( 'Color Scheme', 'naomimoon' ),
+			array( $this, 'section_description_callback' ),
+			'naomimoon-color',
+			array(
+				'section_content' => $this->section_descriptions['section_color'],
+			)
+		);
+
+		add_settings_section(
+			'naomimoon-section-gradient',
+			__( 'Background Gradient', 'naomimoon' ),
+			array( $this, 'section_gradient_callback' ),
+			'naomimoon-color'
+		);
+
+		add_settings_section(
+			'naomimoon-section-font',
+			__( 'Fonts', 'naomimoon' ),
+			array( $this, 'section_description_callback' ),
+			'naomimoon-font',
+			array(
+				'section_content' => $this->section_descriptions['section_font'],
+			)
+		);
+
+		add_settings_section(
+			'naomimoon-section-header',
+			__( 'Header', 'naomimoon' ),
+			array( $this, 'section_description_callback' ),
+			'naomimoon-general',
+			array(
+				'section_content' => $this->section_descriptions['section_header'],
+			)
+		);
+
+		add_settings_section(
+			'naomimoon-section-footer',
+			__( 'Footer', 'naomimoon' ),
+			array( $this, 'section_description_callback' ),
+			'naomimoon-general',
+			array(
+				'section_content' => $this->section_descriptions['section_footer'],
+			)
+		);
 
 		// Header logo text.
 		add_settings_field(
@@ -322,7 +369,11 @@ class Theme_Options {
 	 */
 	public function text_callback( $args, $options ) {
 		?>
-		<input type="<?php echo esc_attr( $args['type'] ); ?>" name="<?php echo esc_attr( $args['name'] ); ?>" value="<?php echo isset( $options[ $args['value'] ] ) ? esc_attr( $options[ $args['value'] ] ) : ''; ?>" />
+		<input
+			type="<?php echo esc_attr( $args['type'] ); ?>"
+			name="<?php echo esc_attr( $args['name'] ); ?>"
+			value="<?php echo isset( $options[ $args['value'] ] ) ? esc_attr( $options[ $args['value'] ] ) : ''; ?>"
+		/>
 		<?php
 	}
 
@@ -337,7 +388,11 @@ class Theme_Options {
 	 */
 	public function color_picker_callback( $args, $options, $default ) {
 		?>
-		<input type="text" class="color-picker" name="<?php echo esc_attr( $args['name'] ); ?>" value="<?php echo ! empty( $options[ $args['value'] ] ) ? esc_attr( $options[ $args['value'] ] ) : esc_attr( $default ); ?>" />
+		<input
+			type="text" class="color-picker"
+			name="<?php echo esc_attr( $args['name'] ); ?>"
+			value="<?php echo ! empty( $options[ $args['value'] ] ) ? esc_attr( $options[ $args['value'] ] ) : esc_attr( $default ); ?>"
+		/>
 		<?php
 	}
 
@@ -450,14 +505,36 @@ class Theme_Options {
 	}
 
 	/**
-	 * Gradient Preview Callback.
+	 * Section Color Callback.
+	 *
+	 * @return void
+	 * @since 1.1
+	 * @param array $args passing description text data.
+	 */
+	public function section_description_callback( $args ) {
+		?>
+		<div class="section-description">
+			<p>
+				<?php echo esc_html( $args['section_content'] ); ?>
+			</p>
+		</div>
+		<?php
+	}
+
+	/**
+	 * Section Gradient Callback.
 	 *
 	 * @return void
 	 * @since 1.1
 	 */
-	public function gradient_preview() {
+	public function section_gradient_callback() {
 		?>
 		<div class="gradient-preview">
+			<div class="section-description">
+				<p>
+					Customize background gradient used in some blocks.
+				</p>
+			</div>
 			<h4>Preview</h4>
 			<?php
 			$get_theme_options    = get_option( 'naomimoon_color_settings' );
