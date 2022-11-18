@@ -22,11 +22,11 @@ class Theme_Options {
 		$this->setup_hooks();
 
 		$this->footer_fields = array(
-			'Footer Link 1' => 'footer_link_1',
+			'Footer Link 1'      => 'footer_link_1',
 			'Footer Link 1 Text' => 'footer_link_1_text',
-			'Footer Link 2' => 'footer_link_2',
+			'Footer Link 2'      => 'footer_link_2',
 			'Footer Link 2 Text' => 'footer_link_2_text',
-			'Footer Link 3' => 'footer_link_3',
+			'Footer Link 3'      => 'footer_link_3',
 			'Footer Link 3 Text' => 'footer_link_3_text',
 		);
 
@@ -218,23 +218,6 @@ class Theme_Options {
 				)
 			);
 		}
-
-		// Footer link label fields.
-		// foreach ( $this->footer_text as $label => $field ) {
-		// 	add_settings_field(
-		// 		$field,
-		// 		$label,
-		// 		array( $this, 'add_field' ),
-		// 		'naomimoon-general',
-		// 		'naomimoon-section-footer',
-		// 		array(
-		// 			'type'  => 'text',
-		// 			'name'  => 'naomimoon_general_settings[' . $field . ']',
-		// 			'value' => $field,
-		// 			'class' => 'use-label',
-		// 		)
-		// 	);
-		// }
 
 		// Color fields.
 		foreach ( $this->color_fields as $field => $data ) {
