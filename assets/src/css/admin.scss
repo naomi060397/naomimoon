@@ -110,7 +110,8 @@ $pink: #FF79C6;
 	}
 	.general {
 		tbody {
-			display: block;
+			display: flex;
+			gap: 0 20px;
 			width: fit-content;
 			margin: 0 auto;
 		}
@@ -176,8 +177,9 @@ $pink: #FF79C6;
 // WP Core
 .wp-core-ui .notice.is-dismissible {
 	position: absolute;
-	top: 41px;
-	right: 111px;
+	top: 4px;
+	left: 0;
+	min-width: 150px;
 }
 
 .form-table {
