@@ -80,6 +80,17 @@ class Theme_Options {
 			),
 		);
 
+		$this->fonts = array(
+			'naomimoon_admin_font' => array(
+				'label'   => 'Dashboard Font:',
+				'options' => array( 'None', 'Nunito', 'Roboto', 'Ubuntu' ),
+			),
+			'naomimoon_front_font' => array(
+				'label'   => 'Theme Font:',
+				'options' => array( 'Nunito', 'Roboto', 'Ubuntu' ),
+			),
+		);
+
 		$this->settings_sections = array(
 			'naomimoon-section-color'    => array(
 				'title'       => 'Color Scheme',
@@ -194,7 +205,7 @@ class Theme_Options {
 			)
 		);
 
-		// Footer links.
+		// Footer link fields.
 		foreach ( $this->footer_fields as $label => $field ) {
 			add_settings_field(
 				$field,
@@ -211,7 +222,7 @@ class Theme_Options {
 			);
 		}
 
-		// Footer link text.
+		// Footer link label fields.
 		foreach ( $this->footer_text as $label => $field ) {
 			add_settings_field(
 				$field,
@@ -229,11 +240,11 @@ class Theme_Options {
 		}
 
 		// Color fields.
-		foreach ( $this->color_fields as $field => $args ) {
+		foreach ( $this->color_fields as $field => $data ) {
 			if ( 'naomimoon_gradient_1' !== $field && 'naomimoon_gradient_2' !== $field ) {
 				add_settings_field(
 					$field,
-					$args['label'],
+					$data['label'],
 					array( $this, 'add_field' ),
 					'naomimoon-color',
 					'naomimoon-section-color',
@@ -247,74 +258,41 @@ class Theme_Options {
 		}
 
 		// Gradient fields.
-		add_settings_field(
-			'naomimoon_gradient_1',
-			__( 'Gradient Color 1', 'naomimoon' ),
-			array( $this, 'add_field' ),
-			'naomimoon-color',
-			'naomimoon-section-gradient',
-			array(
-				'type'  => 'color-picker',
-				'name'  => 'naomimoon_color_settings[naomimoon_gradient_1]',
-				'value' => 'naomimoon_gradient_1',
-				'class' => 'gradient-1',
-			)
-		);
+		foreach ( $this->color_fields as $field => $data ) {
+			if ( 'naomimoon_gradient_1' === $field || 'naomimoon_gradient_2' === $field ) {
+				add_settings_field(
+					$field,
+					$data['label'],
+					array( $this, 'add_field' ),
+					'naomimoon-color',
+					'naomimoon-section-gradient',
+					array(
+						'type'  => 'color-picker',
+						'name'  => 'naomimoon_color_settings[' . $field . ']',
+						'value' => $field,
+						'class' => 'gradient-1',
+					)
+				);
+			}
+		}
 
-		add_settings_field(
-			'naomimoon_gradient_2',
-			__( 'Gradient Color 2', 'naomimoon' ),
-			array( $this, 'add_field' ),
-			'naomimoon-color',
-			'naomimoon-section-gradient',
-			array(
-				'type'  => 'color-picker',
-				'name'  => 'naomimoon_color_settings[naomimoon_gradient_2]',
-				'value' => 'naomimoon_gradient_2',
-				'class' => 'gradient-2',
-			)
-		);
-
-		// Admin side font.
-		add_settings_field(
-			'naomimoon_admin_font',
-			__( 'Dashboard Font:', 'naomimoon' ),
-			array( $this, 'add_field' ),
-			'naomimoon-font',
-			'naomimoon-section-font',
-			array(
-				'type'    => 'select',
-				'name'    => 'naomimoon_font_settings[naomimoon_admin_font]',
-				'value'   => 'naomimoon_admin_font',
-				'class'   => 'use-label',
-				'options' => array(
-					'None',
-					'Nunito',
-					'Roboto',
-					'Ubuntu',
-				),
-			)
-		);
-
-		// Front side font.
-		add_settings_field(
-			'naomimoon_front_font',
-			__( 'Theme Font:', 'naomimoon' ),
-			array( $this, 'add_field' ),
-			'naomimoon-font',
-			'naomimoon-section-font',
-			array(
-				'type'    => 'select',
-				'name'    => 'naomimoon_font_settings[naomimoon_front_font]',
-				'value'   => 'naomimoon_front_font',
-				'class'   => 'use-label',
-				'options' => array(
-					'Nunito',
-					'Roboto',
-					'Ubuntu',
-				),
-			)
-		);
+		// Font fields.
+		foreach ( $this->fonts as $field => $data ) {
+			add_settings_field(
+				$field,
+				$data['label'],
+				array( $this, 'add_field' ),
+				'naomimoon-font',
+				'naomimoon-section-font',
+				array(
+					'type'    => 'select',
+					'name'    => 'naomimoon_font_settings[' . $field . ']',
+					'value'   => $field,
+					'class'   => 'use-label',
+					'options' => $data['options'],
+				)
+			);
+		}
 	}
 
 	/**
@@ -330,45 +308,13 @@ class Theme_Options {
 		$options_general = get_option( 'naomimoon_general_settings' );
 
 		if ( ! $options_color[ $args['value'] ] ) {
-			switch ( $args['value'] ) {
-				case 'naomimoon_gradient_1':
-					$default = '#ff79c5bd';
-					break;
-				case 'naomimoon_gradient_2':
-					$default = '#bd93f9ac';
-					break;
-				case 'naomimoon_background':
-					$default = '#282a36';
-					break;
-				case 'naomimoon_background_secondary':
-					$default = '#21242f';
-					break;
-				case 'naomimoon_body_font':
-					$default = '#F8F8F2';
-					break;
-				case 'naomimoon_accent':
-					$default = '#BD93F9';
-					break;
-				case 'naomimoon_header_bg':
-					$default = '#21242f';
-					break;
-				case 'naomimoon_header_font':
-					$default = '#F8F8F2';
-					break;
-				case 'naomimoon_footer_bg':
-					$default = '#21242f';
-					break;
-				case 'naomimoon_footer_font':
-					$default = '#F8F8F2';
-					break;
-				case 'naomimoon_link_hover':
-					$default = '#FF79C6';
-					break;
-			}
+			$color_data    = $this->color_fields[ $args['value'] ] ?? null;
+			$default_color = $color_data['default'];
 		}
+
 		switch ( $args['type'] ) {
 			case 'color-picker':
-				$this->color_picker_callback( $args, $options_color, $default );
+				$this->color_picker_callback( $args, $options_color, $default_color );
 				break;
 			case 'select':
 				$this->selectbox_callback( $args, $options_font );
@@ -525,7 +471,7 @@ class Theme_Options {
 	}
 
 	/**
-	 * Section Color Callback.
+	 * Section Description Callback.
 	 *
 	 * @return void
 	 * @since 1.1
