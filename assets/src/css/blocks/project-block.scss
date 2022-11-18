@@ -27,7 +27,6 @@
 		h4 {
 			font-size: 25px;
     		margin: 0;
-			border-bottom: 1px solid $comment;
 			transition: ease-in-out .2s;
 		}
 		p {
@@ -35,7 +34,6 @@
 		}
 		&.image {
 			display: flex;
-			background: $selection;
 			justify-content: center;
 			align-items: center;
 			@media (max-width: 800px) {

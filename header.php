@@ -45,6 +45,7 @@ $header_logo           = ( isset( $theme_general_options['naomimoon_header_logo'
 			background: <?php echo esc_html( $naomimoon_background ); ?>;
 		}
 		.project-block .col.content,
+		.project-block .col.image,
 		.experience-block h3,
 		.contact-block .col {
 			background: <?php echo esc_html( $naomimoon_background_secondary ); ?>;
@@ -65,6 +66,7 @@ $header_logo           = ( isset( $theme_general_options['naomimoon_header_logo'
 		}
 		.project-block .col h4:hover {
 			border-bottom: 1px solid <?php echo esc_html( $naomimoon_link_hover ); ?>;
+			color: <?php echo esc_html( $naomimoon_link_hover ); ?>;
 		}
 		.menu-item:after,
 		.link-hover-animation:after {
@@ -95,11 +97,14 @@ $header_logo           = ( isset( $theme_general_options['naomimoon_header_logo'
 		.contact-block img {
 			border-bottom: 2px solid <?php echo esc_html( $naomimoon_accent ); ?>;
 		}
-		.site-footer .site-info .sep {
+		.site-footer .site-info .sep, .project-block .col h4 {
 			color: <?php echo esc_html( $naomimoon_accent ); ?>;
 		}
 		.naomimoon-homepage .seperator {
 			background: <?php echo esc_html( $naomimoon_accent ); ?>;
+		}
+		.project-block .col h4 {
+			border-bottom: 1px solid <?php echo esc_html( $naomimoon_accent ); ?>;
 		}
 		/* Gradient */
 		.naomimoon-homepage__hero {

@@ -593,13 +593,11 @@ html :where(.editor-styles-wrapper) h4 {
     .project-block .col h4 {
       font-size: 25px;
       margin: 0;
-      border-bottom: 1px solid #6272A4;
       transition: ease-in-out .2s; }
     .project-block .col p {
       margin-bottom: 0; }
     .project-block .col.image {
       display: flex;
-      background: #44475A;
       justify-content: center;
       align-items: center; }
       @media (max-width: 800px) {

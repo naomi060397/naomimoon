@@ -34,22 +34,83 @@ class Theme_Options {
 		);
 
 		$this->color_fields = array(
-			'Body Background'   => 'naomimoon_background',
-			'Body Secondary'    => 'naomimoon_background_secondary',
-			'Body Font'         => 'naomimoon_body_font',
-			'Theme Accent'      => 'naomimoon_accent',
-			'Header Background' => 'naomimoon_header_bg',
-			'Header Font Color' => 'naomimoon_header_font',
-			'Footer Background' => 'naomimoon_footer_bg',
-			'Footer Font'       => 'naomimoon_footer_font',
-			'Link Hover'        => 'naomimoon_link_hover',
+			'naomimoon_gradient_1'           => array(
+				'label'   => 'Gradient Color 1',
+				'default' => '#ff79c5bd',
+			),
+			'naomimoon_gradient_2'           => array(
+				'label'   => 'Gradient Color 2',
+				'default' => '#bd93f9ac',
+			),
+			'naomimoon_background'           => array(
+				'label'   => 'Body Background',
+				'default' => '#282a36',
+			),
+			'naomimoon_background_secondary' => array(
+				'label'   => 'Body Secondary',
+				'default' => '#21242f',
+			),
+			'naomimoon_body_font'            => array(
+				'label'   => 'Body Font',
+				'default' => '#F8F8F2',
+			),
+			'naomimoon_accent'               => array(
+				'label'   => 'Theme Accent',
+				'default' => '#BD93F9',
+			),
+			'naomimoon_header_bg'            => array(
+				'label'   => 'Header Background',
+				'default' => '#21242f',
+			),
+			'naomimoon_header_font'          => array(
+				'label'   => 'Header Font Color',
+				'default' => '#F8F8F2',
+			),
+			'naomimoon_footer_bg'            => array(
+				'label'   => 'Footer Background',
+				'default' => '#21242f',
+			),
+			'naomimoon_footer_font'          => array(
+				'label'   => 'Footer Font',
+				'default' => '#F8F8F2',
+			),
+			'naomimoon_link_hover'           => array(
+				'label'   => 'Link Hover',
+				'default' => '#FF79C6',
+			),
 		);
 
-		$this->section_descriptions = array(
-			'section_color'  => "Customize theme's block and page colors.",
-			'section_font'   => 'Change the font of the Dashboard and Front-end design.',
-			'section_header' => 'Change the text of the logo on the left side of the header.',
-			'section_footer' => 'Add custom links to the footer.',
+		$this->settings_sections = array(
+			'naomimoon-section-color'    => array(
+				'title'       => 'Color Scheme',
+				'callback'    => 'section_description_callback',
+				'page'        => 'naomimoon-color',
+				'description' => "Customize theme's block and page colors.",
+
+			),
+			'naomimoon-section-gradient' => array(
+				'title'    => 'Background Gradient',
+				'callback' => 'section_gradient_callback',
+				'page'     => 'naomimoon-color',
+			),
+			'naomimoon-section-font'     => array(
+				'title'       => 'Fonts',
+				'callback'    => 'section_description_callback',
+				'page'        => 'naomimoon-font',
+				'description' => 'Change the font of the Dashboard and Front-end design.',
+			),
+			'naomimoon-section-header'   => array(
+				'title'       => 'Header',
+				'callback'    => 'section_description_callback',
+				'page'        => 'naomimoon-general',
+				'description' => 'Change the text of the logo on the left side of the header.',
+			),
+			'naomimoon-section-footer'   => array(
+				'title'       => 'Footer',
+				'callback'    => 'section_description_callback',
+				'page'        => 'naomimoon-general',
+				'description' => 'Add custom links to the footer.',
+			),
 		);
 	}
 
@@ -114,52 +175,9 @@ class Theme_Options {
 		register_setting( 'naomimoon-font-setting', 'naomimoon_font_settings' );
 		register_setting( 'naomimoon-general-setting', 'naomimoon_general_settings' );
 
-		add_settings_section(
-			'naomimoon-section-color',
-			__( 'Color Scheme', 'naomimoon' ),
-			array( $this, 'section_description_callback' ),
-			'naomimoon-color',
-			array(
-				'section_content' => $this->section_descriptions['section_color'],
-			)
-		);
-
-		add_settings_section(
-			'naomimoon-section-gradient',
-			__( 'Background Gradient', 'naomimoon' ),
-			array( $this, 'section_gradient_callback' ),
-			'naomimoon-color'
-		);
-
-		add_settings_section(
-			'naomimoon-section-font',
-			__( 'Fonts', 'naomimoon' ),
-			array( $this, 'section_description_callback' ),
-			'naomimoon-font',
-			array(
-				'section_content' => $this->section_descriptions['section_font'],
-			)
-		);
-
-		add_settings_section(
-			'naomimoon-section-header',
-			__( 'Header', 'naomimoon' ),
-			array( $this, 'section_description_callback' ),
-			'naomimoon-general',
-			array(
-				'section_content' => $this->section_descriptions['section_header'],
-			)
-		);
-
-		add_settings_section(
-			'naomimoon-section-footer',
-			__( 'Footer', 'naomimoon' ),
-			array( $this, 'section_description_callback' ),
-			'naomimoon-general',
-			array(
-				'section_content' => $this->section_descriptions['section_footer'],
-			)
-		);
+		foreach ( $this->settings_sections as $id => $args ) {
+			add_settings_section( $id, $args['title'], array( $this, $args['callback'] ), $args['page'], array( 'section_content' => $args['description'] ) );
+		}
 
 		// Header logo text.
 		add_settings_field(
@@ -211,19 +229,21 @@ class Theme_Options {
 		}
 
 		// Color fields.
-		foreach ( $this->color_fields as $label => $field ) {
-			add_settings_field(
-				$field,
-				$label,
-				array( $this, 'add_field' ),
-				'naomimoon-color',
-				'naomimoon-section-color',
-				array(
-					'type'  => 'color-picker',
-					'name'  => 'naomimoon_color_settings[' . $field . ']',
-					'value' => $field,
-				)
-			);
+		foreach ( $this->color_fields as $field => $args ) {
+			if ( 'naomimoon_gradient_1' !== $field && 'naomimoon_gradient_2' !== $field ) {
+				add_settings_field(
+					$field,
+					$args['label'],
+					array( $this, 'add_field' ),
+					'naomimoon-color',
+					'naomimoon-section-color',
+					array(
+						'type'  => 'color-picker',
+						'name'  => 'naomimoon_color_settings[' . $field . ']',
+						'value' => $field,
+					)
+				);
+			}
 		}
 
 		// Gradient fields.
