@@ -22,14 +22,14 @@ export default class aboutEdit extends Component {
             <Fragment>
                 <InspectorControls>
                 </InspectorControls>
-                <div className="about-block naomimoon-homepage__about container" id="about">
+                <div className="about-block naomimoon-portfolio__about container" id="about">
                     <div className="square-border">
                         <RichText
                             tagName="h1"
                             value={ heading }
                             onChange={ ( heading ) => setAttributes( { heading } ) }
                             placeholder={ __( 'Heading...' ) }
-                            className="home-heading mb-10"
+                            className="portfolio-heading mb-10"
                         />
                         <span class="naomimoon-border-bottom"></span>
                         <RichText

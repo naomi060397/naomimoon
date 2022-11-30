@@ -496,7 +496,7 @@ var aboutEdit = /*#__PURE__*/function (_Component) {
       var heading = attributes.heading,
           content = attributes.content;
       return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_8__["InspectorControls"], null), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("div", {
-        className: "about-block naomimoon-homepage__about container",
+        className: "about-block naomimoon-portfolio__about container",
         id: "about"
       }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("div", {
         className: "square-border"
@@ -509,7 +509,7 @@ var aboutEdit = /*#__PURE__*/function (_Component) {
           });
         },
         placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_6__["__"])('Heading...'),
-        className: "home-heading mb-10"
+        className: "portfolio-heading mb-10"
       }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("span", {
         class: "naomimoon-border-bottom"
       }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_8__["RichText"], {
@@ -600,14 +600,14 @@ var aboutSave = /*#__PURE__*/function (_Component) {
       var heading = attributes.heading,
           content = attributes.content;
       return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("div", {
-        className: "about-block naomimoon-homepage__about container",
+        className: "about-block naomimoon-portfolio__about container",
         id: "about"
       }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("div", {
         className: "square-border"
       }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_7__["RichText"].Content, {
         tagName: "h1",
         value: heading,
-        className: "home-heading mb-10"
+        className: "portfolio-heading mb-10"
       }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("span", {
         class: "naomimoon-border-bottom"
       }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_7__["RichText"].Content, {
@@ -907,7 +907,7 @@ var certificatetEdit = /*#__PURE__*/function (_Component) {
           });
         },
         placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__["__"])('Heading...'),
-        className: "home-heading"
+        className: "portfolio-heading"
       }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])("span", {
         className: "naomimoon-border-bottom"
       })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])("div", {
@@ -1010,7 +1010,7 @@ var certificateSave = /*#__PURE__*/function (_Component) {
       }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_7__["RichText"].Content, {
         tagName: "h2",
         value: heading,
-        className: "home-heading"
+        className: "portfolio-heading"
       }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("span", {
         className: "naomimoon-border-bottom"
       })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("div", {
@@ -1411,7 +1411,7 @@ var contactEdit = /*#__PURE__*/function (_Component) {
           });
         },
         placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__["__"])('Heading...'),
-        className: "home-heading"
+        className: "portfolio-heading"
       }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])("span", {
         className: "naomimoon-border-bottom"
       })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])("div", {
@@ -1513,7 +1513,7 @@ var contactSave = /*#__PURE__*/function (_Component) {
       }, toggleHeading && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("div", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_7__["RichText"].Content, {
         tagName: "h2",
         value: heading,
-        className: "home-heading"
+        className: "portfolio-heading"
       }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("span", {
         className: "naomimoon-border-bottom"
       })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("div", {
@@ -1846,7 +1846,7 @@ var experienceEdit = /*#__PURE__*/function (_Component) {
           });
         },
         placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__["__"])('Heading...'),
-        className: "home-heading mb-30"
+        className: "portfolio-heading mb-30"
       }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])("span", {
         className: "naomimoon-border-bottom"
       })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])("div", {
@@ -1949,7 +1949,7 @@ var experienceSave = /*#__PURE__*/function (_Component) {
       }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_7__["RichText"].Content, {
         tagName: "h2",
         value: heading,
-        className: "home-heading mb-30"
+        className: "portfolio-heading mb-30"
       }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("span", {
         className: "naomimoon-border-bottom"
       })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("div", {
@@ -2099,8 +2099,8 @@ var heroEdit = /*#__PURE__*/function (_Component) {
           subHeading = attributes.subHeading,
           description = attributes.description;
       return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_8__["InspectorControls"], null), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("div", {
-        className: "hero-block naomimoon-homepage__hero align-center",
-        id: "home"
+        className: "hero-block naomimoon-portfolio__hero align-center",
+        id: "portfolio"
       }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("div", {
         className: "overlay-wrapper"
       }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("div", {
@@ -2213,8 +2213,8 @@ var heroSave = /*#__PURE__*/function (_Component) {
           subHeading = attributes.subHeading,
           description = attributes.description;
       return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("div", {
-        className: "hero-block naomimoon-homepage__hero align-center",
-        id: "home"
+        className: "hero-block naomimoon-portfolio__hero align-center",
+        id: "portfolio"
       }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("div", {
         className: "overlay-wrapper"
       }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("div", {
@@ -2445,7 +2445,7 @@ var projectEdit = /*#__PURE__*/function (_Component) {
           });
         },
         placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_6__["__"])('Heading...'),
-        className: "home-heading"
+        className: "portfolio-heading"
       }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("div", {
         className: "row",
         style: flexStyle
@@ -2612,7 +2612,7 @@ var projectSave = /*#__PURE__*/function (_Component) {
       }, toggleHeading && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_7__["RichText"].Content, {
         tagName: "h2",
         value: heading,
-        className: "home-heading"
+        className: "portfolio-heading"
       }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("div", {
         className: "row",
         style: flexStyle

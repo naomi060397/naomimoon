@@ -170,7 +170,7 @@ export default class experienceEdit extends Component {
                                 value={ heading }
                                 onChange={ ( heading ) => setAttributes( { heading } ) }
                                 placeholder={ __( 'Heading...' ) }
-                                className="home-heading mb-30"
+                                className="portfolio-heading mb-30"
                             />
                             <span className='naomimoon-border-bottom'></span>
                         </div>

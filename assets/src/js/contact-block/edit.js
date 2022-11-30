@@ -252,7 +252,7 @@ export default class contactEdit extends Component {
                             value={ heading }
                             onChange={ ( heading ) => setAttributes( { heading } ) }
                             placeholder={ __( 'Heading...' ) }
-                            className="home-heading"
+                            className="portfolio-heading"
                         />
                         <span className="naomimoon-border-bottom"></span>
                     </div>

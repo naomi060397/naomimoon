@@ -3,8 +3,8 @@
 	background: $background;
 	color: $white;
 	font-family: 'Nunito', sans-serif;
-	/* HOMEPAGE */
-	.home-heading {
+	/* Portfolio */
+	.portfolio-heading {
 		font-size: 40px;
 		@media (max-width: $size-phone) {
 			font-size: 30px;
@@ -18,10 +18,10 @@
 	p {
 		line-height: 30px;
 	}
-	&.naomimoon-homepage__content {
+	&.naomimoon-portfolio__content {
 		box-shadow: 0 0 15px rgba(0,0,0,.4);
 	}
-	&.naomimoon-homepage__hero {
+	&.naomimoon-portfolio__hero {
 		width: 100%;
 		padding: 32vh 0;
 		background: linear-gradient(180deg, #ff79c5bd -90%, #bd93f9ac 50%, #282a36bd 140%);
@@ -59,7 +59,7 @@
 			}
 		}
 	}
-	&.naomimoon-homepage__about {
+	&.naomimoon-portfolio__about {
 		.square-border {
 			border: 2px solid $purple;
 			border-radius: 10px;
@@ -74,7 +74,7 @@
 			margin: auto;
 		}
 	}
-	&.naomimoon-homepage__experience {
+	&.naomimoon-portfolio__experience {
 		.row {
 			justify-content: center;
 			margin-bottom: 20px;

@@ -18,12 +18,12 @@ export default class aboutSave extends Component {
         } = attributes;
 
         return (
-            <div className="about-block naomimoon-homepage__about container" id="about">
+            <div className="about-block naomimoon-portfolio__about container" id="about">
                 <div className="square-border">
                     <RichText.Content
                         tagName="h1"
                         value={ heading }
-                        className="home-heading mb-10"
+                        className="portfolio-heading mb-10"
                     />
                     <span class="naomimoon-border-bottom"></span>
                     <RichText.Content

@@ -19,7 +19,7 @@ export default class heroSave extends Component {
         } = attributes;
 
         return (
-            <div className="hero-block naomimoon-homepage__hero align-center" id="home">
+            <div className="hero-block naomimoon-portfolio__hero align-center" id="portfolio">
                 <div className="overlay-wrapper"></div>
                 <div className="hero-card">
                     <RichText.Content

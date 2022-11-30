@@ -147,11 +147,11 @@ p.submit {
   border-color: #808080 !important; }
 
 /* Body and Blocks */
-body.home, body.page-template {
+body.portfolio, body.page-template {
   background: #282a36;
   color: #F8F8F2; }
 
-.naomimoon-homepage__hero .hero-card,
+.naomimoon-portfolio__hero .hero-card,
 .experience-heading, .experience-block .col,
 .certificate-block .certificate-heading,
 .certificate-block .col {
@@ -168,7 +168,7 @@ body.home, body.page-template {
 .contact-block a h4 {
   color: #F8F8F2; }
 
-body.home a:hover,
+body.portfolio a:hover,
 body.page-template a:hover,
 .certificate-block .col:hover p a,
 .contact-block a h4:hover,
@@ -187,14 +187,14 @@ body.page-template a:hover,
 .naomimoon-border-bottom {
   background: #BD93F9; }
 
-.naomimoon-homepage__about .square-border {
+.naomimoon-portfolio__about .square-border {
   border: 2px solid #BD93F9; }
 
 .contact-block img {
   border-bottom: 2px solid #BD93F9; }
 
 /* Gradient */
-.naomimoon-homepage__hero {
+.naomimoon-portfolio__hero {
   background: linear-gradient(180deg, #FF79C6 -20%, #BD93F9 70%); }
 
 .experience-block {

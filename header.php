@@ -34,11 +34,11 @@ $header_logo           = ( isset( $theme_general_options['naomimoon_header_logo'
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<style>
 		/* Body and Blocks */
-		body.home, body.page-template {
+		body.portfolio, body.page-template {
 			background: <?php echo esc_html( $naomimoon_background ); ?>;
 			color: <?php echo esc_html( $naomimoon_body_font ); ?>;
 		}
-		.naomimoon-homepage__hero .hero-card,
+		.naomimoon-portfolio__hero .hero-card,
 		.experience-heading, .experience-block .col,
 		.certificate-block .certificate-heading,
 		.certificate-block .col {
@@ -56,7 +56,7 @@ $header_logo           = ( isset( $theme_general_options['naomimoon_header_logo'
 		.contact-block a h4 {
 			color: <?php echo esc_html( $naomimoon_body_font ); ?>;
 		}
-		body.home a:hover,
+		body.portfolio a:hover,
 		body.page-template a:hover,
 		.certificate-block .col:hover p a,
 		.contact-block a h4:hover,
@@ -91,7 +91,7 @@ $header_logo           = ( isset( $theme_general_options['naomimoon_header_logo'
 		.naomimoon-border-bottom {
 			background: <?php echo esc_html( $naomimoon_accent ); ?>;
 		}
-		.naomimoon-homepage__about .square-border {
+		.naomimoon-portfolio__about .square-border {
 			border: 2px solid <?php echo esc_html( $naomimoon_accent ); ?>;
 		}
 		.contact-block img {
@@ -100,14 +100,14 @@ $header_logo           = ( isset( $theme_general_options['naomimoon_header_logo'
 		.site-footer .site-info .sep, .project-block .col h4 {
 			color: <?php echo esc_html( $naomimoon_accent ); ?>;
 		}
-		.naomimoon-homepage .seperator {
+		.naomimoon-portfolio .seperator {
 			background: <?php echo esc_html( $naomimoon_accent ); ?>;
 		}
 		.project-block .col h4 {
 			border-bottom: 1px solid <?php echo esc_html( $naomimoon_accent ); ?>;
 		}
 		/* Gradient */
-		.naomimoon-homepage__hero {
+		.naomimoon-portfolio__hero {
 			background: linear-gradient(180deg, <?php echo esc_html( $naomimoon_gradient_1 ); ?> -20%, <?php echo esc_html( $naomimoon_gradient_2 ); ?> 70%)
 		}
 		.experience-block {

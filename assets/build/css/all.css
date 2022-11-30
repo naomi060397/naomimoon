@@ -10,10 +10,10 @@ html {
   html.wp-toolbar {
     margin-top: 0; }
 
-body.home, body.page-template {
+body.portfolio, body.page-template {
   margin: 0;
   width: 100%; }
-  body.home a, body.page-template a {
+  body.portfolio a, body.page-template a {
     text-decoration: none; }
 
 .naomimoon-border-bottom {
@@ -352,8 +352,8 @@ html :where(.editor-styles-wrapper) h4 {
   background: #282a36;
   color: #F8F8F2;
   font-family: 'Nunito', sans-serif;
-  /* HOMEPAGE */ }
-  .editor-styles-wrapper.block-editor-writing-flow .home-heading {
+  /* Portfolio */ }
+  .editor-styles-wrapper.block-editor-writing-flow .portfolio-heading {
     font-size: 40px;
     text-align: center;
     top: 54px;
@@ -361,19 +361,19 @@ html :where(.editor-styles-wrapper) h4 {
     text-transform: uppercase;
     letter-spacing: 5px; }
     @media (max-width: 420px) {
-      .editor-styles-wrapper.block-editor-writing-flow .home-heading {
+      .editor-styles-wrapper.block-editor-writing-flow .portfolio-heading {
         font-size: 30px; } }
   .editor-styles-wrapper.block-editor-writing-flow p {
     line-height: 30px; }
-  .editor-styles-wrapper.block-editor-writing-flow.naomimoon-homepage__content {
+  .editor-styles-wrapper.block-editor-writing-flow.naomimoon-portfolio__content {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.4); }
-  .editor-styles-wrapper.block-editor-writing-flow.naomimoon-homepage__hero {
+  .editor-styles-wrapper.block-editor-writing-flow.naomimoon-portfolio__hero {
     width: 100%;
     padding: 32vh 0;
     background: linear-gradient(180deg, #ff79c5bd -90%, #bd93f9ac 50%, #282a36bd 140%);
     background-size: cover;
     background-attachment: fixed; }
-    .editor-styles-wrapper.block-editor-writing-flow.naomimoon-homepage__hero .hero-card {
+    .editor-styles-wrapper.block-editor-writing-flow.naomimoon-portfolio__hero .hero-card {
       background-color: #282a36;
       backdrop-filter: blur(5px);
       padding: 20px;
@@ -382,10 +382,10 @@ html :where(.editor-styles-wrapper) h4 {
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
       margin: 0 auto; }
       @media (max-width: 900px) {
-        .editor-styles-wrapper.block-editor-writing-flow.naomimoon-homepage__hero .hero-card {
+        .editor-styles-wrapper.block-editor-writing-flow.naomimoon-portfolio__hero .hero-card {
           max-width: 100%;
           border-radius: 0; } }
-      .editor-styles-wrapper.block-editor-writing-flow.naomimoon-homepage__hero .hero-card h1 {
+      .editor-styles-wrapper.block-editor-writing-flow.naomimoon-portfolio__hero .hero-card h1 {
         text-transform: lowercase;
         font-weight: 600;
         font-size: 80px;
@@ -393,41 +393,41 @@ html :where(.editor-styles-wrapper) h4 {
         line-height: 100px;
         cursor: default;
         color: #F8F8F2; }
-      .editor-styles-wrapper.block-editor-writing-flow.naomimoon-homepage__hero .hero-card h3 {
+      .editor-styles-wrapper.block-editor-writing-flow.naomimoon-portfolio__hero .hero-card h3 {
         font-size: 22px;
         margin: 30px 0;
         font-weight: 300; }
-      .editor-styles-wrapper.block-editor-writing-flow.naomimoon-homepage__hero .hero-card h4 {
+      .editor-styles-wrapper.block-editor-writing-flow.naomimoon-portfolio__hero .hero-card h4 {
         font-weight: 200;
         padding-bottom: 15px; }
-  .editor-styles-wrapper.block-editor-writing-flow.naomimoon-homepage__about .square-border {
+  .editor-styles-wrapper.block-editor-writing-flow.naomimoon-portfolio__about .square-border {
     border: 2px solid #BD93F9;
     border-radius: 10px;
     max-width: 770px;
     margin: auto; }
     @media (max-width: 900px) {
-      .editor-styles-wrapper.block-editor-writing-flow.naomimoon-homepage__about .square-border {
+      .editor-styles-wrapper.block-editor-writing-flow.naomimoon-portfolio__about .square-border {
         border: none; } }
-  .editor-styles-wrapper.block-editor-writing-flow.naomimoon-homepage__about p {
+  .editor-styles-wrapper.block-editor-writing-flow.naomimoon-portfolio__about p {
     max-width: 710px;
     margin: auto; }
-  .editor-styles-wrapper.block-editor-writing-flow.naomimoon-homepage__experience .row {
+  .editor-styles-wrapper.block-editor-writing-flow.naomimoon-portfolio__experience .row {
     justify-content: center;
     margin-bottom: 20px;
     max-width: 1000px;
     margin: auto; }
     @media (max-width: 540px) {
-      .editor-styles-wrapper.block-editor-writing-flow.naomimoon-homepage__experience .row {
+      .editor-styles-wrapper.block-editor-writing-flow.naomimoon-portfolio__experience .row {
         justify-content: left; } }
-  .editor-styles-wrapper.block-editor-writing-flow.naomimoon-homepage__experience .col {
+  .editor-styles-wrapper.block-editor-writing-flow.naomimoon-portfolio__experience .col {
     background: #21242f;
     border-radius: 10px; }
     @media (max-width: 540px) {
-      .editor-styles-wrapper.block-editor-writing-flow.naomimoon-homepage__experience .col {
+      .editor-styles-wrapper.block-editor-writing-flow.naomimoon-portfolio__experience .col {
         flex: 0 0 100%; } }
-  .editor-styles-wrapper.block-editor-writing-flow.naomimoon-homepage__experience h2 {
+  .editor-styles-wrapper.block-editor-writing-flow.naomimoon-portfolio__experience h2 {
     margin-bottom: 30px; }
-  .editor-styles-wrapper.block-editor-writing-flow.naomimoon-homepage__experience h3 {
+  .editor-styles-wrapper.block-editor-writing-flow.naomimoon-portfolio__experience h3 {
     margin: 0;
     padding: 10px 0;
     color: black;
@@ -435,22 +435,22 @@ html :where(.editor-styles-wrapper) h4 {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     letter-spacing: 1.5px; }
-  .editor-styles-wrapper.block-editor-writing-flow.naomimoon-homepage__experience ul {
+  .editor-styles-wrapper.block-editor-writing-flow.naomimoon-portfolio__experience ul {
     text-align: left;
     padding-right: 25px; }
-    .editor-styles-wrapper.block-editor-writing-flow.naomimoon-homepage__experience ul li {
+    .editor-styles-wrapper.block-editor-writing-flow.naomimoon-portfolio__experience ul li {
       font-weight: 300;
       line-height: 30px; }
-    .editor-styles-wrapper.block-editor-writing-flow.naomimoon-homepage__experience ul.php-ul, .editor-styles-wrapper.block-editor-writing-flow.naomimoon-homepage__experience ul.other-ul {
+    .editor-styles-wrapper.block-editor-writing-flow.naomimoon-portfolio__experience ul.php-ul, .editor-styles-wrapper.block-editor-writing-flow.naomimoon-portfolio__experience ul.other-ul {
       padding-right: 21px; }
       @media (max-width: 765px) {
-        .editor-styles-wrapper.block-editor-writing-flow.naomimoon-homepage__experience ul.php-ul, .editor-styles-wrapper.block-editor-writing-flow.naomimoon-homepage__experience ul.other-ul {
+        .editor-styles-wrapper.block-editor-writing-flow.naomimoon-portfolio__experience ul.php-ul, .editor-styles-wrapper.block-editor-writing-flow.naomimoon-portfolio__experience ul.other-ul {
           padding-right: 19.5px; } }
       @media (max-width: 761px) {
-        .editor-styles-wrapper.block-editor-writing-flow.naomimoon-homepage__experience ul.php-ul, .editor-styles-wrapper.block-editor-writing-flow.naomimoon-homepage__experience ul.other-ul {
+        .editor-styles-wrapper.block-editor-writing-flow.naomimoon-portfolio__experience ul.php-ul, .editor-styles-wrapper.block-editor-writing-flow.naomimoon-portfolio__experience ul.other-ul {
           padding-right: 28px; } }
     @media (max-width: 761px) {
-      .editor-styles-wrapper.block-editor-writing-flow.naomimoon-homepage__experience ul.other-ul, .editor-styles-wrapper.block-editor-writing-flow.naomimoon-homepage__experience ul.design-ul {
+      .editor-styles-wrapper.block-editor-writing-flow.naomimoon-portfolio__experience ul.other-ul, .editor-styles-wrapper.block-editor-writing-flow.naomimoon-portfolio__experience ul.design-ul {
         padding: 0 45.5px; } }
   .editor-styles-wrapper.block-editor-writing-flow .seperator {
     width: 100%;
@@ -499,29 +499,29 @@ html :where(.editor-styles-wrapper) h4 {
       background: #44475A; }
 
 /*
-	Homepage styles
+	Portfolio styles
 */
-.naomimoon-homepage {
+.naomimoon-portfolio {
   margin-top: 52px; }
-  .naomimoon-homepage .home-heading {
+  .naomimoon-portfolio .portfolio-heading {
     font-size: 40px;
     text-align: center;
     top: 54px;
     text-transform: uppercase;
     letter-spacing: 5px; }
     @media (max-width: 420px) {
-      .naomimoon-homepage .home-heading {
+      .naomimoon-portfolio .portfolio-heading {
         font-size: 30px; } }
-  .naomimoon-homepage p {
+  .naomimoon-portfolio p {
     line-height: 30px; }
-  .naomimoon-homepage__content {
+  .naomimoon-portfolio__content {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.4); }
-  .naomimoon-homepage__hero {
+  .naomimoon-portfolio__hero {
     width: 100%;
     padding: 32vh 0;
     background-size: cover;
     background-attachment: fixed; }
-    .naomimoon-homepage__hero .hero-card {
+    .naomimoon-portfolio__hero .hero-card {
       backdrop-filter: blur(5px);
       padding: 20px;
       border-radius: 20px;
@@ -529,37 +529,37 @@ html :where(.editor-styles-wrapper) h4 {
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
       margin: 0 auto; }
       @media (max-width: 900px) {
-        .naomimoon-homepage__hero .hero-card {
+        .naomimoon-portfolio__hero .hero-card {
           max-width: 100%;
           border-radius: 0; } }
-      .naomimoon-homepage__hero .hero-card h1 {
+      .naomimoon-portfolio__hero .hero-card h1 {
         text-transform: lowercase;
         font-weight: 600;
         font-size: 80px;
         margin: 20px 0 15px;
         line-height: 100px;
         cursor: default; }
-      .naomimoon-homepage__hero .hero-card h3 {
+      .naomimoon-portfolio__hero .hero-card h3 {
         font-size: 22px;
         margin: 30px 0;
         font-weight: 300; }
-      .naomimoon-homepage__hero .hero-card h4 {
+      .naomimoon-portfolio__hero .hero-card h4 {
         font-weight: 200;
         padding-bottom: 15px; }
-  .naomimoon-homepage__about .square-border {
+  .naomimoon-portfolio__about .square-border {
     border-radius: 10px;
     max-width: 762px;
     margin: auto; }
     @media (max-width: 900px) {
-      .naomimoon-homepage__about .square-border {
+      .naomimoon-portfolio__about .square-border {
         border: none; } }
-  .naomimoon-homepage__about p {
+  .naomimoon-portfolio__about p {
     max-width: 710px;
     margin: auto; }
-  .naomimoon-homepage__certs ul {
+  .naomimoon-portfolio__certs ul {
     margin-left: auto;
     font-size: 19px; }
-  .naomimoon-homepage .seperator {
+  .naomimoon-portfolio .seperator {
     width: 100%;
     padding: 1px 0;
     background-size: cover;
@@ -694,11 +694,11 @@ html :where(.editor-styles-wrapper) h4 {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px; }
-    .certificate-block .certificate-heading .home-heading {
+    .certificate-block .certificate-heading .portfolio-heading {
       margin: 0;
       margin-bottom: 20px; }
       @media (max-width: 460px) {
-        .certificate-block .certificate-heading .home-heading {
+        .certificate-block .certificate-heading .portfolio-heading {
           font-size: 28px; } }
     .certificate-block .certificate-heading .naomimoon-border-bottom {
       margin-bottom: 20px; }
@@ -706,7 +706,7 @@ html :where(.editor-styles-wrapper) h4 {
 .contact-block {
   margin-bottom: 120px;
   /* EDITOR */ }
-  .contact-block .home-heading {
+  .contact-block .portfolio-heading {
     margin-bottom: 20px; }
   .contact-block .row {
     justify-content: center;

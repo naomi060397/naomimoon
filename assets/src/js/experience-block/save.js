@@ -25,7 +25,7 @@ export default class experienceSave extends Component {
                         <RichText.Content
                             tagName="h2"
                             value={ heading }
-                            className="home-heading mb-30"
+                            className="portfolio-heading mb-30"
                         />
                         <span className='naomimoon-border-bottom'></span>
                     </div>

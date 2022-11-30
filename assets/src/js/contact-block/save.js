@@ -29,7 +29,7 @@ export default class contactSave extends Component {
                     <RichText.Content
                         tagName="h2"
                         value={ heading }
-                        className="home-heading"
+                        className="portfolio-heading"
                     />
                     <span className="naomimoon-border-bottom"></span>
                 </div>
