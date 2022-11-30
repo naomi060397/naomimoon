@@ -28,6 +28,7 @@ class Blocks {
 			'naomimoon/hero',
 			'naomimoon/about',
 			'naomimoon/experience',
+			'naomimoon/links',
 		);
 	}
 

@@ -7,18 +7,22 @@ import { registerBlockType } from '@wordpress/blocks';
 /**
  * Import components
  */
-import contactEdit from './edit';
-import contactSave from './save';
+import linkEdit from './edit';
+import linkSave from './save';
 
-registerBlockType("naomimoon/contact", {
-    title: __( "Naomimoon Contact" ),
-    description: __( "2 Column block" ),
-    icon: 'dashicons dashicons-share naomimoon-icon',
+registerBlockType("naomimoon/links", {
+    title: __( "Naomimoon Link Block" ),
+    description: __( "List block" ),
+    icon: 'dashicons dashicons-admin-links naomimoon-icon',
     category: 'naomimoon',
     attributes: {
         heading: {
             type: 'string',
-            default: ''
+            default: 'Naomi Moon'
+        },
+        subHeading: {
+            type: 'string',
+            default: 'she/her'
         },
         toggleHeading: {
             type: 'boolean',
@@ -28,11 +32,8 @@ registerBlockType("naomimoon/contact", {
             type: 'array',
             default: []
         },
-        flexWidth: {
-            type: 'number',
-            default: 23
-        }
     },
-    edit: contactEdit,
-    save: contactSave,
+    edit: linkEdit,
+    save: linkSave,
 });
+

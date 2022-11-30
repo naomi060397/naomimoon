@@ -565,6 +565,10 @@ html :where(.editor-styles-wrapper) h4 {
     background-size: cover;
     background-attachment: fixed; }
 
+/* Homepage styles */
+.page-template-page-home header {
+  display: none; }
+
 .project-block {
   max-width: 770px;
   padding-bottom: 20px;
