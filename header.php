@@ -113,8 +113,27 @@ $header_logo           = ( isset( $theme_general_options['naomimoon_header_logo'
 		.experience-block {
 			background: linear-gradient(180deg, <?php echo esc_html( $naomimoon_gradient_2 ); ?> 0%, <?php echo esc_html( $naomimoon_gradient_1 ); ?> 90% );
 		}
-		.certificate-block {
+		.certificate-block, .link-block {
 			background: linear-gradient(180deg, <?php echo esc_html( $naomimoon_gradient_1 ); ?> -20%, <?php echo esc_html( $naomimoon_gradient_2 ); ?> 70%);
+		}
+		/* Link block */
+		.link-block .col {
+			background: <?php echo esc_html( $naomimoon_accent ); ?>;
+		}
+		.link-block .col:hover {
+			background: <?php echo esc_html( $naomimoon_link_hover ); ?>;
+		}
+		.link-card {
+			background: <?php echo esc_html( $naomimoon_background ); ?>;
+		}
+		.link-block .col p {
+			color: <?php echo esc_html( $naomimoon_background_secondary ); ?>;
+		}
+		.link-block .col a {
+			color: <?php echo esc_html( $naomimoon_background_secondary ); ?>;
+		}
+		.link-block .link-heading {
+			color: <?php echo esc_html( $naomimoon_accent ); ?>;
 		}
 	</style>
 	<?php wp_head(); ?>

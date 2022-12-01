@@ -203,4 +203,23 @@ body.page-template a:hover,
 .certificate-block {
   background: linear-gradient(180deg, #FF79C6 -20%, #BD93F9 70%); }
 
+/* Link block */
+.link-block {
+  background: linear-gradient(180deg, #FF79C6 -20%, #BD93F9 70%); }
+
+.link-block .col {
+  background: #BD93F9; }
+
+.link-block .col:hover {
+  background: #FF79C6; }
+
+.link-card {
+  background: #282a36; }
+
+.link-block .col p, .link-block .col a {
+  color: #21242f; }
+
+.editor-styles-wrapper.block-editor-writing-flow p {
+  line-height: normal; }
+
 /*# sourceMappingURL=admin.css.map */

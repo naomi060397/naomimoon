@@ -29,7 +29,8 @@ export default class linkEdit extends Component {
             dataArray: [
             {
                 index: 0,
-                value: ''
+                value: '',
+                icon: '',
             }
             ]
         });
@@ -43,7 +44,8 @@ export default class linkEdit extends Component {
         const { dataArray } = attributes;
         let attr = {
             index: dataArray.length,
-            value: ''
+            value: '',
+            icon: '',
         }
         setAttributes({ 
             dataArray: [...dataArray, attr]
@@ -88,11 +90,44 @@ export default class linkEdit extends Component {
                             value={data.value}
                             placeholder={__( "Enter Text..." )}
                             onChange={value => {
-                            let arrayCopy = [...dataArray];
-                            arrayCopy[index].value = value;
-                            setAttributes({ dataArray: arrayCopy });
+                                let arrayCopy = [...dataArray];
+                                arrayCopy[index].value = value;
+                                setAttributes({ dataArray: arrayCopy });
                             }}
                         />
+                        <div className='image'>
+                        {!data.icon &&
+                            <MediaUploadCheck>
+                                <MediaUpload
+                                    onSelect={ ( media ) => {
+                                        let arrayCopy = [...dataArray];
+                                        arrayCopy[index].icon = media.url;
+                                        setAttributes({ dataArray: arrayCopy });
+                                    }}
+                                    value={ data.icon }
+                                    render={ ( { open } ) => (
+                                        <Button onClick={ open } className="naomi-mediaupload" style={{right: "27px"}}>Add Icon</Button>
+                                    ) }
+                                />
+                            </MediaUploadCheck>
+                        }
+                        {data.icon &&
+                            <MediaUploadCheck>
+                                <MediaUpload
+                                    onSelect={ ( media ) => {
+                                        let arrayCopy = [...dataArray];
+                                        arrayCopy[index].icon = media.url;
+                                        setAttributes({ dataArray: arrayCopy });
+                                    }}
+                                    value={ data.icon }
+                                    render={ ( { open } ) => (
+                                        <Button onClick={ open } className="naomi-mediaupload replace">Replace Icon</Button>
+                                    ) }
+                                />
+                            </MediaUploadCheck>
+                        }
+                            <img class="link-item-icon" src={data.icon}></img>
+                        </div>
                         <div className="item-action-wrap">
                             <div className="move-item">
                                 {0 < index && (
@@ -150,30 +185,31 @@ export default class linkEdit extends Component {
                 </InspectorControls>
 				<div className='link-block' id="links">
                     <div className='container'>
-                    {toggleHeading && 
-                        <div className="link-heading">
-                            <RichText
-                                tagName="h2"
-                                value={ heading }
-                                onChange={ ( heading ) => setAttributes( { heading } ) }
-                                placeholder={ __( 'Heading...' ) }
-                            />
-                            <span className='naomimoon-border-bottom'></span>
-                        </div>
-                    }
-                        <div className="row">
-                            {linkListing}
-                        </div>
-                        <div className="add-item-wrap">
-                            <Tooltip text={__( "Add New Item" )}>
-                            <i
-                                className="dashicons dashicons-plus-alt2"
-                                aria-hidden="true"
-                                onClick={() => {
-                                this.addNewItem();
-                                }}
-                            ></i>
-                            </Tooltip>
+                        <div className='link-card'>
+                        {toggleHeading && 
+                            <div className="link-heading">
+                                <RichText
+                                    tagName="h2"
+                                    value={ heading }
+                                    onChange={ ( heading ) => setAttributes( { heading } ) }
+                                    placeholder={ __( 'Heading...' ) }
+                                />
+                            </div>
+                        }
+                            <div className="row">
+                                {linkListing}
+                            </div>
+                            <div className="add-item-wrap">
+                                <Tooltip text={__( "Add New Item" )}>
+                                <i
+                                    className="dashicons dashicons-plus-alt2"
+                                    aria-hidden="true"
+                                    onClick={() => {
+                                    this.addNewItem();
+                                    }}
+                                ></i>
+                                </Tooltip>
+                            </div>
                         </div>
                     </div>
 				</div>

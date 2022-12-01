@@ -267,3 +267,22 @@ body.page-template a:hover,
 .certificate-block {
 	background: linear-gradient(180deg, $pink -20%, $purple 70%);
 }
+/* Link block */
+.link-block {
+	background: linear-gradient(180deg, $pink -20%, $purple 70%);
+}
+.link-block .col {
+	background: $purple;
+}
+.link-block .col:hover {
+	background: $pink;
+}
+.link-card {
+	background: $background;
+}
+.link-block .col p, .link-block .col a {
+	color: $background-dark;
+}
+.editor-styles-wrapper.block-editor-writing-flow p {
+	line-height: normal;
+}

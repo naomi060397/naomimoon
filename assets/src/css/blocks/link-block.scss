@@ -1,0 +1,82 @@
+.link-block {
+	background-size: cover;
+	background-attachment: fixed;
+	padding: 125px 0;
+	height: 76vh;
+	.link-card {
+		max-width: 390px;
+		margin: 0 auto;
+		border-radius: 10px;
+		padding: 35px;
+		@media (max-width: 500px) {
+			padding: 35px 20px;
+		}
+	}
+	.row {
+		gap: 14px;
+		justify-content: center;
+		max-width: 770px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.col {
+		flex: 0 0 100%;
+		text-align: left;
+		border-radius: 50px;
+		position: relative;
+		padding: 0;
+		display: flex;
+		@media (max-width: 540px) {
+			flex: 0 0 100%;
+		}
+		transition: ease-in-out .3s;
+		&:hover {
+			cursor: pointer;
+			.item-action-wrap {
+				display: flex;
+				margin-top: -19px;
+   				left: 21px;
+			}
+		}
+		p {
+			flex-basis: 85%;
+			margin: 12px 0;
+			font-size: 18px;
+			padding: 0 27px;
+			@media (max-width: 460px) {
+				font-size: 15px;
+			}
+			a {
+				text-decoration: none;
+			}
+		}
+		.image {
+			flex-basis: 15%;
+			text-align: center;
+			padding: 7px 15px 0 0;
+			.link-item-icon {
+				max-width: 33px;
+			}
+		}
+		.naomi-mediaupload {
+			position: absolute;
+			right: 82px;
+			background: $background_dark;
+			color: $purple;
+			&:hover {
+				background: $purple;
+				color: $background_dark;
+			}
+		}
+	}
+	.link-heading h2 {
+		padding: 13px 15px 10px;
+		max-width: 738px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 20px;
+		text-align: center;
+		font-size: 27px;
+		font-weight: 400;
+	}
+}
