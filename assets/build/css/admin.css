@@ -225,4 +225,9 @@ body.page-template a:hover,
 .link-block .col p a {
   padding: 0; }
 
+.is-root-container, .edit-post-visual-editor__post-title-wrapper {
+  max-width: 1290px;
+  margin: 0 auto;
+  padding: 0 20px; }
+
 /*# sourceMappingURL=admin.css.map */

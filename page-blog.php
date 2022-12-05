@@ -18,13 +18,24 @@ get_header();
 
 			<?php
 
+			$paged = max( 1, get_query_var( 'paged' ) ); //phpcs:ignore
+
+			$posts_per_page = 4;
+			$offset_start   = 0;
+			$offset         = $paged ? ( $paged - 1 ) * $posts_per_page + $offset_start : $offset_start;
+
 			$args = array(
 				'post_type'      => 'post',
 				'post_status'    => 'publish',
-				'posts_per_page' => 3,
+				'posts_per_page' => $posts_per_page,
+				'offset'         => $offset,
 			);
 
 			$naomimoon_posts = new WP_Query( $args );
+
+			$naomimoon_posts->found_posts   = max( 0, $naomimoon_posts->found_posts - $offset_start );
+			$naomimoon_posts->max_num_pages = ceil( $naomimoon_posts->found_posts / $posts_per_page );
+
 			?>
 			<div class="naomimoon-blog__post container">
 				<?php
@@ -34,13 +45,21 @@ get_header();
 						?>
 						<div class="flex">
 							<h2><?php the_title(); ?></h2>
-							<span><?php the_date(); ?></span>
+							<span><?php echo get_the_date(); ?></span>
 						</div>
 						<p><?php the_content(); ?></p>
 					<?php endwhile; ?>
-					<?php
-					the_posts_pagination();
-					?>
+					<div class="pagination">
+						<?php
+						echo paginate_links( //phpcs:ignore
+							array(
+								'current' => $paged,
+								'total'   => $naomimoon_posts->max_num_pages,
+							)
+						);
+						?>
+					</div>
+				</div>
 				<?php else : ?>
 					<p><?php echo esc_html( 'There are no posts to display at the moment' ); ?></p>
 				<?php endif; ?>
