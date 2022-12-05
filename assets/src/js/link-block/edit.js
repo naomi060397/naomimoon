@@ -3,7 +3,7 @@
  */
 import { __ } from '@wordpress/i18n';
 import { Component, Fragment } from '@wordpress/element';
-import { PanelBody, Button, ToggleControl, TextareaControl, Tooltip } from '@wordpress/components';
+import { PanelBody, Button, ToggleControl, TextareaControl, Tooltip, RangeControl } from '@wordpress/components';
 import { InspectorControls, RichText, MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';
 
 /**
@@ -75,11 +75,22 @@ export default class linkEdit extends Component {
     render() {
         const { attributes, setAttributes } = this.props;
         const { 
+            avatar,
+            toggleAvatar,
 			heading,
             subHeading,
             toggleHeading,
-            dataArray
+            toggleSubheading,
+            dataArray,
+            itemPadding,
+            itemGap,
         } = attributes;
+
+        const itemStyles = {};
+        itemPadding && (itemStyles.padding = itemPadding + "px 27px");
+
+        const itemContainerStyles = {};
+        itemGap && (itemContainerStyles.gap = itemGap + "px");
 
         const linkListing = dataArray?.map((data, index) => {
             return(
@@ -94,6 +105,7 @@ export default class linkEdit extends Component {
                                 arrayCopy[index].value = value;
                                 setAttributes({ dataArray: arrayCopy });
                             }}
+                            style={itemStyles}
                         />
                         <div className='image'>
                         {!data.icon &&
@@ -175,17 +187,76 @@ export default class linkEdit extends Component {
         return (
             <Fragment>
                 <InspectorControls>
-					<PanelBody title={__("Settings")} initialOpen={true}>
+					<PanelBody title={__("Display")} initialOpen={true}>
+                        <ToggleControl
+							label={__( "Toggle Avatar" )}
+							checked={toggleAvatar}
+							onChange={toggleAvatar=>setAttributes({toggleAvatar})}
+						/>
 						<ToggleControl
 							label={__( "Toggle Heading" )}
 							checked={toggleHeading}
 							onChange={toggleHeading=>setAttributes({toggleHeading})}
 						/>
+                        <ToggleControl
+							label={__( "Toggle Subheading" )}
+							checked={toggleSubheading}
+							onChange={toggleSubheading=>setAttributes({toggleSubheading})}
+						/>
 					</PanelBody>
+                    <PanelBody title={__("Style")} initialOpen={true}>
+                        <RangeControl
+                            label="Item Padding"
+                            value={ itemPadding }
+                            onChange={ ( itemPadding ) => setAttributes({ itemPadding }) }
+                            min={ 12 }
+                            max={ 25 }
+                            step={ .2 }
+                        />
+                        <RangeControl
+                            label="Item Margin"
+                            value={ itemGap }
+                            onChange={ ( itemGap ) => setAttributes({ itemGap }) }
+                            min={ 12 }
+                            max={ 25 }
+                            step={ .2 }
+                        />
+                    </PanelBody>
                 </InspectorControls>
 				<div className='link-block' id="links">
                     <div className='container'>
                         <div className='link-card'>
+                        {toggleAvatar &&
+                            <div className="link-avatar">
+                                {!avatar &&
+                                    <MediaUploadCheck>
+                                        <MediaUpload
+                                            onSelect={ ( media ) =>
+                                                setAttributes({ avatar: media.url })
+                                            }
+                                            value={ avatar }
+                                            render={ ( { open } ) => (
+                                                <Button onClick={ open } className="naomi-mediaupload replace">Add Avatar</Button>
+                                            ) }
+                                        />
+                                    </MediaUploadCheck>
+                                }
+                                {avatar &&
+                                    <MediaUploadCheck>
+                                        <MediaUpload
+                                            onSelect={ ( media ) =>
+                                                setAttributes({ avatar: media.url })
+                                            }
+                                            value={ avatar }
+                                            render={ ( { open } ) => (
+                                                <Button onClick={ open } className="naomi-mediaupload replace">Replace</Button>
+                                            ) }
+                                        />
+                                    </MediaUploadCheck>
+                                }
+                                <img src={avatar}></img>
+                            </div>
+                        }
                         {toggleHeading && 
                             <div className="link-heading">
                                 <RichText
@@ -196,7 +267,17 @@ export default class linkEdit extends Component {
                                 />
                             </div>
                         }
-                            <div className="row">
+                        {toggleSubheading && 
+                            <div className="link-subheading">
+                                <RichText
+                                    tagName="h4"
+                                    value={ subHeading }
+                                    onChange={ ( subHeading ) => setAttributes( { subHeading } ) }
+                                    placeholder={ __( 'Sub Heading...' ) }
+                                />
+                            </div>
+                        }
+                            <div className="row" style={itemContainerStyles}>
                                 {linkListing}
                             </div>
                             <div className="add-item-wrap">

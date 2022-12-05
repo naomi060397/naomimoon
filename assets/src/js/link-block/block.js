@@ -16,6 +16,14 @@ registerBlockType("naomimoon/links", {
     icon: 'dashicons dashicons-admin-links naomimoon-icon',
     category: 'naomimoon',
     attributes: {
+        avatar: {
+            type: 'string',
+            default: ''
+        },
+        toggleAvatar: {
+            type: 'boolean',
+            default: true
+        },
         heading: {
             type: 'string',
             default: 'Naomi Moon'
@@ -28,10 +36,22 @@ registerBlockType("naomimoon/links", {
             type: 'boolean',
             default: true
         },
+        toggleSubheading: {
+            type: 'boolean',
+            default: true
+        },
         dataArray: {
             type: 'array',
             default: []
         },
+        itemPadding: {
+            type: 'number',
+            default: 12
+        },
+        itemGap: {
+            type: 'number',
+            default: 14
+        }
     },
     edit: linkEdit,
     save: linkSave,

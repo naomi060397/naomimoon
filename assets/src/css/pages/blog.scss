@@ -1,0 +1,38 @@
+/* blog styles */
+
+// Hide header
+.page-template-page-blog header {
+	display: none;
+}
+
+.naomimoon-blog {
+	.flex {
+		display: flex;
+	}
+	&__header {
+		margin-top: 52px;
+		height: 200px;
+		background: linear-gradient(180deg, $purple 0%, $pink 90% );
+		h1 {
+			text-align: center;
+			margin: auto;
+			padding: 63px 0;
+			text-transform: uppercase;
+    		letter-spacing: 3px;
+			font-size: 50px;
+		}
+	}
+	&__post {
+		h2 {
+			margin: 30px 0 10px;
+		}
+		span {
+			margin: 40px 0 10px 20px;
+   			font-size: 14px;
+			font-style: italic;
+		}
+		&.container {
+			max-width: 980px;
+		}
+	}
+}

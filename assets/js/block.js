@@ -2273,6 +2273,14 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])("nao
   icon: 'dashicons dashicons-admin-links naomimoon-icon',
   category: 'naomimoon',
   attributes: {
+    avatar: {
+      type: 'string',
+      default: ''
+    },
+    toggleAvatar: {
+      type: 'boolean',
+      default: true
+    },
     heading: {
       type: 'string',
       default: 'Naomi Moon'
@@ -2285,9 +2293,21 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])("nao
       type: 'boolean',
       default: true
     },
+    toggleSubheading: {
+      type: 'boolean',
+      default: true
+    },
     dataArray: {
       type: 'array',
       default: []
+    },
+    itemPadding: {
+      type: 'number',
+      default: 12
+    },
+    itemGap: {
+      type: 'number',
+      default: 14
     }
   },
   edit: _edit__WEBPACK_IMPORTED_MODULE_2__["default"],
@@ -2440,10 +2460,19 @@ var linkEdit = /*#__PURE__*/function (_Component) {
       var _this$props4 = this.props,
           attributes = _this$props4.attributes,
           setAttributes = _this$props4.setAttributes;
-      var heading = attributes.heading,
+      var avatar = attributes.avatar,
+          toggleAvatar = attributes.toggleAvatar,
+          heading = attributes.heading,
           subHeading = attributes.subHeading,
           toggleHeading = attributes.toggleHeading,
-          dataArray = attributes.dataArray;
+          toggleSubheading = attributes.toggleSubheading,
+          dataArray = attributes.dataArray,
+          itemPadding = attributes.itemPadding,
+          itemGap = attributes.itemGap;
+      var itemStyles = {};
+      itemPadding && (itemStyles.padding = itemPadding + "px 27px");
+      var itemContainerStyles = {};
+      itemGap && (itemContainerStyles.gap = itemGap + "px");
       var linkListing = dataArray === null || dataArray === void 0 ? void 0 : dataArray.map(function (data, index) {
         return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])("div", {
           className: "col"
@@ -2458,7 +2487,8 @@ var linkEdit = /*#__PURE__*/function (_Component) {
             setAttributes({
               dataArray: arrayCopy
             });
-          }
+          },
+          style: itemStyles
         }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])("div", {
           className: "image"
         }, !data.icon && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["MediaUploadCheck"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["MediaUpload"], {
@@ -2546,9 +2576,17 @@ var linkEdit = /*#__PURE__*/function (_Component) {
         })))));
       });
       return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["InspectorControls"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_8__["PanelBody"], {
-        title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__["__"])("Settings"),
+        title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__["__"])("Display"),
         initialOpen: true
       }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_8__["ToggleControl"], {
+        label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__["__"])("Toggle Avatar"),
+        checked: toggleAvatar,
+        onChange: function onChange(toggleAvatar) {
+          return setAttributes({
+            toggleAvatar: toggleAvatar
+          });
+        }
+      }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_8__["ToggleControl"], {
         label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__["__"])("Toggle Heading"),
         checked: toggleHeading,
         onChange: function onChange(toggleHeading) {
@@ -2556,6 +2594,39 @@ var linkEdit = /*#__PURE__*/function (_Component) {
             toggleHeading: toggleHeading
           });
         }
+      }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_8__["ToggleControl"], {
+        label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__["__"])("Toggle Subheading"),
+        checked: toggleSubheading,
+        onChange: function onChange(toggleSubheading) {
+          return setAttributes({
+            toggleSubheading: toggleSubheading
+          });
+        }
+      })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_8__["PanelBody"], {
+        title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__["__"])("Style"),
+        initialOpen: true
+      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_8__["RangeControl"], {
+        label: "Item Padding",
+        value: itemPadding,
+        onChange: function onChange(itemPadding) {
+          return setAttributes({
+            itemPadding: itemPadding
+          });
+        },
+        min: 12,
+        max: 25,
+        step: .2
+      }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_8__["RangeControl"], {
+        label: "Item Margin",
+        value: itemGap,
+        onChange: function onChange(itemGap) {
+          return setAttributes({
+            itemGap: itemGap
+          });
+        },
+        min: 12,
+        max: 25,
+        step: .2
       }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])("div", {
         className: "link-block",
         id: "links"
@@ -2563,7 +2634,39 @@ var linkEdit = /*#__PURE__*/function (_Component) {
         className: "container"
       }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])("div", {
         className: "link-card"
-      }, toggleHeading && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])("div", {
+      }, toggleAvatar && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])("div", {
+        className: "link-avatar"
+      }, !avatar && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["MediaUploadCheck"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["MediaUpload"], {
+        onSelect: function onSelect(media) {
+          return setAttributes({
+            avatar: media.url
+          });
+        },
+        value: avatar,
+        render: function render(_ref3) {
+          var open = _ref3.open;
+          return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_8__["Button"], {
+            onClick: open,
+            className: "naomi-mediaupload replace"
+          }, "Add Avatar");
+        }
+      })), avatar && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["MediaUploadCheck"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["MediaUpload"], {
+        onSelect: function onSelect(media) {
+          return setAttributes({
+            avatar: media.url
+          });
+        },
+        value: avatar,
+        render: function render(_ref4) {
+          var open = _ref4.open;
+          return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_8__["Button"], {
+            onClick: open,
+            className: "naomi-mediaupload replace"
+          }, "Replace");
+        }
+      })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])("img", {
+        src: avatar
+      })), toggleHeading && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])("div", {
         className: "link-heading"
       }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["RichText"], {
         tagName: "h2",
@@ -2574,8 +2677,20 @@ var linkEdit = /*#__PURE__*/function (_Component) {
           });
         },
         placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__["__"])('Heading...')
+      })), toggleSubheading && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])("div", {
+        className: "link-subheading"
+      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["RichText"], {
+        tagName: "h4",
+        value: subHeading,
+        onChange: function onChange(subHeading) {
+          return setAttributes({
+            subHeading: subHeading
+          });
+        },
+        placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__["__"])('Sub Heading...')
       })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])("div", {
-        className: "row"
+        className: "row",
+        style: itemContainerStyles
       }, linkListing), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])("div", {
         className: "add-item-wrap"
       }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_8__["Tooltip"], {
@@ -2661,10 +2776,19 @@ var linkSave = /*#__PURE__*/function (_Component) {
       var _this$props = this.props,
           attributes = _this$props.attributes,
           className = _this$props.className;
-      var heading = attributes.heading,
+      var avatar = attributes.avatar,
+          toggleAvatar = attributes.toggleAvatar,
+          heading = attributes.heading,
           subHeading = attributes.subHeading,
           toggleHeading = attributes.toggleHeading,
-          dataArray = attributes.dataArray;
+          toggleSubheading = attributes.toggleSubheading,
+          dataArray = attributes.dataArray,
+          itemPadding = attributes.itemPadding,
+          itemGap = attributes.itemGap;
+      var itemStyles = {};
+      itemPadding && (itemStyles.padding = itemPadding + "px 27px");
+      var itemContainerStyles = {};
+      itemGap && (itemContainerStyles.gap = itemGap + "px");
       return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("div", {
         className: "link-block",
         id: "links"
@@ -2672,19 +2796,30 @@ var linkSave = /*#__PURE__*/function (_Component) {
         className: "container"
       }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("div", {
         className: "link-card"
-      }, toggleHeading && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("div", {
+      }, toggleAvatar && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("div", {
+        className: "link-avatar"
+      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("img", {
+        src: avatar
+      })), toggleHeading && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("div", {
         className: "link-heading"
       }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_7__["RichText"].Content, {
         tagName: "h2",
         value: heading
+      })), toggleSubheading && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("div", {
+        className: "link-subheading"
+      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_7__["RichText"].Content, {
+        tagName: "h4",
+        value: subHeading
       })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("div", {
-        className: "row"
+        className: "row",
+        style: itemContainerStyles
       }, dataArray.map(function (data) {
         return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("div", {
           className: "col"
         }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_7__["RichText"].Content, {
           tagName: "p",
-          value: data.value
+          value: data.value,
+          style: itemStyles
         }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("div", {
           className: "image"
         }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("img", {

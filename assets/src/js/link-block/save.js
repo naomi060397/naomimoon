@@ -12,16 +12,32 @@ export default class linkSave extends Component {
 	render() {
 		const { attributes, className } = this.props;
         const {
+            avatar,
+            toggleAvatar,
             heading,
             subHeading,
             toggleHeading,
+            toggleSubheading,
             dataArray,
+            itemPadding,
+            itemGap,
         } = attributes;
+
+        const itemStyles = {};
+        itemPadding && (itemStyles.padding = itemPadding + "px 27px");
+
+        const itemContainerStyles = {};
+        itemGap && (itemContainerStyles.gap = itemGap + "px");
 
         return (
             <div className='link-block' id="links">
                 <div className='container'>
                     <div className='link-card'>
+                        {toggleAvatar &&
+                            <div className="link-avatar">
+                                <img src={avatar}></img>
+                            </div>
+                        }
                         {toggleHeading &&
                         <div className="link-heading">
                             <RichText.Content
@@ -30,13 +46,22 @@ export default class linkSave extends Component {
                             />
                         </div>
                         }
-                        <div className="row">
+                        {toggleSubheading &&
+                        <div className="link-subheading">
+                            <RichText.Content
+                                tagName="h4"
+                                value={ subHeading }
+                            />
+                        </div>
+                        }
+                        <div className="row" style={itemContainerStyles}>
                         {dataArray.map((data) => {
                             return(
                                 <div className="col">
                                     <RichText.Content
                                         tagName="p"
                                         value={data.value}
+                                        style={itemStyles}
                                     />
                                     <div className="image">
                                         <img class="link-item-icon" src={data.icon}></img>

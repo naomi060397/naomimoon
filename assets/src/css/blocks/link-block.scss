@@ -2,7 +2,7 @@
 	background-size: cover;
 	background-attachment: fixed;
 	padding: 125px 0;
-	height: 76vh;
+	min-height: 76vh;
 	.link-card {
 		max-width: 390px;
 		margin: 0 auto;
@@ -33,26 +33,35 @@
 		&:hover {
 			cursor: pointer;
 			.item-action-wrap {
-				display: flex;
-				margin-top: -19px;
-   				left: 21px;
+				display: -webkit-inline-box;
+				margin: auto;
+				top: 20%;
+				left: 375px;
+			}
+			.naomi-mediaupload {
+				display: block;
 			}
 		}
 		p {
 			flex-basis: 85%;
-			margin: 12px 0;
+			margin: auto;
 			font-size: 18px;
-			padding: 0 27px;
+			padding: 12px 27px;
 			@media (max-width: 460px) {
 				font-size: 15px;
 			}
 			a {
 				text-decoration: none;
+				padding: 15px 210px 15px 0;
+				&:hover {
+					color: black;
+				}
 			}
 		}
 		.image {
 			flex-basis: 15%;
 			text-align: center;
+			margin: auto;
 			padding: 7px 15px 0 0;
 			.link-item-icon {
 				max-width: 33px;
@@ -60,23 +69,54 @@
 		}
 		.naomi-mediaupload {
 			position: absolute;
-			right: 82px;
+			right: 66px;
 			background: $background_dark;
 			color: $purple;
+			display: none;
+			margin: auto;
+			top: 0;
+			bottom: 0;
 			&:hover {
 				background: $purple;
 				color: $background_dark;
 			}
 		}
 	}
+	.link-avatar {
+		text-align: center;
+		&:hover {
+			.naomi-mediaupload {
+				display: block;
+			}
+		}
+		.naomi-mediaupload {
+			position: absolute;
+			background: $purple;
+			color: $background_dark;
+			display: none;
+			margin-left: 159px;
+			margin-top: 34px;
+			&:hover {
+				background: $background_dark;
+				color: $purple;
+			}
+		}
+		img {
+			max-width: 100px;
+			border-radius: 100px;
+		}
+	}
 	.link-heading h2 {
 		padding: 13px 15px 10px;
 		max-width: 738px;
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: 20px;
+		margin: 0;
 		text-align: center;
 		font-size: 27px;
 		font-weight: 400;
+	}
+	.link-subheading h4 {
+		text-align: center;
+		font-weight: 600;
+		margin-bottom: 37px;
 	}
 }

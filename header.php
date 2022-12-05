@@ -132,7 +132,7 @@ $header_logo           = ( isset( $theme_general_options['naomimoon_header_logo'
 		.link-block .col a {
 			color: <?php echo esc_html( $naomimoon_background_secondary ); ?>;
 		}
-		.link-block .link-heading {
+		.link-block .link-subheading, .link-block .link-heading {
 			color: <?php echo esc_html( $naomimoon_accent ); ?>;
 		}
 	</style>

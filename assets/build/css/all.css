@@ -477,14 +477,18 @@ html :where(.editor-styles-wrapper) h4 {
   z-index: 99;
   display: none; }
   .item-action-wrap i {
-    background: white;
-    border: 1px solid black;
+    background: #21242f;
+    border: 1px solid #FF79C6;
     border-right: none;
-    color: black;
+    color: white;
     padding: 4px; }
+    .item-action-wrap i.remove-item {
+      border-right: 1px solid #FF79C6; }
     .item-action-wrap i:hover {
       cursor: pointer;
-      background: #BD93F9; }
+      background: #BD93F9;
+      color: black;
+      border-color: #21242f; }
 
 .add-item-wrap {
   text-align: center;
@@ -568,6 +572,32 @@ html :where(.editor-styles-wrapper) h4 {
 /* Homepage styles */
 .page-template-page-home header {
   display: none; }
+
+/* blog styles */
+.page-template-page-blog header {
+  display: none; }
+
+.naomimoon-blog .flex {
+  display: flex; }
+.naomimoon-blog__header {
+  margin-top: 52px;
+  height: 200px;
+  background: linear-gradient(180deg, #BD93F9 0%, #FF79C6 90%); }
+  .naomimoon-blog__header h1 {
+    text-align: center;
+    margin: auto;
+    padding: 63px 0;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 50px; }
+.naomimoon-blog__post h2 {
+  margin: 30px 0 10px; }
+.naomimoon-blog__post span {
+  margin: 40px 0 10px 20px;
+  font-size: 14px;
+  font-style: italic; }
+.naomimoon-blog__post.container {
+  max-width: 980px; }
 
 .project-block {
   max-width: 770px;
@@ -843,7 +873,7 @@ html :where(.editor-styles-wrapper) h4 {
   background-size: cover;
   background-attachment: fixed;
   padding: 125px 0;
-  height: 76vh; }
+  min-height: 76vh; }
   .link-block .link-card {
     max-width: 390px;
     margin: 0 auto;
@@ -872,41 +902,71 @@ html :where(.editor-styles-wrapper) h4 {
     .link-block .col:hover {
       cursor: pointer; }
       .link-block .col:hover .item-action-wrap {
-        display: flex;
-        margin-top: -19px;
-        left: 21px; }
+        display: -webkit-inline-box;
+        margin: auto;
+        top: 20%;
+        left: 375px; }
+      .link-block .col:hover .naomi-mediaupload {
+        display: block; }
     .link-block .col p {
       flex-basis: 85%;
-      margin: 12px 0;
+      margin: auto;
       font-size: 18px;
-      padding: 0 27px; }
+      padding: 12px 27px; }
       @media (max-width: 460px) {
         .link-block .col p {
           font-size: 15px; } }
       .link-block .col p a {
-        text-decoration: none; }
+        text-decoration: none;
+        padding: 15px 210px 15px 0; }
+        .link-block .col p a:hover {
+          color: black; }
     .link-block .col .image {
       flex-basis: 15%;
       text-align: center;
+      margin: auto;
       padding: 7px 15px 0 0; }
       .link-block .col .image .link-item-icon {
         max-width: 33px; }
     .link-block .col .naomi-mediaupload {
       position: absolute;
-      right: 82px;
+      right: 66px;
       background: #21242f;
-      color: #BD93F9; }
+      color: #BD93F9;
+      display: none;
+      margin: auto;
+      top: 0;
+      bottom: 0; }
       .link-block .col .naomi-mediaupload:hover {
         background: #BD93F9;
         color: #21242f; }
+  .link-block .link-avatar {
+    text-align: center; }
+    .link-block .link-avatar:hover .naomi-mediaupload {
+      display: block; }
+    .link-block .link-avatar .naomi-mediaupload {
+      position: absolute;
+      background: #BD93F9;
+      color: #21242f;
+      display: none;
+      margin-left: 159px;
+      margin-top: 34px; }
+      .link-block .link-avatar .naomi-mediaupload:hover {
+        background: #21242f;
+        color: #BD93F9; }
+    .link-block .link-avatar img {
+      max-width: 100px;
+      border-radius: 100px; }
   .link-block .link-heading h2 {
     padding: 13px 15px 10px;
     max-width: 738px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px;
+    margin: 0;
     text-align: center;
     font-size: 27px;
     font-weight: 400; }
+  .link-block .link-subheading h4 {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 37px; }
 
 /*# sourceMappingURL=all.css.map */

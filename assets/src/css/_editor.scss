@@ -157,14 +157,19 @@
 	z-index: 99;
 	display: none;
 	i {
-		background: white;
-		border: 1px solid black;
+		background: $background_dark;
+		border: 1px solid $pink;
 		border-right: none;
-		color: black;
+		color: white;
 		padding: 4px;
+		&.remove-item {
+			border-right: 1px solid $pink;
+		}
 		&:hover {
 			cursor: pointer;
 			background: $purple;
+			color: black;
+			border-color: $background_dark;
 		}
 	}
 }
