@@ -502,6 +502,24 @@ html :where(.editor-styles-wrapper) h4 {
       cursor: pointer;
       background: #44475A; }
 
+.pagination {
+  margin: 50px auto 80px;
+  text-align: center; }
+  .pagination .page-numbers {
+    color: black;
+    margin-right: 7px;
+    background-color: #BD93F9;
+    border-radius: 20px;
+    padding: 0 10px; }
+    .pagination .page-numbers:hover {
+      background: #FF79C6;
+      color: black; }
+    .pagination .page-numbers.current {
+      color: #F8F8F2;
+      margin: 0;
+      margin-right: 7px;
+      font-size: 16px; }
+
 /*
 	Portfolio styles
 */

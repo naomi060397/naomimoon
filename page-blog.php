@@ -53,8 +53,10 @@ get_header();
 						<?php
 						echo paginate_links( //phpcs:ignore
 							array(
-								'current' => $paged,
-								'total'   => $naomimoon_posts->max_num_pages,
+								'current'   => $paged,
+								'total'     => $naomimoon_posts->max_num_pages,
+								'prev_text' => '< Previous',
+								'next_text' => 'Next >',
 							)
 						);
 						?>

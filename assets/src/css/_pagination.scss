@@ -1,0 +1,22 @@
+// Pagination styles
+.pagination {
+	margin: 50px auto 80px;
+	text-align: center;
+	.page-numbers {
+		color: black;
+		margin-right: 7px;
+		background-color: $purple;
+		border-radius: 20px;
+		padding: 0 10px;
+		&:hover {
+			background: $pink;
+			color: black;
+		}
+		&.current {
+			color: $white;
+			margin: 0;
+			margin-right: 7px;
+			font-size: 16px;
+		}
+	}
+}
