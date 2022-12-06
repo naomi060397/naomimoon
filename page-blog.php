@@ -12,6 +12,13 @@ get_header();
 		<!-- Content from Editor -->
 		<div class="entry-content">
 
+			<div class="nav">
+				<ul>
+					<li>Home</li>
+					<li></li>
+				</ul>
+			</div>
+
 			<div class="naomimoon-blog__header">
 				<h1>Naomi Moon: Blog</h1>
 			</div>
@@ -55,7 +62,7 @@ get_header();
 							array(
 								'current'   => $paged,
 								'total'     => $naomimoon_posts->max_num_pages,
-								'prev_text' => '< Previous',
+								'prev_text' => '< Prev',
 								'next_text' => 'Next >',
 							)
 						);
@@ -69,3 +76,5 @@ get_header();
 		</div>
 		<div class="seperator"></div>
 	</main>
+<?php
+get_footer();

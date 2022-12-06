@@ -503,22 +503,22 @@ html :where(.editor-styles-wrapper) h4 {
       background: #44475A; }
 
 .pagination {
-  margin: 50px auto 80px;
+  margin: 70px auto 70px;
   text-align: center; }
   .pagination .page-numbers {
     color: black;
     margin-right: 7px;
     background-color: #BD93F9;
-    border-radius: 20px;
-    padding: 0 10px; }
+    border-radius: 100px;
+    padding: 5px 12px; }
     .pagination .page-numbers:hover {
       background: #FF79C6;
       color: black; }
     .pagination .page-numbers.current {
-      color: #F8F8F2;
       margin: 0;
       margin-right: 7px;
-      font-size: 16px; }
+      font-size: 16px;
+      background: #FF79C6; }
 
 /*
 	Portfolio styles
@@ -592,22 +592,30 @@ html :where(.editor-styles-wrapper) h4 {
   display: none; }
 
 /* blog styles */
-.page-template-page-blog header {
+.page-template-page-blog header #menu-primary li {
   display: none; }
+.page-template-page-blog header #menu-primary li:first-child {
+  display: block; }
 
 .naomimoon-blog .flex {
-  display: flex; }
+  display: flex;
+  border-bottom: 1px solid #BD93F9; }
 .naomimoon-blog__header {
-  margin-top: 52px;
+  margin-top: 45px;
+  margin-bottom: 70px;
   height: 200px;
+  line-height: 200px;
+  text-align: center;
   background: linear-gradient(180deg, #BD93F9 0%, #FF79C6 90%); }
   .naomimoon-blog__header h1 {
     text-align: center;
     margin: auto;
-    padding: 63px 0;
     text-transform: uppercase;
     letter-spacing: 3px;
     font-size: 50px; }
+    @media (max-width: 600px) {
+      .naomimoon-blog__header h1 {
+        font-size: 30px; } }
 .naomimoon-blog__post h2 {
   margin: 30px 0 10px; }
 .naomimoon-blog__post span {
