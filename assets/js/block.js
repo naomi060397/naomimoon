@@ -2701,7 +2701,11 @@ var linkEdit = /*#__PURE__*/function (_Component) {
         onClick: function onClick() {
           _this.addNewItem();
         }
-      })))))));
+      })))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])("div", {
+        className: "link-footer"
+      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])("i", null, "Created with ", Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])("a", {
+        href: "https://wordpress.org/"
+      }, "WordPress"))))));
     }
   }]);
 
@@ -2826,7 +2830,11 @@ var linkSave = /*#__PURE__*/function (_Component) {
           class: "link-item-icon",
           src: data.icon
         })));
-      })))));
+      }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("div", {
+        className: "link-footer"
+      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("i", null, "Created with ", Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("a", {
+        href: "https://wordpress.org/"
+      }, "WordPress")))));
     }
   }]);
 

@@ -1,15 +1,20 @@
 .link-block {
 	background-size: cover;
 	background-attachment: fixed;
-	padding: 125px 0;
-	min-height: 76vh;
+	padding: 70px 0 0;
+	min-height: 100vh;
+	@media (max-width: 500px) {
+		padding: 55px 0 0;
+	}
 	.link-card {
 		max-width: 390px;
 		margin: 0 auto;
 		border-radius: 10px;
 		padding: 35px;
+		transform: scale(.9);
 		@media (max-width: 500px) {
 			padding: 35px 20px;
+			transform: scale(1);
 		}
 	}
 	.row {
@@ -52,7 +57,7 @@
 			}
 			a {
 				text-decoration: none;
-				padding: 15px 210px 15px 0;
+				padding: 15px 100% 15px 0;
 				&:hover {
 					color: black;
 				}
@@ -119,4 +124,18 @@
 		font-weight: 600;
 		margin-bottom: 37px;
 	}
+	.link-footer {
+		color: $background_dark;
+		text-align: center;
+		font-size: 14px;
+		margin-top: -20px;
+		a {
+			color: $background_dark;
+			text-decoration: underline;
+		}
+	}
+}
+
+.page-template-page-home {
+	overflow: hidden;
 }
