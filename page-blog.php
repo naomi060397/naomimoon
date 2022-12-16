@@ -44,17 +44,23 @@ get_header();
 			$naomimoon_posts->max_num_pages = ceil( $naomimoon_posts->found_posts / $posts_per_page );
 
 			?>
-			<div class="naomimoon-blog__post container">
+			<div class="naomimoon-blog__posts container">
 				<?php
 				if ( $naomimoon_posts->have_posts() ) :
 					while ( $naomimoon_posts->have_posts() ) :
-						$naomimoon_posts->the_post();
 						?>
-						<div class="flex">
-							<h2><?php the_title(); ?></h2>
-							<span><?php echo get_the_date(); ?></span>
+						<div class="naomimoon-blog__post">
+							<?php
+							$naomimoon_posts->the_post();
+							?>
+							<div class="flex">
+								<h2><?php the_title(); ?></h2>
+								<span><?php echo get_the_date(); ?></span>
+							</div>
+							<div class="naomimoon-blog__post-content">
+								<?php the_content(); ?>
+							</div>
 						</div>
-						<p><?php the_content(); ?></p>
 					<?php endwhile; ?>
 					<div class="pagination">
 						<?php

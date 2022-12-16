@@ -1,0 +1,37 @@
+.gallery-block {
+	.row {
+		//display: flex;
+		min-height: 100px;
+		.naomi-mediaupload {
+			position: absolute;
+			background: $purple;
+			color: $background_dark;
+			display: block;
+			margin-left: 159px;
+			margin-top: 34px;
+			&:hover {
+				background: $background_dark;
+				color: $purple;
+			}
+		}
+		.item-action-wrap {
+			display: -webkit-inline-box;
+		}
+		&:hover {
+			.item-action-wrap {
+				display: -webkit-inline-box;
+			}
+			.naomi-mediaupload {
+				display: block;
+			}
+		}
+	}
+	.image {
+		margin: 0 auto;
+		max-width: 1000px;
+		position: relative;
+		img {
+			
+		}
+	}
+}

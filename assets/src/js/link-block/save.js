@@ -73,6 +73,8 @@ export default class linkSave extends Component {
                     </div>
                     <div className="link-footer">
                         <i>Created with <a href="https://wordpress.org/">WordPress</a></i>
+                        <span> | </span>
+                        <i>Color scheme by <a href="https://github.com/dracula/dracula-theme">Dracula</a></i>
                     </div>
                 </div>
             </div>

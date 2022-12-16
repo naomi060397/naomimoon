@@ -616,14 +616,18 @@ html :where(.editor-styles-wrapper) h4 {
     @media (max-width: 600px) {
       .naomimoon-blog__header h1 {
         font-size: 30px; } }
-.naomimoon-blog__post h2 {
+.naomimoon-blog__posts h2 {
   margin: 30px 0 10px; }
-.naomimoon-blog__post span {
+.naomimoon-blog__posts span {
   margin: 40px 0 10px 20px;
   font-size: 14px;
   font-style: italic; }
-.naomimoon-blog__post.container {
+.naomimoon-blog__posts.container {
   max-width: 980px; }
+.naomimoon-blog__post {
+  margin-bottom: 100px; }
+.naomimoon-blog__post-content {
+  margin-top: 40px; }
 
 .project-block {
   max-width: 770px;
@@ -1010,5 +1014,28 @@ html :where(.editor-styles-wrapper) h4 {
 
 .page-template-page-home {
   overflow: hidden; }
+
+.gallery-block .row {
+  min-height: 100px; }
+  .gallery-block .row .naomi-mediaupload {
+    position: absolute;
+    background: #BD93F9;
+    color: #21242f;
+    display: block;
+    margin-left: 159px;
+    margin-top: 34px; }
+    .gallery-block .row .naomi-mediaupload:hover {
+      background: #21242f;
+      color: #BD93F9; }
+  .gallery-block .row .item-action-wrap {
+    display: -webkit-inline-box; }
+  .gallery-block .row:hover .item-action-wrap {
+    display: -webkit-inline-box; }
+  .gallery-block .row:hover .naomi-mediaupload {
+    display: block; }
+.gallery-block .image {
+  margin: 0 auto;
+  max-width: 1000px;
+  position: relative; }
 
 /*# sourceMappingURL=all.css.map */
