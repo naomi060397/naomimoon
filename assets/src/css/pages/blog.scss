@@ -12,6 +12,17 @@
 	}
 }
 
+.page-template-page-blog {
+	.naomimoon-header__hamburger-menu {
+		li {
+			display: none;
+		}
+		li:first-child {
+			display: block;
+		}
+	}
+}
+
 .naomimoon-blog {
 	.flex {
 		display: flex;
@@ -46,20 +57,22 @@
 	&__posts {
 		h2 {
 			margin: 30px 0 10px;
+			font-size: 35px;
 		}
 		span {
 			margin: 40px 0 10px 20px;
    			font-size: 14px;
 			font-style: italic;
+			padding-top: 11px;
 		}
 		&.container {
 			max-width: 980px;
 		}
 	}
 	&__post {
-		margin-bottom: 100px;
+		margin-bottom: 50px;
 	}
 	&__post-content {
-		margin-top: 40px;
+		margin-top: 6px;
 	}
 }

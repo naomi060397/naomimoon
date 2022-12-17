@@ -510,7 +510,8 @@ html :where(.editor-styles-wrapper) h4 {
     margin-right: 7px;
     background-color: #BD93F9;
     border-radius: 100px;
-    padding: 5px 12px; }
+    padding: 5px 12px;
+    transition: ease-in-out .5s; }
     .pagination .page-numbers:hover {
       background: #FF79C6;
       color: black; }
@@ -597,6 +598,11 @@ html :where(.editor-styles-wrapper) h4 {
 .page-template-page-blog header #menu-primary li:first-child {
   display: block; }
 
+.page-template-page-blog .naomimoon-header__hamburger-menu li {
+  display: none; }
+.page-template-page-blog .naomimoon-header__hamburger-menu li:first-child {
+  display: block; }
+
 .naomimoon-blog .flex {
   display: flex;
   border-bottom: 1px solid #BD93F9; }
@@ -625,17 +631,19 @@ html :where(.editor-styles-wrapper) h4 {
       .naomimoon-blog__header h1 {
         font-size: 40px; } }
 .naomimoon-blog__posts h2 {
-  margin: 30px 0 10px; }
+  margin: 30px 0 10px;
+  font-size: 35px; }
 .naomimoon-blog__posts span {
   margin: 40px 0 10px 20px;
   font-size: 14px;
-  font-style: italic; }
+  font-style: italic;
+  padding-top: 11px; }
 .naomimoon-blog__posts.container {
   max-width: 980px; }
 .naomimoon-blog__post {
-  margin-bottom: 100px; }
+  margin-bottom: 50px; }
 .naomimoon-blog__post-content {
-  margin-top: 40px; }
+  margin-top: 6px; }
 
 .project-block {
   max-width: 770px;
@@ -684,6 +692,11 @@ html :where(.editor-styles-wrapper) h4 {
         max-height: 80px;
         transform: scale(1);
         transition: ease-in-out .2s; }
+        @media (max-width: 800px) {
+          .project-block .col.image img {
+            padding-top: 25.5px;
+            max-width: -webkit-fill-available;
+            max-height: none; } }
         .project-block .col.image img:hover {
           transform: scale(1.05); }
     .project-block .col.content {
