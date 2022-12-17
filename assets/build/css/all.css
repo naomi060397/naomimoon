@@ -1028,13 +1028,11 @@ html :where(.editor-styles-wrapper) h4 {
     color: #21242f;
     text-align: center;
     font-size: 14px;
-    margin-top: -20px; }
+    margin-top: -20px;
+    padding-bottom: 20px; }
     .link-block .link-footer a {
       color: #21242f;
       text-decoration: underline; }
-
-.page-template-page-home {
-  overflow: hidden; }
 
 .gallery-block .row {
   min-height: 100px; }
